@@ -6,7 +6,7 @@
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <title>Dak Lak Dashboard</title>
-<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;max-width:1440px;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;max-width:1200px;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
 </head>
 <body>
 <iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="Dak Lak Dashboard" srcdoc="&lt;!doctype html&gt;
@@ -815,7 +815,7 @@ html&gt;body{padding:0}&lt;/style&gt;
 &lt;body&gt;
 &lt;div id=&quot;dak-lak-dashboard&quot;&gt;
   &lt;style&gt;
-    #dak-lak-dashboard { color: var(--foreground); width: 100%; }
+    #dak-lak-dashboard { color:var(--foreground); width:100%; max-width:736px; margin:0 auto; }
     #dak-lak-dashboard .dash-head { display:flex; justify-content:space-between; align-items:flex-end; gap:16px; margin-bottom:16px; }
     #dak-lak-dashboard .dash-head h2 { margin:0; }
     #dak-lak-dashboard .dash-head p { margin:4px 0 0; color:var(--muted-foreground); }
@@ -855,6 +855,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     #dak-lak-dashboard .tabs { display:flex; gap:8px; flex-wrap:wrap; }
     #dak-lak-dashboard .table-responsive { margin-top:10px; }
     #dak-lak-dashboard .indicator-legend { display:flex; flex-wrap:wrap; gap:14px; margin:8px 0 12px; color:var(--muted-foreground); }
+    #dak-lak-dashboard .indicator-section { width:min(1100px, 100vw); margin-left:50%; transform:translateX(-50%); }
     #dak-lak-dashboard .indicator-legend span { display:flex; align-items:center; gap:6px; }
     #dak-lak-dashboard .indicator-dot { width:9px; height:9px; border-radius:50%; background:var(--muted-foreground); flex:0 0 auto; }
     #dak-lak-dashboard .indicator-dot.met { background:var(--viz-series-2); }
@@ -872,6 +873,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     #dak-lak-dashboard .indicator-band td { background:var(--muted); font-weight:500; }
     #dak-lak-dashboard .indicator-result { display:flex; flex-direction:column; gap:4px; }
     #dak-lak-dashboard .indicator-status { display:flex; align-items:center; gap:5px; color:var(--foreground); }
+    #dak-lak-dashboard .indicator-secondary { color:var(--muted-foreground); font-size:0.84em; font-weight:400; }
     #dak-lak-dashboard [data-view] { display:none; }
     #dak-lak-dashboard [data-view].active { display:block; }
     @media(max-width:600px){
@@ -884,16 +886,18 @@ html&gt;body{padding:0}&lt;/style&gt;
       #dak-lak-dashboard .indicator-table { display:table; font-size:11px; }
       #dak-lak-dashboard .indicator-table th,
       #dak-lak-dashboard .indicator-table td { padding:6px 4px; overflow-wrap:anywhere; }
+      #dak-lak-dashboard .indicator-table th:nth-child(1),
+      #dak-lak-dashboard .indicator-table td:nth-child(1),
       #dak-lak-dashboard .indicator-table th:nth-child(3),
       #dak-lak-dashboard .indicator-table td:nth-child(3),
       #dak-lak-dashboard .indicator-table th:nth-child(6),
       #dak-lak-dashboard .indicator-table td:nth-child(6),
       #dak-lak-dashboard .indicator-table th:nth-child(7),
       #dak-lak-dashboard .indicator-table td:nth-child(7) { display:none; }
-      #dak-lak-dashboard .indicator-table th:nth-child(1) { width:8%; }
-      #dak-lak-dashboard .indicator-table th:nth-child(2) { width:34%; }
-      #dak-lak-dashboard .indicator-table th:nth-child(4) { width:23%; }
-      #dak-lak-dashboard .indicator-table th:nth-child(5) { width:35%; }
+      #dak-lak-dashboard .indicator-table th:nth-child(2) { width:38%; }
+      #dak-lak-dashboard .indicator-table th:nth-child(4) { width:25%; }
+      #dak-lak-dashboard .indicator-table th:nth-child(5) { width:37%; }
+      #dak-lak-dashboard .indicator-table .indicator-band td:first-child { display:table-cell; }
       #dak-lak-dashboard .indicator-status { align-items:flex-start; }
     }
   &lt;/style&gt;
@@ -1006,6 +1010,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;/div&gt;
   &lt;/section&gt;
 
+  &lt;section class=&quot;indicator-section&quot; aria-label=&quot;Kết quả chỉ tiêu kinh tế – xã hội&quot;&gt;
   &lt;div class=&quot;section-head&quot;&gt;&lt;h3&gt;Kết quả chỉ tiêu kinh tế – xã hội&lt;/h3&gt;&lt;span&gt;Số liệu 6 tháng đầu năm 2026&lt;/span&gt;&lt;/div&gt;
   &lt;div class=&quot;indicator-legend text-small&quot; aria-label=&quot;Chú giải trạng thái chỉ tiêu&quot;&gt;
     &lt;span&gt;&lt;i class=&quot;indicator-dot met&quot;&gt;&lt;/i&gt;Đạt hoặc vượt kịch bản&lt;/span&gt;
@@ -1059,10 +1064,36 @@ html&gt;body{padding:0}&lt;/style&gt;
       &lt;/tbody&gt;
     &lt;/table&gt;
   &lt;/div&gt;
+  &lt;/section&gt;
 
   &lt;script&gt;
     (() =&gt; {
       const root = document.getElementById(&quot;dak-lak-dashboard&quot;);
+      const decorateSecondaryText = (node) =&gt; {
+        if (node.nodeType === 3) {
+          const text = node.nodeValue || &quot;&quot;;
+          const pattern = /(;?\s*(?:KB\s+[^;]+|tăng\s+[^;]*\bso(?:\s+với)?\s+[^;]+))/gi;
+          if (!pattern.test(text)) return;
+          pattern.lastIndex = 0;
+          const fragment = document.createDocumentFragment();
+          let cursor = 0;
+          text.replace(pattern, (match, _group, offset) =&gt; {
+            fragment.append(document.createTextNode(text.slice(cursor, offset)));
+            const span = document.createElement(&quot;span&quot;);
+            span.className = &quot;indicator-secondary&quot;;
+            span.textContent = match.replace(/^;\s*/, &quot; · &quot;);
+            fragment.append(span);
+            cursor = offset + match.length;
+            return match;
+          });
+          fragment.append(document.createTextNode(text.slice(cursor)));
+          node.parentNode.replaceChild(fragment, node);
+          return;
+        }
+        if (node.nodeType !== 1 || node.classList.contains(&quot;indicator-status&quot;) || node.classList.contains(&quot;indicator-secondary&quot;)) return;
+        Array.from(node.childNodes).forEach(decorateSecondaryText);
+      };
+      root.querySelectorAll(&quot;.indicator-table td&quot;).forEach(decorateSecondaryText);
       const buttons = root.querySelectorAll(&quot;[data-tab]&quot;);
       const views = root.querySelectorAll(&quot;[data-view]&quot;);
       buttons.forEach((button) =&gt; button.addEventListener(&quot;click&quot;, () =&gt; {
