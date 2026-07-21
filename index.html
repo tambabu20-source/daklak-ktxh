@@ -6,7 +6,7 @@
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <title>Dak Lak Dashboard</title>
-<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;max-width:736px;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;max-width:1440px;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
 </head>
 <body>
 <iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="Dak Lak Dashboard" srcdoc="&lt;!doctype html&gt;
@@ -824,7 +824,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     #dak-lak-dashboard .viz-stat-value { font-variant-numeric:tabular-nums; }
     #dak-lak-dashboard .delta { color:var(--foreground); margin-top:4px; }
     #dak-lak-dashboard .section-head { display:flex; justify-content:space-between; align-items:center; gap:12px; margin:22px 0 10px; }
-    #dak-lak-dashboard .section-head h3 { margin:0; }
+    #dak-lak-dashboard .section-head h3 { margin:0; color:var(--viz-series-2); }
     #dak-lak-dashboard .section-head span { color:var(--muted-foreground); }
     #dak-lak-dashboard .finance { display:grid; gap:10px; margin-bottom:18px; }
     #dak-lak-dashboard .finance-row { display:grid; grid-template-columns:minmax(190px,1.2fr) minmax(150px,1fr) 100px; align-items:center; gap:12px; }
@@ -859,7 +859,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     #dak-lak-dashboard .indicator-dot { width:9px; height:9px; border-radius:50%; background:var(--muted-foreground); flex:0 0 auto; }
     #dak-lak-dashboard .indicator-dot.met { background:var(--viz-series-2); }
     #dak-lak-dashboard .indicator-dot.unmet { background:var(--destructive); }
-    #dak-lak-dashboard .indicator-table { width:100%; table-layout:fixed; }
+    #dak-lak-dashboard .indicator-table { width:100%; table-layout:fixed; font-size:0.9em; }
     #dak-lak-dashboard .indicator-table th:first-child { width:5%; }
     #dak-lak-dashboard .indicator-table th:nth-child(2) { width:20%; }
     #dak-lak-dashboard .indicator-table th:nth-child(3),
@@ -867,6 +867,8 @@ html&gt;body{padding:0}&lt;/style&gt;
     #dak-lak-dashboard .indicator-table th:nth-child(5) { width:15%; }
     #dak-lak-dashboard .indicator-table th:nth-child(6),
     #dak-lak-dashboard .indicator-table th:nth-child(7) { width:15%; }
+    #dak-lak-dashboard .indicator-table th:nth-child(5),
+    #dak-lak-dashboard .indicator-table td:nth-child(5) { background:color-mix(in srgb, var(--viz-series-1) 12%, transparent); }
     #dak-lak-dashboard .indicator-band td { background:var(--muted); font-weight:500; }
     #dak-lak-dashboard .indicator-result { display:flex; flex-direction:column; gap:4px; }
     #dak-lak-dashboard .indicator-status { display:flex; align-items:center; gap:5px; color:var(--foreground); }
@@ -879,16 +881,20 @@ html&gt;body{padding:0}&lt;/style&gt;
       #dak-lak-dashboard .bar-row { grid-template-columns:110px minmax(80px,1fr) 54px; }
       #dak-lak-dashboard .finance-row { grid-template-columns:1fr; gap:5px; }
       #dak-lak-dashboard .finance-row em { text-align:left; }
-      #dak-lak-dashboard .indicator-table { display:block; }
-      #dak-lak-dashboard .indicator-table thead { display:none; }
-      #dak-lak-dashboard .indicator-table tbody,
-      #dak-lak-dashboard .indicator-table tr,
-      #dak-lak-dashboard .indicator-table td { display:block; width:100%; }
-      #dak-lak-dashboard .indicator-table tr { padding:8px 0; border-bottom:1px solid var(--border); }
-      #dak-lak-dashboard .indicator-table td { padding:5px 0; }
-      #dak-lak-dashboard .indicator-table td::before { content:attr(data-label); display:block; color:var(--muted-foreground); font-size:0.84em; font-weight:400; margin-bottom:2px; }
-      #dak-lak-dashboard .indicator-table .indicator-band { padding:8px; }
-      #dak-lak-dashboard .indicator-table .indicator-band td::before { display:none; }
+      #dak-lak-dashboard .indicator-table { display:table; font-size:11px; }
+      #dak-lak-dashboard .indicator-table th,
+      #dak-lak-dashboard .indicator-table td { padding:6px 4px; overflow-wrap:anywhere; }
+      #dak-lak-dashboard .indicator-table th:nth-child(3),
+      #dak-lak-dashboard .indicator-table td:nth-child(3),
+      #dak-lak-dashboard .indicator-table th:nth-child(6),
+      #dak-lak-dashboard .indicator-table td:nth-child(6),
+      #dak-lak-dashboard .indicator-table th:nth-child(7),
+      #dak-lak-dashboard .indicator-table td:nth-child(7) { display:none; }
+      #dak-lak-dashboard .indicator-table th:nth-child(1) { width:8%; }
+      #dak-lak-dashboard .indicator-table th:nth-child(2) { width:34%; }
+      #dak-lak-dashboard .indicator-table th:nth-child(4) { width:23%; }
+      #dak-lak-dashboard .indicator-table th:nth-child(5) { width:35%; }
+      #dak-lak-dashboard .indicator-status { align-items:flex-start; }
     }
   &lt;/style&gt;
 
@@ -1000,7 +1006,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;/div&gt;
   &lt;/section&gt;
 
-  &lt;div class=&quot;section-head&quot;&gt;&lt;h3&gt;1. Kết quả chỉ tiêu kinh tế – xã hội&lt;/h3&gt;&lt;span&gt;Số liệu 6 tháng đầu năm 2026&lt;/span&gt;&lt;/div&gt;
+  &lt;div class=&quot;section-head&quot;&gt;&lt;h3&gt;Kết quả chỉ tiêu kinh tế – xã hội&lt;/h3&gt;&lt;span&gt;Số liệu 6 tháng đầu năm 2026&lt;/span&gt;&lt;/div&gt;
   &lt;div class=&quot;indicator-legend text-small&quot; aria-label=&quot;Chú giải trạng thái chỉ tiêu&quot;&gt;
     &lt;span&gt;&lt;i class=&quot;indicator-dot met&quot;&gt;&lt;/i&gt;Đạt hoặc vượt kịch bản&lt;/span&gt;
     &lt;span&gt;&lt;i class=&quot;indicator-dot unmet&quot;&gt;&lt;/i&gt;Chưa đạt kịch bản&lt;/span&gt;
