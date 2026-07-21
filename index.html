@@ -861,6 +861,9 @@ html&gt;body{padding:0}&lt;/style&gt;
     #dak-lak-dashboard .indicator-dot.met { background:var(--viz-series-2); }
     #dak-lak-dashboard .indicator-dot.unmet { background:var(--destructive); }
     #dak-lak-dashboard .indicator-table { width:100%; table-layout:fixed; font-size:0.9em; }
+    #dak-lak-dashboard .indicator-section .table-responsive { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+    #dak-lak-dashboard .indicator-table th,
+    #dak-lak-dashboard .indicator-table td { padding:6px 7px; line-height:1.3; }
     #dak-lak-dashboard .indicator-table th:first-child { width:5%; }
     #dak-lak-dashboard .indicator-table th:nth-child(2) { width:20%; }
     #dak-lak-dashboard .indicator-table th:nth-child(3),
@@ -873,7 +876,8 @@ html&gt;body{padding:0}&lt;/style&gt;
     #dak-lak-dashboard .indicator-band td { background:var(--muted); font-weight:500; }
     #dak-lak-dashboard .indicator-result { display:flex; flex-direction:column; gap:4px; }
     #dak-lak-dashboard .indicator-status { display:flex; align-items:center; gap:5px; color:var(--foreground); }
-    #dak-lak-dashboard .indicator-secondary { color:var(--muted-foreground); font-size:0.84em; font-weight:400; }
+    #dak-lak-dashboard .indicator-secondary { display:block; color:var(--muted-foreground); font-size:0.84em; font-weight:400; margin-top:2px; }
+    #dak-lak-dashboard .mobile-scroll-hint { display:none; }
     #dak-lak-dashboard [data-view] { display:none; }
     #dak-lak-dashboard [data-view].active { display:block; }
     @media(max-width:600px){
@@ -883,21 +887,10 @@ html&gt;body{padding:0}&lt;/style&gt;
       #dak-lak-dashboard .bar-row { grid-template-columns:110px minmax(80px,1fr) 54px; }
       #dak-lak-dashboard .finance-row { grid-template-columns:1fr; gap:5px; }
       #dak-lak-dashboard .finance-row em { text-align:left; }
-      #dak-lak-dashboard .indicator-table { display:table; font-size:11px; }
+      #dak-lak-dashboard .mobile-scroll-hint { display:block; margin:6px 0; }
+      #dak-lak-dashboard .indicator-table { display:table; min-width:900px; font-size:11px; }
       #dak-lak-dashboard .indicator-table th,
-      #dak-lak-dashboard .indicator-table td { padding:6px 4px; overflow-wrap:anywhere; }
-      #dak-lak-dashboard .indicator-table th:nth-child(1),
-      #dak-lak-dashboard .indicator-table td:nth-child(1),
-      #dak-lak-dashboard .indicator-table th:nth-child(3),
-      #dak-lak-dashboard .indicator-table td:nth-child(3),
-      #dak-lak-dashboard .indicator-table th:nth-child(6),
-      #dak-lak-dashboard .indicator-table td:nth-child(6),
-      #dak-lak-dashboard .indicator-table th:nth-child(7),
-      #dak-lak-dashboard .indicator-table td:nth-child(7) { display:none; }
-      #dak-lak-dashboard .indicator-table th:nth-child(2) { width:38%; }
-      #dak-lak-dashboard .indicator-table th:nth-child(4) { width:25%; }
-      #dak-lak-dashboard .indicator-table th:nth-child(5) { width:37%; }
-      #dak-lak-dashboard .indicator-table .indicator-band td:first-child { display:table-cell; }
+      #dak-lak-dashboard .indicator-table td { padding:5px 6px; overflow-wrap:anywhere; }
       #dak-lak-dashboard .indicator-status { align-items:flex-start; }
     }
   &lt;/style&gt;
@@ -1017,6 +1010,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;span&gt;&lt;i class=&quot;indicator-dot unmet&quot;&gt;&lt;/i&gt;Chưa đạt kịch bản&lt;/span&gt;
     &lt;span&gt;&lt;i class=&quot;indicator-dot&quot;&gt;&lt;/i&gt;Theo dõi hoặc đánh giá cuối năm&lt;/span&gt;
   &lt;/div&gt;
+  &lt;div class=&quot;mobile-scroll-hint text-small text-muted&quot;&gt;Vuốt ngang bảng để xem đầy đủ các cột giai đoạn 2026–2030.&lt;/div&gt;
   &lt;div class=&quot;table-responsive&quot;&gt;
     &lt;table class=&quot;table table-sm indicator-table&quot;&gt;
       &lt;thead&gt;&lt;tr&gt;&lt;th&gt;STT&lt;/th&gt;&lt;th&gt;Chỉ tiêu&lt;/th&gt;&lt;th&gt;Kết quả 2025&lt;/th&gt;&lt;th&gt;Kế hoạch 2026&lt;/th&gt;&lt;th&gt;Kết quả 6 tháng/2026&lt;/th&gt;&lt;th&gt;GĐ 2026–2030 (Nghị quyết ĐHĐB tỉnh)&lt;/th&gt;&lt;th&gt;GĐ 2026–2030 (CTHĐ thực hiện NQĐH XIV)&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
@@ -1072,7 +1066,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       const decorateSecondaryText = (node) =&gt; {
         if (node.nodeType === 3) {
           const text = node.nodeValue || &quot;&quot;;
-          const pattern = /(;?\s*(?:KB\s+[^;]+|tăng\s+[^;]*\bso(?:\s+với)?\s+[^;]+))/gi;
+          const pattern = /(;?\s*(?:KB\s+[^;]+|tăng\s+[^;]*\bso(?:\s+với)?\s+[^;]+|điều chỉnh\s+[^;]+|đạt\s+[\d.,]+%[^;]*))/gi;
           if (!pattern.test(text)) return;
           pattern.lastIndex = 0;
           const fragment = document.createDocumentFragment();
