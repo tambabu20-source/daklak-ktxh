@@ -841,6 +841,29 @@ html&gt;body{padding:0}&lt;/style&gt;
     #dak-lak-dashboard .allocation p { margin:4px 0; color:var(--muted-foreground); }
     #dak-lak-dashboard .bars { display:grid; gap:10px; }
     #dak-lak-dashboard .bar-row { display:grid; grid-template-columns:minmax(130px, 1.1fr) minmax(120px, 2fr) 64px; align-items:center; gap:10px; }
+    #dak-lak-dashboard .investor-wide { width:min(1200px,100vw); margin-left:50%; transform:translateX(-50%); }
+    #dak-lak-dashboard .scenario-scroll { overflow:visible; margin-top:10px; }
+    #dak-lak-dashboard .scenario-chart { width:100%; min-width:0; display:grid; gap:4px; font-size:0.78em; }
+    #dak-lak-dashboard .scenario-row { display:grid; grid-template-columns:160px repeat(8,minmax(0,1fr)); gap:3px; align-items:stretch; }
+    #dak-lak-dashboard .scenario-row.header { color:var(--muted-foreground); text-align:center; }
+    #dak-lak-dashboard .scenario-row.header &gt; span:first-child { text-align:left; }
+    #dak-lak-dashboard .scenario-name { display:flex; align-items:center; font-weight:500; }
+    #dak-lak-dashboard .scenario-cell { position:relative; min-height:30px; display:flex; align-items:center; justify-content:flex-end; padding:4px; overflow:hidden; background:var(--muted); font-variant-numeric:tabular-nums; }
+    #dak-lak-dashboard .scenario-cell::before { content:&quot;&quot;; position:absolute; inset:0 auto 0 0; width:var(--pct,0%); background:color-mix(in srgb,var(--viz-series-1) 32%,transparent); }
+    #dak-lak-dashboard .scenario-cell.actual::before { background:color-mix(in srgb,var(--viz-series-2) 38%,transparent); }
+    #dak-lak-dashboard .scenario-cell b { position:relative; z-index:1; font-weight:500; }
+    #dak-lak-dashboard .scenario-cell.na { justify-content:center; color:var(--muted-foreground); }
+    #dak-lak-dashboard .investor-table { width:100%; table-layout:fixed; font-size:0.72em; }
+    #dak-lak-dashboard .investor-table th,
+    #dak-lak-dashboard .investor-table td { padding:5px 4px; line-height:1.2; }
+    #dak-lak-dashboard .investor-table th:first-child { width:20%; }
+    #dak-lak-dashboard .investor-table th:nth-child(2),
+    #dak-lak-dashboard .investor-table th:nth-child(3) { width:9%; }
+    #dak-lak-dashboard .investor-table th:nth-child(4) { width:8%; }
+    #dak-lak-dashboard .investor-table th:nth-child(5) { width:6%; }
+    #dak-lak-dashboard .investor-table th:nth-child(n+6) { width:6.7%; }
+    #dak-lak-dashboard .investor-table td:not(:first-child) { white-space:nowrap; }
+    #dak-lak-dashboard .investor-wide .table-responsive { overflow:visible; }
     #dak-lak-dashboard .track { height:12px; background:var(--muted); border-radius:999px; overflow:hidden; }
     #dak-lak-dashboard .fill { height:100%; background:var(--viz-series-1); border-radius:inherit; }
     #dak-lak-dashboard .fill.good { background:var(--viz-series-2); }
@@ -855,7 +878,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     #dak-lak-dashboard .tabs { display:flex; gap:8px; flex-wrap:wrap; }
     #dak-lak-dashboard .table-responsive { margin-top:10px; }
     #dak-lak-dashboard .indicator-legend { display:flex; flex-wrap:wrap; gap:14px; margin:8px 0 12px; color:var(--muted-foreground); }
-    #dak-lak-dashboard .indicator-section { width:min(1100px, 100vw); margin-left:50%; transform:translateX(-50%); }
+    #dak-lak-dashboard .indicator-section { width:min(1200px, 100vw); margin-left:50%; transform:translateX(-50%); }
     #dak-lak-dashboard .indicator-legend span { display:flex; align-items:center; gap:6px; }
     #dak-lak-dashboard .indicator-dot { width:9px; height:9px; border-radius:50%; background:var(--muted-foreground); flex:0 0 auto; }
     #dak-lak-dashboard .indicator-dot.met { background:var(--viz-series-2); }
@@ -864,15 +887,21 @@ html&gt;body{padding:0}&lt;/style&gt;
     #dak-lak-dashboard .indicator-section .table-responsive { overflow-x:auto; -webkit-overflow-scrolling:touch; }
     #dak-lak-dashboard .indicator-table th,
     #dak-lak-dashboard .indicator-table td { padding:6px 7px; line-height:1.3; }
-    #dak-lak-dashboard .indicator-table th:first-child { width:5%; }
-    #dak-lak-dashboard .indicator-table th:nth-child(2) { width:20%; }
+    #dak-lak-dashboard .indicator-table th:first-child { width:4%; }
+    #dak-lak-dashboard .indicator-table th:nth-child(2) { width:16%; }
     #dak-lak-dashboard .indicator-table th:nth-child(3),
     #dak-lak-dashboard .indicator-table th:nth-child(4),
-    #dak-lak-dashboard .indicator-table th:nth-child(5) { width:15%; }
+    #dak-lak-dashboard .indicator-table th:nth-child(5) { width:11%; }
     #dak-lak-dashboard .indicator-table th:nth-child(6),
-    #dak-lak-dashboard .indicator-table th:nth-child(7) { width:15%; }
+    #dak-lak-dashboard .indicator-table th:nth-child(7) { width:10%; }
+    #dak-lak-dashboard .indicator-table th:nth-child(8),
+    #dak-lak-dashboard .indicator-table th:nth-child(9) { width:13.5%; }
     #dak-lak-dashboard .indicator-table th:nth-child(5),
     #dak-lak-dashboard .indicator-table td:nth-child(5) { background:color-mix(in srgb, var(--viz-series-1) 12%, transparent); }
+    #dak-lak-dashboard .indicator-table th:nth-child(6),
+    #dak-lak-dashboard .indicator-table td:nth-child(6) { background:color-mix(in srgb, var(--viz-series-3) 10%, transparent); }
+    #dak-lak-dashboard .indicator-table th:nth-child(7),
+    #dak-lak-dashboard .indicator-table td:nth-child(7) { background:color-mix(in srgb, var(--viz-series-4) 10%, transparent); }
     #dak-lak-dashboard .indicator-band td { background:var(--muted); font-weight:500; }
     #dak-lak-dashboard .indicator-result { display:flex; flex-direction:column; gap:4px; }
     #dak-lak-dashboard .indicator-status { display:flex; align-items:center; gap:5px; color:var(--foreground); }
@@ -882,17 +911,46 @@ html&gt;body{padding:0}&lt;/style&gt;
     #dak-lak-dashboard .mobile-scroll-hint { display:none; }
     #dak-lak-dashboard [data-view] { display:none; }
     #dak-lak-dashboard [data-view].active { display:block; }
-    @media(max-width:600px){
+    @media(max-width:700px){
       #dak-lak-dashboard .dash-head { display:block; }
       #dak-lak-dashboard .stamp { display:block; margin-top:6px; }
       #dak-lak-dashboard .projects { grid-template-columns:1fr; }
       #dak-lak-dashboard .bar-row { grid-template-columns:110px minmax(80px,1fr) 54px; }
       #dak-lak-dashboard .finance-row { grid-template-columns:1fr; gap:5px; }
       #dak-lak-dashboard .finance-row em { text-align:left; }
-      #dak-lak-dashboard .mobile-scroll-hint { display:block; margin:6px 0; }
-      #dak-lak-dashboard .indicator-table { display:table; min-width:900px; font-size:11px; }
-      #dak-lak-dashboard .indicator-table th,
-      #dak-lak-dashboard .indicator-table td { padding:5px 6px; overflow-wrap:anywhere; }
+      #dak-lak-dashboard .mobile-scroll-hint { display:none; }
+      #dak-lak-dashboard .scenario-row.header { display:none; }
+      #dak-lak-dashboard .scenario-row:not(.header) { grid-template-columns:repeat(4,minmax(0,1fr)); gap:4px; padding:7px 0; border-bottom:1px solid var(--border); }
+      #dak-lak-dashboard .scenario-name { grid-column:1/-1; min-height:24px; }
+      #dak-lak-dashboard .scenario-cell { min-height:38px; padding:16px 2px 3px; justify-content:center; font-size:11px; }
+      #dak-lak-dashboard .scenario-cell::after { position:absolute; top:2px; left:3px; right:3px; color:var(--muted-foreground); font-size:0.86em; font-weight:400; text-align:center; }
+      #dak-lak-dashboard .scenario-cell:nth-child(2)::after { content:&quot;TH 15/7&quot;; }
+      #dak-lak-dashboard .scenario-cell:nth-child(3)::after { content:&quot;KB T7&quot;; }
+      #dak-lak-dashboard .scenario-cell:nth-child(4)::after { content:&quot;KB T8&quot;; }
+      #dak-lak-dashboard .scenario-cell:nth-child(5)::after { content:&quot;KB T9&quot;; }
+      #dak-lak-dashboard .scenario-cell:nth-child(6)::after { content:&quot;KB T10&quot;; }
+      #dak-lak-dashboard .scenario-cell:nth-child(7)::after { content:&quot;KB T11&quot;; }
+      #dak-lak-dashboard .scenario-cell:nth-child(8)::after { content:&quot;KB T12&quot;; }
+      #dak-lak-dashboard .scenario-cell:nth-child(9)::after { content:&quot;KB T1/27&quot;; }
+      #dak-lak-dashboard .investor-table,
+      #dak-lak-dashboard .investor-table tbody { display:block; width:100%; }
+      #dak-lak-dashboard .investor-table thead { display:none; }
+      #dak-lak-dashboard .investor-table tr { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:4px 6px; padding:8px 0; border-bottom:1px solid var(--border); }
+      #dak-lak-dashboard .investor-table td { display:block; border:0; padding:2px; text-align:left !important; white-space:normal !important; font-size:11px; }
+      #dak-lak-dashboard .investor-table td::before { content:attr(data-label); display:block; color:var(--muted-foreground); font-size:0.86em; margin-bottom:2px; }
+      #dak-lak-dashboard .investor-table td:first-child { grid-column:1/-1; font-weight:500; font-size:12px; }
+      #dak-lak-dashboard .investor-table td:first-child::before { display:none; }
+      #dak-lak-dashboard .indicator-section .table-responsive { overflow:visible; }
+      #dak-lak-dashboard .indicator-table,
+      #dak-lak-dashboard .indicator-table tbody { display:block; width:100%; min-width:0; font-size:11px; }
+      #dak-lak-dashboard .indicator-table thead { display:none; }
+      #dak-lak-dashboard .indicator-table tr:not(.indicator-band) { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:5px 8px; padding:9px 0; border-bottom:1px solid var(--border); }
+      #dak-lak-dashboard .indicator-table tr:not(.indicator-band) td { display:block; border:0; padding:2px; overflow-wrap:anywhere; background:transparent; }
+      #dak-lak-dashboard .indicator-table tr:not(.indicator-band) td::before { content:attr(data-label); display:block; color:var(--muted-foreground); font-size:0.86em; margin-bottom:2px; }
+      #dak-lak-dashboard .indicator-table tr:not(.indicator-band) td:nth-child(2) { grid-column:1/-1; font-weight:500; }
+      #dak-lak-dashboard .indicator-table tr:not(.indicator-band) td:nth-child(2)::before { display:none; }
+      #dak-lak-dashboard .indicator-band { display:block; }
+      #dak-lak-dashboard .indicator-band td { display:block; width:100%; padding:6px; }
       #dak-lak-dashboard .indicator-status { align-items:flex-start; }
     }
   &lt;/style&gt;
@@ -959,33 +1017,37 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;span class=&quot;text-small text-muted&quot;&gt;Đạt 31,13% kế hoạch địa phương giao chi tiết · 31,05% kế hoạch Thủ tướng Chính phủ giao&lt;/span&gt;
   &lt;/div&gt;
   &lt;div class=&quot;legend text-small&quot; aria-label=&quot;Chú giải màu biểu đồ&quot;&gt;
-    &lt;span&gt;&lt;i class=&quot;good&quot;&gt;&lt;/i&gt;Từ 40% trở lên&lt;/span&gt;
-    &lt;span&gt;&lt;i&gt;&lt;/i&gt;Từ 20% đến dưới 40%&lt;/span&gt;
-    &lt;span&gt;&lt;i class=&quot;low&quot;&gt;&lt;/i&gt;Dưới 20%&lt;/span&gt;
+    &lt;span&gt;&lt;i class=&quot;good&quot;&gt;&lt;/i&gt;Thực hiện đến 15/7/2026&lt;/span&gt;
+    &lt;span&gt;&lt;i&gt;&lt;/i&gt;Kịch bản lũy kế&lt;/span&gt;
+    &lt;span&gt;Đơn vị: % kế hoạch vốn năm 2026&lt;/span&gt;
   &lt;/div&gt;
 
-  &lt;section data-view=&quot;investors&quot; class=&quot;active&quot; aria-label=&quot;Tỷ lệ giải ngân theo chủ đầu tư&quot;&gt;
-    &lt;div class=&quot;bars&quot;&gt;
-      &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Ban Dân dụng &amp;amp; CN&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:50.49%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;b class=&quot;pct&quot;&gt;50,49%&lt;/b&gt;&lt;/div&gt;
-      &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Ban Ea Kar&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:44.48%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;b class=&quot;pct&quot;&gt;44,48%&lt;/b&gt;&lt;/div&gt;
-      &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Ban phía Đông&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:43.37%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;b class=&quot;pct&quot;&gt;43,37%&lt;/b&gt;&lt;/div&gt;
-      &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Ban Tuy Hòa&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:34.62%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;b class=&quot;pct&quot;&gt;34,62%&lt;/b&gt;&lt;/div&gt;
-      &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Ban Buôn Ma Thuột&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:34.52%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;b class=&quot;pct&quot;&gt;34,52%&lt;/b&gt;&lt;/div&gt;
-      &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Ban Tuy An&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:28.34%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;b class=&quot;pct&quot;&gt;28,34%&lt;/b&gt;&lt;/div&gt;
-      &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Ban KKT Phú Yên&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:24.61%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;b class=&quot;pct&quot;&gt;24,61%&lt;/b&gt;&lt;/div&gt;
-      &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Ban Buôn Hồ&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:24.38%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;b class=&quot;pct&quot;&gt;24,38%&lt;/b&gt;&lt;/div&gt;
-      &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Ban GT&amp;amp;NNNT tỉnh&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill low&quot; style=&quot;width:19.96%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;b class=&quot;pct&quot;&gt;19,96%&lt;/b&gt;&lt;/div&gt;
-      &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Sở NN&amp;MT&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill low&quot; style=&quot;width:11.21%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;b class=&quot;pct&quot;&gt;11,21%&lt;/b&gt;&lt;/div&gt;
+  &lt;section data-view=&quot;investors&quot; class=&quot;active investor-wide&quot; aria-label=&quot;Tỷ lệ giải ngân theo chủ đầu tư&quot;&gt;
+    &lt;div class=&quot;mobile-scroll-hint text-small text-muted&quot;&gt;Vuốt ngang để xem kịch bản giải ngân đến tháng 01/2027.&lt;/div&gt;
+    &lt;div class=&quot;scenario-scroll&quot;&gt;
+      &lt;div class=&quot;scenario-chart&quot; role=&quot;img&quot; aria-label=&quot;Tỷ lệ thực hiện và kịch bản giải ngân lũy kế theo chủ đầu tư từ tháng 7 năm 2026 đến tháng 1 năm 2027&quot;&gt;
+        &lt;div class=&quot;scenario-row header text-small&quot;&gt;&lt;span&gt;Chủ đầu tư&lt;/span&gt;&lt;span&gt;Thực hiện&lt;br&gt;15/7&lt;/span&gt;&lt;span&gt;KB T7&lt;/span&gt;&lt;span&gt;KB T8&lt;/span&gt;&lt;span&gt;KB T9&lt;/span&gt;&lt;span&gt;KB T10&lt;/span&gt;&lt;span&gt;KB T11&lt;/span&gt;&lt;span&gt;KB T12&lt;/span&gt;&lt;span&gt;KB T1/2027&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban Ea Kar&lt;/span&gt;&lt;span class=&quot;scenario-cell actual&quot; style=&quot;--pct:44.48%&quot;&gt;&lt;b&gt;44,48%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:52.85%&quot;&gt;&lt;b&gt;52,85%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:69.88%&quot;&gt;&lt;b&gt;69,88%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:83.02%&quot;&gt;&lt;b&gt;83,02%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:84.77%&quot;&gt;&lt;b&gt;84,77%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:88.64%&quot;&gt;&lt;b&gt;88,64%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:92%&quot;&gt;&lt;b&gt;92,00%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban phía Đông&lt;/span&gt;&lt;span class=&quot;scenario-cell actual&quot; style=&quot;--pct:43.37%&quot;&gt;&lt;b&gt;43,37%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:51.30%&quot;&gt;&lt;b&gt;51,30%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:68.90%&quot;&gt;&lt;b&gt;68,90%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:82.47%&quot;&gt;&lt;b&gt;82,47%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:84.28%&quot;&gt;&lt;b&gt;84,28%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:88.27%&quot;&gt;&lt;b&gt;88,27%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:89%&quot;&gt;&lt;b&gt;89,00%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban Tuy Hòa&lt;/span&gt;&lt;span class=&quot;scenario-cell actual&quot; style=&quot;--pct:34.62%&quot;&gt;&lt;b&gt;34,62%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:44.75%&quot;&gt;&lt;b&gt;44,75%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:64.71%&quot;&gt;&lt;b&gt;64,71%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:82.16%&quot;&gt;&lt;b&gt;82,16%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:83.01%&quot;&gt;&lt;b&gt;83,01%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:87.19%&quot;&gt;&lt;b&gt;87,19%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:92%&quot;&gt;&lt;b&gt;92,00%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban Buôn Ma Thuột&lt;/span&gt;&lt;span class=&quot;scenario-cell actual&quot; style=&quot;--pct:34.52%&quot;&gt;&lt;b&gt;34,52%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:40.56%&quot;&gt;&lt;b&gt;40,56%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:60.08%&quot;&gt;&lt;b&gt;60,08%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:79.21%&quot;&gt;&lt;b&gt;79,21%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:82.62%&quot;&gt;&lt;b&gt;82,62%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:84.72%&quot;&gt;&lt;b&gt;84,72%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:93%&quot;&gt;&lt;b&gt;93,00%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban Dân dụng &amp;amp; CN&lt;/span&gt;&lt;span class=&quot;scenario-cell actual&quot; style=&quot;--pct:32.74%&quot;&gt;&lt;b&gt;32,74%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:38.83%&quot;&gt;&lt;b&gt;38,83%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:48.22%&quot;&gt;&lt;b&gt;48,22%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:56.44%&quot;&gt;&lt;b&gt;56,44%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:58.57%&quot;&gt;&lt;b&gt;58,57%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:68.98%&quot;&gt;&lt;b&gt;68,98%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:75%&quot;&gt;&lt;b&gt;75,00%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban Tuy An&lt;/span&gt;&lt;span class=&quot;scenario-cell actual&quot; style=&quot;--pct:28.34%&quot;&gt;&lt;b&gt;28,34%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:37.21%&quot;&gt;&lt;b&gt;37,21%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:57.83%&quot;&gt;&lt;b&gt;57,83%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:78.81%&quot;&gt;&lt;b&gt;78,81%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:83.52%&quot;&gt;&lt;b&gt;83,52%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:84.44%&quot;&gt;&lt;b&gt;84,44%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:91%&quot;&gt;&lt;b&gt;91,00%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban KKT Phú Yên&lt;/span&gt;&lt;span class=&quot;scenario-cell actual&quot; style=&quot;--pct:24.61%&quot;&gt;&lt;b&gt;24,61%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:31.61%&quot;&gt;&lt;b&gt;31,61%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:42.40%&quot;&gt;&lt;b&gt;42,40%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:52.92%&quot;&gt;&lt;b&gt;52,92%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:55.72%&quot;&gt;&lt;b&gt;55,72%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:70.86%&quot;&gt;&lt;b&gt;70,86%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:89.78%&quot;&gt;&lt;b&gt;89,78%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban Buôn Hồ&lt;/span&gt;&lt;span class=&quot;scenario-cell actual&quot; style=&quot;--pct:24.38%&quot;&gt;&lt;b&gt;24,38%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:29.33%&quot;&gt;&lt;b&gt;29,33%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:45.58%&quot;&gt;&lt;b&gt;45,58%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:64.77%&quot;&gt;&lt;b&gt;64,77%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:72.71%&quot;&gt;&lt;b&gt;72,71%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:82.73%&quot;&gt;&lt;b&gt;82,73%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:92%&quot;&gt;&lt;b&gt;92,00%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban GT&amp;amp;NNNT tỉnh&lt;/span&gt;&lt;span class=&quot;scenario-cell actual&quot; style=&quot;--pct:19.96%&quot;&gt;&lt;b&gt;19,96%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:25.69%&quot;&gt;&lt;b&gt;25,69%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:40.33%&quot;&gt;&lt;b&gt;40,33%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:60.87%&quot;&gt;&lt;b&gt;60,87%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:70.13%&quot;&gt;&lt;b&gt;70,13%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:83.78%&quot;&gt;&lt;b&gt;83,78%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:91%&quot;&gt;&lt;b&gt;91,00%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Sở NN&amp;amp;MT&lt;/span&gt;&lt;span class=&quot;scenario-cell actual&quot; style=&quot;--pct:11.21%&quot;&gt;&lt;b&gt;11,21%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell na&quot;&gt;—&lt;/span&gt;&lt;span class=&quot;scenario-cell na&quot;&gt;—&lt;/span&gt;&lt;span class=&quot;scenario-cell na&quot;&gt;—&lt;/span&gt;&lt;span class=&quot;scenario-cell na&quot;&gt;—&lt;/span&gt;&lt;span class=&quot;scenario-cell na&quot;&gt;—&lt;/span&gt;&lt;span class=&quot;scenario-cell na&quot;&gt;—&lt;/span&gt;&lt;span class=&quot;scenario-cell na&quot;&gt;—&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class=&quot;table-responsive&quot;&gt;
-      &lt;table class=&quot;table table-sm&quot;&gt;
-        &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Chủ đầu tư&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;Kế hoạch &lt;span class=&quot;text-small text-muted&quot;&gt;(tỷ đồng)&lt;/span&gt;&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;Đã giải ngân &lt;span class=&quot;text-small text-muted&quot;&gt;(tỷ đồng)&lt;/span&gt;&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;So với tuần trước&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;Xếp hạng&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;table class=&quot;table table-sm investor-table&quot;&gt;
+        &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Chủ đầu tư&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;Kế hoạch &lt;span class=&quot;text-small text-muted&quot;&gt;(tỷ đồng)&lt;/span&gt;&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;Đã giải ngân &lt;span class=&quot;text-small text-muted&quot;&gt;(tỷ đồng)&lt;/span&gt;&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;So với tuần trước&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;Xếp hạng&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;KB T7&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;KB T8&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;KB T9&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;KB T10&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;KB T11&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;KB T12&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;KB T1/2027&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
         &lt;tbody&gt;
           &lt;tr&gt;&lt;td&gt;Ban QL các dự án ĐTXD khu vực phía Đông tỉnh&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;1.846,957&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;800,972&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+35,1 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;16/28&lt;/td&gt;&lt;/tr&gt;
           &lt;tr&gt;&lt;td&gt;Ban QLDA ĐTXDCT GT&amp;amp;NNNT tỉnh&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;2.253,711&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;449,902&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+4,3 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;26/28&lt;/td&gt;&lt;/tr&gt;
           &lt;tr&gt;&lt;td&gt;Ban QLDA ĐTXD Buôn Ma Thuột&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;1.289,037&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;444,912&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+7,0 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;18/28&lt;/td&gt;&lt;/tr&gt;
           &lt;tr&gt;&lt;td&gt;Ban QLDA ĐTXD Tuy Hòa&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;1.027,062&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;355,595&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+2,6 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;17/28&lt;/td&gt;&lt;/tr&gt;
-          &lt;tr&gt;&lt;td&gt;Ban QLDA ĐTXDCT Dân dụng và Công nghiệp tỉnh&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;339,856&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;171,599&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+0,2 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;09/28&lt;/td&gt;&lt;/tr&gt;
+          &lt;tr&gt;&lt;td&gt;Ban QLDA ĐTXDCT Dân dụng và Công nghiệp tỉnh&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;524,192&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;171,599&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+0,2 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;09/28&lt;/td&gt;&lt;/tr&gt;
           &lt;tr&gt;&lt;td&gt;Ban QLDA ĐTXD Tuy An&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;468,440&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;132,765&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+7,6 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;19/28&lt;/td&gt;&lt;/tr&gt;
           &lt;tr&gt;&lt;td&gt;Ban QLDA ĐTXD Ea Kar&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;205,319&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;91,323&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+0,5 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;14/28&lt;/td&gt;&lt;/tr&gt;
           &lt;tr&gt;&lt;td&gt;Ban QLDA ĐTXD Buôn Hồ&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;293,141&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;71,462&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+4,5 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;23/28&lt;/td&gt;&lt;/tr&gt;
@@ -994,6 +1056,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         &lt;/tbody&gt;
       &lt;/table&gt;
     &lt;/div&gt;
+    &lt;div class=&quot;text-small text-muted&quot;&gt;Các cột kịch bản là tỷ lệ giải ngân lũy kế theo Phụ lục III-1. Ban Dân dụng &amp;amp; Công nghiệp: thực hiện 171,599/524,192 tỷ đồng, đạt 32,74%; kế hoạch điều chỉnh gồm 184,336 tỷ đồng vốn bổ sung.&lt;/div&gt;
   &lt;/section&gt;
 
   &lt;section data-view=&quot;projects&quot; aria-label=&quot;Tiến độ dự án trọng điểm&quot;&gt;
@@ -1012,10 +1075,10 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;span&gt;&lt;i class=&quot;indicator-dot unmet&quot;&gt;&lt;/i&gt;Chưa đạt kịch bản&lt;/span&gt;
     &lt;span&gt;&lt;i class=&quot;indicator-dot&quot;&gt;&lt;/i&gt;Theo dõi hoặc đánh giá cuối năm&lt;/span&gt;
   &lt;/div&gt;
-  &lt;div class=&quot;mobile-scroll-hint text-small text-muted&quot;&gt;Vuốt ngang bảng để xem đầy đủ các cột giai đoạn 2026–2030.&lt;/div&gt;
+  &lt;div class=&quot;mobile-scroll-hint text-small text-muted&quot;&gt;Vuốt ngang bảng để xem kịch bản quý III, quý IV và các cột giai đoạn 2026–2030.&lt;/div&gt;
   &lt;div class=&quot;table-responsive&quot;&gt;
     &lt;table class=&quot;table table-sm indicator-table&quot;&gt;
-      &lt;thead&gt;&lt;tr&gt;&lt;th&gt;STT&lt;/th&gt;&lt;th&gt;Chỉ tiêu&lt;/th&gt;&lt;th&gt;Kết quả 2025&lt;/th&gt;&lt;th&gt;Kế hoạch 2026&lt;/th&gt;&lt;th&gt;Kết quả 6 tháng/2026&lt;/th&gt;&lt;th&gt;GĐ 2026–2030 (Nghị quyết ĐHĐB tỉnh)&lt;/th&gt;&lt;th&gt;GĐ 2026–2030 (CTHĐ thực hiện NQĐH XIV)&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th&gt;STT&lt;/th&gt;&lt;th&gt;Chỉ tiêu&lt;/th&gt;&lt;th&gt;Kết quả 2025&lt;/th&gt;&lt;th&gt;Kế hoạch 2026&lt;/th&gt;&lt;th&gt;Kết quả 6 tháng/2026&lt;/th&gt;&lt;th&gt;Kịch bản quý III/2026&lt;/th&gt;&lt;th&gt;Kịch bản quý IV/2026&lt;/th&gt;&lt;th&gt;GĐ 2026–2030 (Nghị quyết ĐHĐB tỉnh)&lt;/th&gt;&lt;th&gt;GĐ 2026–2030 (CTHĐ thực hiện NQĐH XIV)&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
       &lt;tbody&gt;
         &lt;tr class=&quot;indicator-band&quot;&gt;&lt;td colspan=&quot;7&quot;&gt;CHỈ TIÊU KINH TẾ CHỦ YẾU&lt;/td&gt;&lt;/tr&gt;
         &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;1.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tăng trưởng GRDP bình quân&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;6,68%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;≥ 10,02%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;7,84%; KB 9,16%&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot unmet&quot;&gt;&lt;/i&gt;Chưa đạt kịch bản&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 10,5%/năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 11%/năm&lt;/td&gt;&lt;/tr&gt;
@@ -1064,6 +1127,59 @@ html&gt;body{padding:0}&lt;/style&gt;
   &lt;script&gt;
     (() =&gt; {
       const root = document.getElementById(&quot;dak-lak-dashboard&quot;);
+      const investorScenarios = {
+        &quot;Ban QL các dự án ĐTXD khu vực phía Đông tỉnh&quot;: [&quot;51,30%&quot;,&quot;68,90%&quot;,&quot;82,47%&quot;,&quot;84,28%&quot;,&quot;88,27%&quot;,&quot;89,00%&quot;,&quot;100%&quot;],
+        &quot;Ban QLDA ĐTXDCT GT&amp;NNNT tỉnh&quot;: [&quot;25,69%&quot;,&quot;40,33%&quot;,&quot;60,87%&quot;,&quot;70,13%&quot;,&quot;83,78%&quot;,&quot;91,00%&quot;,&quot;100%&quot;],
+        &quot;Ban QLDA ĐTXD Buôn Ma Thuột&quot;: [&quot;40,56%&quot;,&quot;60,08%&quot;,&quot;79,21%&quot;,&quot;82,62%&quot;,&quot;84,72%&quot;,&quot;93,00%&quot;,&quot;100%&quot;],
+        &quot;Ban QLDA ĐTXD Tuy Hòa&quot;: [&quot;44,75%&quot;,&quot;64,71%&quot;,&quot;82,16%&quot;,&quot;83,01%&quot;,&quot;87,19%&quot;,&quot;92,00%&quot;,&quot;100%&quot;],
+        &quot;Ban QLDA ĐTXDCT Dân dụng và Công nghiệp tỉnh&quot;: [&quot;38,83%&quot;,&quot;48,22%&quot;,&quot;56,44%&quot;,&quot;58,57%&quot;,&quot;68,98%&quot;,&quot;75,00%&quot;,&quot;100%&quot;],
+        &quot;Ban QLDA ĐTXD Tuy An&quot;: [&quot;37,21%&quot;,&quot;57,83%&quot;,&quot;78,81%&quot;,&quot;83,52%&quot;,&quot;84,44%&quot;,&quot;91,00%&quot;,&quot;100%&quot;],
+        &quot;Ban QLDA ĐTXD Ea Kar&quot;: [&quot;52,85%&quot;,&quot;69,88%&quot;,&quot;83,02%&quot;,&quot;84,77%&quot;,&quot;88,64%&quot;,&quot;92,00%&quot;,&quot;100%&quot;],
+        &quot;Ban QLDA ĐTXD Buôn Hồ&quot;: [&quot;29,33%&quot;,&quot;45,58%&quot;,&quot;64,77%&quot;,&quot;72,71%&quot;,&quot;82,73%&quot;,&quot;92,00%&quot;,&quot;100%&quot;],
+        &quot;Ban QL khu kinh tế Phú Yên&quot;: [&quot;31,61%&quot;,&quot;42,40%&quot;,&quot;52,92%&quot;,&quot;55,72%&quot;,&quot;70,86%&quot;,&quot;89,78%&quot;,&quot;100%&quot;]
+      };
+      root.querySelectorAll(&quot;.investor-table tbody tr&quot;).forEach((row) =&gt; {
+        [&quot;Chủ đầu tư&quot;,&quot;Kế hoạch&quot;,&quot;Đã giải ngân&quot;,&quot;So với tuần trước&quot;,&quot;Xếp hạng&quot;].forEach((label, index) =&gt; {
+          row.cells[index].dataset.label = label;
+        });
+        const values = investorScenarios[row.cells[0].textContent.trim()] || [&quot;—&quot;,&quot;—&quot;,&quot;—&quot;,&quot;—&quot;,&quot;—&quot;,&quot;—&quot;,&quot;—&quot;];
+        values.forEach((value, index) =&gt; {
+          const cell = document.createElement(&quot;td&quot;);
+          cell.className = &quot;text-end&quot;;
+          cell.dataset.label = [&quot;KB T7&quot;,&quot;KB T8&quot;,&quot;KB T9&quot;,&quot;KB T10&quot;,&quot;KB T11&quot;,&quot;KB T12&quot;,&quot;KB T1/2027&quot;][index];
+          cell.textContent = value;
+          row.appendChild(cell);
+        });
+      });
+
+      const quarterlyScenarios = {
+        &quot;Tăng trưởng GRDP bình quân&quot;: [&quot;11,56%&quot;,&quot;11,71%&quot;],
+        &quot;Nông, lâm nghiệp, thủy sản&quot;: [&quot;5,91%&quot;,&quot;5,74%&quot;],
+        &quot;Công nghiệp – xây dựng&quot;: [&quot;22,04%&quot;,&quot;26,31%&quot;],
+        &quot;Dịch vụ&quot;: [&quot;10,68%&quot;,&quot;12,31%&quot;],
+        &quot;Thuế sản phẩm trừ trợ cấp sản phẩm&quot;: [&quot;6,51%&quot;,&quot;2,37%&quot;],
+        &quot;Tổng vốn đầu tư toàn xã hội&quot;: [&quot;24.778 tỷ đồng&quot;,&quot;28.438 tỷ đồng&quot;],
+        &quot;Kim ngạch xuất khẩu&quot;: [&quot;735 triệu USD&quot;,&quot;765 triệu USD&quot;],
+        &quot;Tổng mức bán lẻ hàng hóa và doanh thu dịch vụ tiêu dùng&quot;: [&quot;57.058 tỷ đồng&quot;,&quot;59.212 tỷ đồng&quot;],
+        &quot;Lượt khách du lịch&quot;: [&quot;2,82 triệu lượt&quot;,&quot;1,85 triệu lượt&quot;],
+        &quot;Tổng thu từ du lịch&quot;: [&quot;5.925 tỷ đồng&quot;,&quot;3.700 tỷ đồng&quot;],
+        &quot;Tổng thu NSNN trên địa bàn&quot;: [&quot;3.524,879 tỷ đồng&quot;,&quot;7.421,756 tỷ đồng&quot;]
+      };
+      root.querySelectorAll(&quot;.indicator-table tbody tr&quot;).forEach((row) =&gt; {
+        if (row.classList.contains(&quot;indicator-band&quot;)) {
+          row.cells[0].colSpan = 9;
+          return;
+        }
+        const values = quarterlyScenarios[row.cells[1].textContent.trim()] || [&quot;—&quot;,&quot;—&quot;];
+        const anchor = row.cells[5];
+        values.forEach((value, index) =&gt; {
+          const cell = document.createElement(&quot;td&quot;);
+          cell.dataset.label = index === 0 ? &quot;Kịch bản quý III/2026&quot; : &quot;Kịch bản quý IV/2026&quot;;
+          cell.textContent = value;
+          row.insertBefore(cell, anchor);
+        });
+      });
+
       const decorateSecondaryText = (node) =&gt; {
         if (node.nodeType === 3) {
           const text = node.nodeValue || &quot;&quot;;
