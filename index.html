@@ -919,38 +919,61 @@ html&gt;body{padding:0}&lt;/style&gt;
       #dak-lak-dashboard .finance-row { grid-template-columns:1fr; gap:5px; }
       #dak-lak-dashboard .finance-row em { text-align:left; }
       #dak-lak-dashboard .mobile-scroll-hint { display:none; }
-      #dak-lak-dashboard .scenario-row.header { display:none; }
-      #dak-lak-dashboard .scenario-row:not(.header) { grid-template-columns:repeat(4,minmax(0,1fr)); gap:4px; padding:7px 0; border-bottom:1px solid var(--border); }
-      #dak-lak-dashboard .scenario-name { grid-column:1/-1; min-height:24px; }
-      #dak-lak-dashboard .scenario-cell { min-height:38px; padding:16px 2px 3px; justify-content:center; font-size:11px; }
-      #dak-lak-dashboard .scenario-cell::after { position:absolute; top:2px; left:3px; right:3px; color:var(--muted-foreground); font-size:0.86em; font-weight:400; text-align:center; }
-      #dak-lak-dashboard .scenario-cell:nth-child(2)::after { content:&quot;TH 15/7&quot;; }
-      #dak-lak-dashboard .scenario-cell:nth-child(3)::after { content:&quot;KB T7&quot;; }
-      #dak-lak-dashboard .scenario-cell:nth-child(4)::after { content:&quot;KB T8&quot;; }
-      #dak-lak-dashboard .scenario-cell:nth-child(5)::after { content:&quot;KB T9&quot;; }
-      #dak-lak-dashboard .scenario-cell:nth-child(6)::after { content:&quot;KB T10&quot;; }
-      #dak-lak-dashboard .scenario-cell:nth-child(7)::after { content:&quot;KB T11&quot;; }
-      #dak-lak-dashboard .scenario-cell:nth-child(8)::after { content:&quot;KB T12&quot;; }
-      #dak-lak-dashboard .scenario-cell:nth-child(9)::after { content:&quot;KB T1/27&quot;; }
-      #dak-lak-dashboard .investor-table,
-      #dak-lak-dashboard .investor-table tbody { display:block; width:100%; }
-      #dak-lak-dashboard .investor-table thead { display:none; }
-      #dak-lak-dashboard .investor-table tr { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:4px 6px; padding:8px 0; border-bottom:1px solid var(--border); }
-      #dak-lak-dashboard .investor-table td { display:block; border:0; padding:2px; text-align:left !important; white-space:normal !important; font-size:11px; }
-      #dak-lak-dashboard .investor-table td::before { content:attr(data-label); display:block; color:var(--muted-foreground); font-size:0.86em; margin-bottom:2px; }
-      #dak-lak-dashboard .investor-table td:first-child { grid-column:1/-1; font-weight:500; font-size:12px; }
-      #dak-lak-dashboard .investor-table td:first-child::before { display:none; }
+      #dak-lak-dashboard .scenario-chart { font-size:8px; gap:2px; }
+      #dak-lak-dashboard .scenario-row,
+      #dak-lak-dashboard .scenario-row:not(.header) { grid-template-columns:minmax(68px,1.9fr) repeat(8,minmax(0,1fr)); gap:2px; padding:2px 0; border-bottom:1px solid var(--border); }
+      #dak-lak-dashboard .scenario-row.header { display:grid; line-height:1.05; }
+      #dak-lak-dashboard .scenario-name { min-height:25px; line-height:1.12; }
+      #dak-lak-dashboard .scenario-cell { min-height:25px; padding:2px 1px; justify-content:center; font-size:8px; }
+      #dak-lak-dashboard .scenario-cell::after { content:none !important; }
+      #dak-lak-dashboard .investor-table { display:table; width:100%; table-layout:fixed; font-size:7.5px; line-height:1.08; }
+      #dak-lak-dashboard .investor-table thead { display:table-header-group; }
+      #dak-lak-dashboard .investor-table tbody { display:table-row-group; }
+      #dak-lak-dashboard .investor-table tr { display:table-row; }
+      #dak-lak-dashboard .investor-table th,
+      #dak-lak-dashboard .investor-table td { display:table-cell; padding:3px 1px; white-space:normal !important; overflow-wrap:anywhere; vertical-align:top; }
+      #dak-lak-dashboard .investor-table th:first-child { width:19%; }
+      #dak-lak-dashboard .investor-table th:nth-child(2),
+      #dak-lak-dashboard .investor-table th:nth-child(3) { width:8.5%; }
+      #dak-lak-dashboard .investor-table th:nth-child(4) { width:7%; }
+      #dak-lak-dashboard .investor-table th:nth-child(5) { width:5.5%; }
+      #dak-lak-dashboard .investor-table th:nth-child(n+6) { width:6.7%; }
+      #dak-lak-dashboard .investor-table th .text-small { display:none; }
+      #dak-lak-dashboard .investor-table td::before { display:none; }
+      #dak-lak-dashboard .investor-table th { font-size:0; line-height:1.05; }
+      #dak-lak-dashboard .investor-table th::after { font-size:7.5px; }
+      #dak-lak-dashboard .investor-table th:nth-child(1)::after { content:&quot;Chủ đầu tư&quot;; }
+      #dak-lak-dashboard .investor-table th:nth-child(2)::after { content:&quot;KH&quot;; }
+      #dak-lak-dashboard .investor-table th:nth-child(3)::after { content:&quot;Giải ngân&quot;; }
+      #dak-lak-dashboard .investor-table th:nth-child(4)::after { content:&quot;± tuần&quot;; }
+      #dak-lak-dashboard .investor-table th:nth-child(5)::after { content:&quot;Hạng&quot;; }
+      #dak-lak-dashboard .investor-table th:nth-child(6)::after { content:&quot;T7&quot;; }
+      #dak-lak-dashboard .investor-table th:nth-child(7)::after { content:&quot;T8&quot;; }
+      #dak-lak-dashboard .investor-table th:nth-child(8)::after { content:&quot;T9&quot;; }
+      #dak-lak-dashboard .investor-table th:nth-child(9)::after { content:&quot;T10&quot;; }
+      #dak-lak-dashboard .investor-table th:nth-child(10)::after { content:&quot;T11&quot;; }
+      #dak-lak-dashboard .investor-table th:nth-child(11)::after { content:&quot;T12&quot;; }
+      #dak-lak-dashboard .investor-table th:nth-child(12)::after { content:&quot;T1/27&quot;; }
       #dak-lak-dashboard .indicator-section .table-responsive { overflow:visible; }
-      #dak-lak-dashboard .indicator-table,
-      #dak-lak-dashboard .indicator-table tbody { display:block; width:100%; min-width:0; font-size:11px; }
-      #dak-lak-dashboard .indicator-table thead { display:none; }
-      #dak-lak-dashboard .indicator-table tr:not(.indicator-band) { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:5px 8px; padding:9px 0; border-bottom:1px solid var(--border); }
-      #dak-lak-dashboard .indicator-table tr:not(.indicator-band) td { display:block; border:0; padding:2px; overflow-wrap:anywhere; background:transparent; }
-      #dak-lak-dashboard .indicator-table tr:not(.indicator-band) td::before { content:attr(data-label); display:block; color:var(--muted-foreground); font-size:0.86em; margin-bottom:2px; }
-      #dak-lak-dashboard .indicator-table tr:not(.indicator-band) td:nth-child(2) { grid-column:1/-1; font-weight:500; }
-      #dak-lak-dashboard .indicator-table tr:not(.indicator-band) td:nth-child(2)::before { display:none; }
-      #dak-lak-dashboard .indicator-band { display:block; }
-      #dak-lak-dashboard .indicator-band td { display:block; width:100%; padding:6px; }
+      #dak-lak-dashboard .indicator-table { display:table; width:100%; min-width:0; table-layout:fixed; font-size:7.5px; line-height:1.12; }
+      #dak-lak-dashboard .indicator-table thead { display:table-header-group; }
+      #dak-lak-dashboard .indicator-table tbody { display:table-row-group; }
+      #dak-lak-dashboard .indicator-table tr { display:table-row; }
+      #dak-lak-dashboard .indicator-table th,
+      #dak-lak-dashboard .indicator-table td { display:table-cell; padding:3px 2px; overflow-wrap:anywhere; vertical-align:top; }
+      #dak-lak-dashboard .indicator-table th { font-size:0; line-height:1.05; }
+      #dak-lak-dashboard .indicator-table th::after { font-size:7.5px; }
+      #dak-lak-dashboard .indicator-table th:nth-child(1)::after { content:&quot;STT&quot;; }
+      #dak-lak-dashboard .indicator-table th:nth-child(2)::after { content:&quot;Chỉ tiêu&quot;; }
+      #dak-lak-dashboard .indicator-table th:nth-child(3)::after { content:&quot;2025&quot;; }
+      #dak-lak-dashboard .indicator-table th:nth-child(4)::after { content:&quot;KH26&quot;; }
+      #dak-lak-dashboard .indicator-table th:nth-child(5)::after { content:&quot;6T&quot;; }
+      #dak-lak-dashboard .indicator-table th:nth-child(6)::after { content:&quot;Q3&quot;; }
+      #dak-lak-dashboard .indicator-table th:nth-child(7)::after { content:&quot;Q4&quot;; }
+      #dak-lak-dashboard .indicator-table th:nth-child(8)::after { content:&quot;GĐ tỉnh&quot;; }
+      #dak-lak-dashboard .indicator-table th:nth-child(9)::after { content:&quot;GĐ CT&quot;; }
+      #dak-lak-dashboard .indicator-table td::before { display:none; }
+      #dak-lak-dashboard .indicator-band td { display:table-cell; width:auto; padding:4px 2px; }
       #dak-lak-dashboard .indicator-status { align-items:flex-start; }
     }
   &lt;/style&gt;
