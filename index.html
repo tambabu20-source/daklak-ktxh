@@ -1056,7 +1056,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         &lt;/tbody&gt;
       &lt;/table&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;text-small text-muted&quot;&gt;Các cột kịch bản là tỷ lệ giải ngân lũy kế theo Phụ lục III-1. Ban Dân dụng &amp;amp; Công nghiệp: thực hiện 171,599/524,192 tỷ đồng, đạt 32,74%; kế hoạch điều chỉnh gồm 184,336 tỷ đồng vốn bổ sung.&lt;/div&gt;
+    &lt;div class=&quot;text-small text-muted&quot;&gt;Các cột KB trong bảng là số tiền giải ngân lũy kế, đơn vị tỷ đồng, theo Phụ lục III-1. Biểu đồ phía trên tiếp tục thể hiện tỷ lệ %. Ban Dân dụng &amp;amp; Công nghiệp: thực hiện 171,599/524,192 tỷ đồng, đạt 32,74%; kế hoạch điều chỉnh gồm 184,336 tỷ đồng vốn bổ sung.&lt;/div&gt;
   &lt;/section&gt;
 
   &lt;section data-view=&quot;projects&quot; aria-label=&quot;Tiến độ dự án trọng điểm&quot;&gt;
@@ -1128,15 +1128,15 @@ html&gt;body{padding:0}&lt;/style&gt;
     (() =&gt; {
       const root = document.getElementById(&quot;dak-lak-dashboard&quot;);
       const investorScenarios = {
-        &quot;Ban QL các dự án ĐTXD khu vực phía Đông tỉnh&quot;: [&quot;51,30%&quot;,&quot;68,90%&quot;,&quot;82,47%&quot;,&quot;84,28%&quot;,&quot;88,27%&quot;,&quot;89,00%&quot;,&quot;100%&quot;],
-        &quot;Ban QLDA ĐTXDCT GT&amp;NNNT tỉnh&quot;: [&quot;25,69%&quot;,&quot;40,33%&quot;,&quot;60,87%&quot;,&quot;70,13%&quot;,&quot;83,78%&quot;,&quot;91,00%&quot;,&quot;100%&quot;],
-        &quot;Ban QLDA ĐTXD Buôn Ma Thuột&quot;: [&quot;40,56%&quot;,&quot;60,08%&quot;,&quot;79,21%&quot;,&quot;82,62%&quot;,&quot;84,72%&quot;,&quot;93,00%&quot;,&quot;100%&quot;],
-        &quot;Ban QLDA ĐTXD Tuy Hòa&quot;: [&quot;44,75%&quot;,&quot;64,71%&quot;,&quot;82,16%&quot;,&quot;83,01%&quot;,&quot;87,19%&quot;,&quot;92,00%&quot;,&quot;100%&quot;],
-        &quot;Ban QLDA ĐTXDCT Dân dụng và Công nghiệp tỉnh&quot;: [&quot;38,83%&quot;,&quot;48,22%&quot;,&quot;56,44%&quot;,&quot;58,57%&quot;,&quot;68,98%&quot;,&quot;75,00%&quot;,&quot;100%&quot;],
-        &quot;Ban QLDA ĐTXD Tuy An&quot;: [&quot;37,21%&quot;,&quot;57,83%&quot;,&quot;78,81%&quot;,&quot;83,52%&quot;,&quot;84,44%&quot;,&quot;91,00%&quot;,&quot;100%&quot;],
-        &quot;Ban QLDA ĐTXD Ea Kar&quot;: [&quot;52,85%&quot;,&quot;69,88%&quot;,&quot;83,02%&quot;,&quot;84,77%&quot;,&quot;88,64%&quot;,&quot;92,00%&quot;,&quot;100%&quot;],
-        &quot;Ban QLDA ĐTXD Buôn Hồ&quot;: [&quot;29,33%&quot;,&quot;45,58%&quot;,&quot;64,77%&quot;,&quot;72,71%&quot;,&quot;82,73%&quot;,&quot;92,00%&quot;,&quot;100%&quot;],
-        &quot;Ban QL khu kinh tế Phú Yên&quot;: [&quot;31,61%&quot;,&quot;42,40%&quot;,&quot;52,92%&quot;,&quot;55,72%&quot;,&quot;70,86%&quot;,&quot;89,78%&quot;,&quot;100%&quot;]
+        &quot;Ban QL các dự án ĐTXD khu vực phía Đông tỉnh&quot;: [&quot;947,560&quot;,&quot;1.272,497&quot;,&quot;1.523,110&quot;,&quot;1.556,608&quot;,&quot;1.630,285&quot;,&quot;1.643,790&quot;,&quot;1.846,957&quot;],
+        &quot;Ban QLDA ĐTXDCT GT&amp;NNNT tỉnh&quot;: [&quot;578,880&quot;,&quot;908,918&quot;,&quot;1.371,784&quot;,&quot;1.580,606&quot;,&quot;1.888,100&quot;,&quot;2.050,880&quot;,&quot;2.253,711&quot;],
+        &quot;Ban QLDA ĐTXD Buôn Ma Thuột&quot;: [&quot;522,800&quot;,&quot;774,466&quot;,&quot;1.021,032&quot;,&quot;1.065,060&quot;,&quot;1.092,083&quot;,&quot;1.198,800&quot;,&quot;1.289,037&quot;],
+        &quot;Ban QLDA ĐTXD Tuy Hòa&quot;: [&quot;459,640&quot;,&quot;664,639&quot;,&quot;843,881&quot;,&quot;852,550&quot;,&quot;895,526&quot;,&quot;944,900&quot;,&quot;1.027,062&quot;],
+        &quot;Ban QLDA ĐTXDCT Dân dụng và Công nghiệp tỉnh&quot;: [&quot;203,540&quot;,&quot;252,790&quot;,&quot;295,860&quot;,&quot;307,024&quot;,&quot;361,600&quot;,&quot;393,140&quot;,&quot;524,192&quot;],
+        &quot;Ban QLDA ĐTXD Tuy An&quot;: [&quot;174,320&quot;,&quot;270,914&quot;,&quot;369,158&quot;,&quot;391,230&quot;,&quot;395,562&quot;,&quot;426,280&quot;,&quot;468,440&quot;],
+        &quot;Ban QLDA ĐTXD Ea Kar&quot;: [&quot;108,510&quot;,&quot;143,474&quot;,&quot;170,460&quot;,&quot;174,057&quot;,&quot;181,987&quot;,&quot;188,890&quot;,&quot;205,319&quot;],
+        &quot;Ban QLDA ĐTXD Buôn Hồ&quot;: [&quot;85,970&quot;,&quot;133,611&quot;,&quot;189,866&quot;,&quot;213,141&quot;,&quot;242,510&quot;,&quot;269,690&quot;,&quot;293,141&quot;],
+        &quot;Ban QL khu kinh tế Phú Yên&quot;: [&quot;83,534&quot;,&quot;112,064&quot;,&quot;139,844&quot;,&quot;147,265&quot;,&quot;187,265&quot;,&quot;237,265&quot;,&quot;264,274&quot;]
       };
       root.querySelectorAll(&quot;.investor-table tbody tr&quot;).forEach((row) =&gt; {
         [&quot;Chủ đầu tư&quot;,&quot;Kế hoạch&quot;,&quot;Đã giải ngân&quot;,&quot;So với tuần trước&quot;,&quot;Xếp hạng&quot;].forEach((label, index) =&gt; {
