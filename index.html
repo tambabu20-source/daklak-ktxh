@@ -333,7 +333,7 @@ code:not(pre code) {
   background: var(--card);
 }
 
-#widget &gt; :not(.card) {
+#widget &gt; :not(.card, .progress) {
   width: 100% !important;
   max-width: none !important;
   margin: 0 !important;
@@ -397,6 +397,22 @@ code:not(pre code) {
   flex-wrap: wrap;
   align-items: center;
   gap: 10px;
+}
+
+.progress {
+  display: flex;
+  height: 6px;
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+}
+
+.progress-bar {
+  height: 100%;
+  flex-shrink: 0;
+  border: 0;
+  background: var(--viz-series-1);
 }
 
 .viz-badge {
@@ -841,10 +857,10 @@ textarea.form-control {
 }
 
 .btn:not(.btn-primary, .viz-tile):is(
-    [aria-pressed=&quot;true&quot;],
-    [aria-selected=&quot;true&quot;],
-    .is-selected
-  ) {
+  [aria-pressed=&quot;true&quot;],
+  [aria-selected=&quot;true&quot;],
+  .is-selected
+) {
   border-color: var(--primary);
   color: var(--primary-foreground);
   background: var(--primary);
@@ -1068,15 +1084,15 @@ html&gt;body{padding:0}&lt;/style&gt;
   &lt;div class=&quot;dash-head&quot;&gt;
     &lt;div&gt;
       &lt;h2&gt;Tình hình kinh tế – xã hội tỉnh Đắk Lắk&lt;/h2&gt;
-      &lt;p&gt;Báo cáo điều hành tuần 03–09/8/2026&lt;/p&gt;
+      &lt;p&gt;Báo cáo giải ngân đầu tư công đến 12/8/2026&lt;/p&gt;
     &lt;/div&gt;
-    &lt;span class=&quot;stamp&quot;&gt;Cập nhật 10/08/2026&lt;/span&gt;
+    &lt;span class=&quot;stamp&quot;&gt;Cập nhật 12/08/2026&lt;/span&gt;
   &lt;/div&gt;
 
   &lt;div class=&quot;viz-grid stats&quot;&gt;
     &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Thu ngân sách (10/8)&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;10.558,903 tỷ đồng&lt;/div&gt;&lt;div class=&quot;delta&quot;&gt;61,69% dự toán TW · 59,63% dự toán HĐND&lt;/div&gt;&lt;/div&gt;
     &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Chi ngân sách (22/7)&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;22.869 tỷ đồng&lt;/div&gt;&lt;div class=&quot;delta&quot;&gt;57,2% dự toán TW&lt;span class=&quot;change-note&quot;&gt;Nguồn mới chưa công bố số chi cập nhật&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Giải ngân ĐTC 2026 (10/8)&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;3.363,676 tỷ đồng&lt;/div&gt;&lt;div class=&quot;delta&quot;&gt;35,00% kế hoạch giao chi tiết&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Giải ngân ĐTC 2026 (12/8)&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;3.451,073 tỷ đồng&lt;/div&gt;&lt;div class=&quot;delta&quot;&gt;35,90% kế hoạch giao chi tiết&lt;span class=&quot;change-note&quot;&gt;+140,626 tỷ đồng so với tuần trước&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
   &lt;/div&gt;
 
   &lt;div class=&quot;section-head&quot;&gt;&lt;h3&gt;Thu – chi ngân sách năm 2026&lt;/h3&gt;&lt;span&gt;Thực hiện / dự toán Trung ương&lt;/span&gt;&lt;/div&gt;
@@ -1091,22 +1107,23 @@ html&gt;body{padding:0}&lt;/style&gt;
   &lt;div class=&quot;section-head&quot;&gt;&lt;h3&gt;Kế hoạch đầu tư công 2026&lt;/h3&gt;&lt;span&gt;Đơn vị: tỷ đồng&lt;/span&gt;&lt;/div&gt;
   &lt;div class=&quot;viz-grid allocation&quot;&gt;
     &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Tỉnh giao&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;11.144,185&lt;/div&gt;&lt;p&gt;NSTW 3.077,944 · NSĐP 8.066,241&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Đã giao chi tiết&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;9.610,579&lt;/div&gt;&lt;p&gt;86,24% · Còn 1.533,606&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Đã giải ngân đến 10/8&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;3.363,676&lt;/div&gt;&lt;p&gt;35,00% KH giao chi tiết · 34,02% KH TTg&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Đã giao chi tiết&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;9.612,015&lt;/div&gt;&lt;p&gt;86,25% · Còn 1.532,170&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Đã giải ngân đến 12/8&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;3.451,073&lt;/div&gt;&lt;p&gt;35,90% KH giao chi tiết · 34,90% KH TTg&lt;/p&gt;&lt;/div&gt;
   &lt;/div&gt;
-  &lt;div class=&quot;text-small text-muted&quot;&gt;Theo Phụ lục ngày 07/8: giải ngân 3.355,823 tỷ đồng; đến 10/8 tăng lên 3.363,676 tỷ đồng. Vốn chưa phân bổ/chưa phê duyệt chủ trương đầu tư: 1.533,606 tỷ đồng.&lt;/div&gt;
+  &lt;div class=&quot;text-small text-muted&quot;&gt;Theo Phụ lục ngày 12/8: vốn chưa giao chi tiết 1.532,170 tỷ đồng; 11/47 đơn vị, địa phương chưa giải ngân. Tỷ lệ toàn tỉnh thấp hơn bình quân cả nước 42,7% (số Bộ Tài chính công bố đến 06/8).&lt;/div&gt;
   &lt;div class=&quot;finance&quot; aria-label=&quot;Tiến độ đầu tư công theo nguồn vốn&quot;&gt;
-    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Ngân sách Trung ương đã phân bổ&lt;/b&gt;&lt;small&gt;2.224,855 / 2.808,804 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:79.21%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;79,2%&lt;/em&gt;&lt;/div&gt;
-    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Ngân sách Trung ương đã giải ngân&lt;/b&gt;&lt;small&gt;460,845 / 2.224,855 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill low&quot; style=&quot;width:20.71%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;20,7%&lt;span class=&quot;change-note&quot;&gt;+4,3 tỷ đồng so với tuần trước&lt;/span&gt;&lt;/em&gt;&lt;/div&gt;
-    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Ngân sách địa phương đã phân bổ&lt;/b&gt;&lt;small&gt;7.385,724 / 8.066,241 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:91.56%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;91,6%&lt;/em&gt;&lt;/div&gt;
-    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Ngân sách địa phương đã giải ngân&lt;/b&gt;&lt;small&gt;2.644,426 / 7.385,724 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:35.80%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;35,8%&lt;span class=&quot;change-note&quot;&gt;+114,3 tỷ đồng so với tuần trước&lt;/span&gt;&lt;/em&gt;&lt;/div&gt;
+    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Ngân sách Trung ương đã phân bổ&lt;/b&gt;&lt;small&gt;2.224,855 / 3.077,944 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:72.28%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;72,28%&lt;/em&gt;&lt;/div&gt;
+    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Ngân sách Trung ương đã giải ngân&lt;/b&gt;&lt;small&gt;514,805 / 2.224,855 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill low&quot; style=&quot;width:23.14%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;23,14%&lt;span class=&quot;change-note&quot;&gt;+14,214 tỷ đồng so với tuần trước&lt;/span&gt;&lt;/em&gt;&lt;/div&gt;
+    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Ngân sách địa phương đã phân bổ&lt;/b&gt;&lt;small&gt;7.387,160 / 8.066,241 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:91.58%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;91,58%&lt;/em&gt;&lt;/div&gt;
+    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Ngân sách địa phương đã giải ngân&lt;/b&gt;&lt;small&gt;2.936,268 / 7.387,160 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:39.75%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;39,75%&lt;span class=&quot;change-note&quot;&gt;+126,412 tỷ đồng so với tuần trước&lt;/span&gt;&lt;/em&gt;&lt;/div&gt;
   &lt;/div&gt;
 
   &lt;div class=&quot;section-head&quot;&gt;&lt;h3&gt;Vốn năm 2025 kéo dài sang 2026&lt;/h3&gt;&lt;/div&gt;
   &lt;div class=&quot;card viz-stat&quot;&gt;
     &lt;span class=&quot;text-muted&quot;&gt;Đã giải ngân vốn kéo dài&lt;/span&gt;
-    &lt;div class=&quot;viz-stat-value&quot;&gt;1.622,148 / 5.628 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt; · 28,82%&lt;/div&gt;
-    &lt;p class=&quot;text-small text-muted&quot;&gt;NSTW 1.042,096 tỷ đồng · NSĐP 580,052 tỷ đồng · Còn 4.005,852 tỷ đồng.&lt;/p&gt;
+    &lt;div class=&quot;viz-stat-value&quot;&gt;1.648,445 / 5.628 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt; · 29,29%&lt;/div&gt;
+    &lt;p&gt;&lt;span class=&quot;viz-badge&quot;&gt;+51,594 tỷ đồng so với tuần trước&lt;/span&gt;&lt;/p&gt;
+    &lt;p class=&quot;text-small text-muted&quot;&gt;NSTW 1.055,875 tỷ đồng · NSĐP 592,569 tỷ đồng · Còn 3.979,555 tỷ đồng. Nếu trừ 164,855 tỷ đồng hết nhiệm vụ chi: đạt 30,17%.&lt;/p&gt;
   &lt;/div&gt;
   &lt;div class=&quot;viz-grid&quot;&gt;
     &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;HĐND tỉnh cho phép kéo dài&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;2.815,239 tỷ đồng&lt;/div&gt;&lt;/div&gt;
@@ -1123,11 +1140,16 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;div class=&quot;viz-row&quot; aria-label=&quot;Tổng giải ngân đầu tư công năm 2026&quot;&gt;
-    &lt;b&gt;Tổng giải ngân: 3.363,676 tỷ đồng&lt;/b&gt;
-    &lt;span class=&quot;text-small text-muted&quot;&gt;Đạt 35,00% kế hoạch địa phương giao chi tiết · 34,02% kế hoạch Thủ tướng Chính phủ giao&lt;/span&gt;
+    &lt;b&gt;Tổng giải ngân: 3.451,073 tỷ đồng&lt;/b&gt;
+    &lt;span class=&quot;text-small text-muted&quot;&gt;Đạt 35,90% kế hoạch địa phương giao chi tiết · 34,90% kế hoạch Thủ tướng Chính phủ giao&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;viz-grid allocation&quot; aria-label=&quot;Khoảng cách so với kịch bản giải ngân&quot;&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Mục tiêu cuối tháng 8&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;5.433,270&lt;/div&gt;&lt;p&gt;Còn 1.982,197 tỷ đồng · cần 660,732 tỷ đồng/tuần&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Mục tiêu cuối tháng 9&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;7.400,259&lt;/div&gt;&lt;p&gt;Còn 3.949,186 tỷ đồng · cần 564,169 tỷ đồng/tuần&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Mục tiêu cuối tháng 12&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;9.551,335&lt;/div&gt;&lt;p&gt;Còn 6.100,262 tỷ đồng · cần 305,013 tỷ đồng/tuần&lt;/p&gt;&lt;/div&gt;
   &lt;/div&gt;
   &lt;div class=&quot;legend text-small&quot; aria-label=&quot;Chú giải màu biểu đồ&quot;&gt;
-    &lt;span&gt;&lt;i class=&quot;good&quot;&gt;&lt;/i&gt;Thực hiện đến 07/8/2026&lt;/span&gt;
+    &lt;span&gt;&lt;i class=&quot;good&quot;&gt;&lt;/i&gt;Thực hiện đến 12/8/2026&lt;/span&gt;
     &lt;span&gt;&lt;i&gt;&lt;/i&gt;Kịch bản lũy kế&lt;/span&gt;
     &lt;span&gt;Đơn vị: % kế hoạch vốn năm 2026&lt;/span&gt;
   &lt;/div&gt;
@@ -1136,7 +1158,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;div class=&quot;mobile-scroll-hint text-small text-muted&quot;&gt;Vuốt ngang để xem kịch bản giải ngân đến tháng 01/2027.&lt;/div&gt;
     &lt;div class=&quot;scenario-scroll&quot;&gt;
       &lt;div class=&quot;scenario-chart&quot; role=&quot;img&quot; aria-label=&quot;Tỷ lệ thực hiện và kịch bản giải ngân lũy kế theo chủ đầu tư từ tháng 7 năm 2026 đến tháng 1 năm 2027&quot;&gt;
-        &lt;div class=&quot;scenario-row header text-small&quot;&gt;&lt;span&gt;Chủ đầu tư&lt;/span&gt;&lt;span&gt;Thực hiện&lt;br&gt;07/8&lt;/span&gt;&lt;span&gt;KB T7&lt;/span&gt;&lt;span&gt;KB T8&lt;/span&gt;&lt;span&gt;KB T9&lt;/span&gt;&lt;span&gt;KB T10&lt;/span&gt;&lt;span&gt;KB T11&lt;/span&gt;&lt;span&gt;KB T12&lt;/span&gt;&lt;span&gt;KB T1/2027&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;scenario-row header text-small&quot;&gt;&lt;span&gt;Chủ đầu tư&lt;/span&gt;&lt;span&gt;Thực hiện&lt;br&gt;12/8&lt;/span&gt;&lt;span&gt;KB T7&lt;/span&gt;&lt;span&gt;KB T8&lt;/span&gt;&lt;span&gt;KB T9&lt;/span&gt;&lt;span&gt;KB T10&lt;/span&gt;&lt;span&gt;KB T11&lt;/span&gt;&lt;span&gt;KB T12&lt;/span&gt;&lt;span&gt;KB T1/2027&lt;/span&gt;&lt;/div&gt;
         &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban Dân dụng &amp;amp; CN&lt;/span&gt;&lt;span class=&quot;scenario-cell actual&quot; style=&quot;--pct:49.54%&quot;&gt;&lt;b&gt;49,5%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:38.83%&quot;&gt;&lt;b&gt;38,8%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:48.22%&quot;&gt;&lt;b&gt;48,2%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:56.44%&quot;&gt;&lt;b&gt;56,4%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:58.57%&quot;&gt;&lt;b&gt;58,6%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:68.98%&quot;&gt;&lt;b&gt;69,0%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:75%&quot;&gt;&lt;b&gt;75%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
         &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban phía Đông&lt;/span&gt;&lt;span class=&quot;scenario-cell actual&quot; style=&quot;--pct:47.09%&quot;&gt;&lt;b&gt;47,1%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:51.30%&quot;&gt;&lt;b&gt;51,3%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:68.90%&quot;&gt;&lt;b&gt;68,9%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:82.47%&quot;&gt;&lt;b&gt;82,5%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:84.28%&quot;&gt;&lt;b&gt;84,3%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:88.27%&quot;&gt;&lt;b&gt;88,3%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:89%&quot;&gt;&lt;b&gt;89%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
         &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban Ea Kar&lt;/span&gt;&lt;span class=&quot;scenario-cell actual&quot; style=&quot;--pct:45.26%&quot;&gt;&lt;b&gt;45,3%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:52.85%&quot;&gt;&lt;b&gt;52,9%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:69.88%&quot;&gt;&lt;b&gt;69,9%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:83.02%&quot;&gt;&lt;b&gt;83,0%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:84.77%&quot;&gt;&lt;b&gt;84,8%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:88.64%&quot;&gt;&lt;b&gt;88,6%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:92%&quot;&gt;&lt;b&gt;92%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
@@ -1153,20 +1175,20 @@ html&gt;body{padding:0}&lt;/style&gt;
       &lt;table class=&quot;table table-sm investor-table&quot;&gt;
         &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Chủ đầu tư&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;Kế hoạch &lt;span class=&quot;text-small text-muted&quot;&gt;(tỷ đồng)&lt;/span&gt;&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;Đã giải ngân &lt;span class=&quot;text-small text-muted&quot;&gt;(tỷ đồng)&lt;/span&gt;&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;So với tuần trước&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;Xếp hạng&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;KB T7&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;KB T8&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;KB T9&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;KB T10&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;KB T11&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;KB T12&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;KB T1/2027&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
         &lt;tbody&gt;
-          &lt;tr&gt;&lt;td&gt;Ban QL các dự án ĐTXD khu vực phía Đông tỉnh&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;1.854,6&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;915,5&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+1,6 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;16&lt;/td&gt;&lt;/tr&gt;
-          &lt;tr&gt;&lt;td&gt;Ban QLDA ĐTXDCT GT&amp;amp;NNNT tỉnh&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;2.251,6&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;524,6&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+22,4 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;30&lt;/td&gt;&lt;/tr&gt;
-          &lt;tr&gt;&lt;td&gt;Ban QLDA ĐTXD Buôn Ma Thuột&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;1.291,4&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;466,1&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+3,7 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;21&lt;/td&gt;&lt;/tr&gt;
-          &lt;tr&gt;&lt;td&gt;Ban QLDA ĐTXD Tuy Hòa&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;1.027,1&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;395,3&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+13,1 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;19&lt;/td&gt;&lt;/tr&gt;
-          &lt;tr&gt;&lt;td&gt;Ban QLDA ĐTXDCT Dân dụng và Công nghiệp tỉnh&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;346,4&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;189,1&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+1,3 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;14&lt;/td&gt;&lt;/tr&gt;
-          &lt;tr&gt;&lt;td&gt;Ban QLDA ĐTXD Tuy An&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;468,4&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;163,7&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+11,6 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;22&lt;/td&gt;&lt;/tr&gt;
-          &lt;tr&gt;&lt;td&gt;Ban QLDA ĐTXD Ea Kar&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;205,3&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;96,4&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+1,5 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;17&lt;/td&gt;&lt;/tr&gt;
-          &lt;tr&gt;&lt;td&gt;Ban QL khu kinh tế Phú Yên&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;264,7&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;92,0&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+6,8 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;24&lt;/td&gt;&lt;/tr&gt;
-          &lt;tr&gt;&lt;td&gt;Ban QLDA ĐTXD Buôn Hồ&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;280,6&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;83,3&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+1,8 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;25&lt;/td&gt;&lt;/tr&gt;
-          &lt;tr&gt;&lt;td&gt;Sở Nông nghiệp và Môi trường&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;149,6&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;18,2&lt;/td&gt;&lt;td class=&quot;text-end text-small&quot;&gt;Không thay đổi&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;35&lt;/td&gt;&lt;/tr&gt;
+          &lt;tr&gt;&lt;td&gt;Ban QL các dự án ĐTXD khu vực phía Đông tỉnh&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;1.854,6&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;978,5&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+63,6 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;15&lt;/td&gt;&lt;/tr&gt;
+          &lt;tr&gt;&lt;td&gt;Ban QLDA ĐTXDCT GT&amp;amp;NNNT tỉnh&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;2.251,6&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;524,8&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+22,4 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;30&lt;/td&gt;&lt;/tr&gt;
+          &lt;tr&gt;&lt;td&gt;Ban QLDA ĐTXD Buôn Ma Thuột&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;1.291,4&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;479,5&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+14,9 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;21&lt;/td&gt;&lt;/tr&gt;
+          &lt;tr&gt;&lt;td&gt;Ban QLDA ĐTXD Tuy Hòa&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;1.027,1&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;407,0&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+22,1 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;20&lt;/td&gt;&lt;/tr&gt;
+          &lt;tr&gt;&lt;td&gt;Ban QLDA ĐTXDCT Dân dụng và Công nghiệp tỉnh&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;346,4&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;189,1&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+1,1 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;14&lt;/td&gt;&lt;/tr&gt;
+          &lt;tr&gt;&lt;td&gt;Ban QLDA ĐTXD Tuy An&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;468,4&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;163,9&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+2,5 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;23&lt;/td&gt;&lt;/tr&gt;
+          &lt;tr&gt;&lt;td&gt;Ban QLDA ĐTXD Ea Kar&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;205,3&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;97,9&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+2,7 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;17&lt;/td&gt;&lt;/tr&gt;
+          &lt;tr&gt;&lt;td&gt;Ban QL khu kinh tế Phú Yên&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;264,7&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;92,2&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+1,2 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;24&lt;/td&gt;&lt;/tr&gt;
+          &lt;tr&gt;&lt;td&gt;Ban QLDA ĐTXD Buôn Hồ&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;280,6&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;86,7&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+5,1 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;26&lt;/td&gt;&lt;/tr&gt;
+          &lt;tr&gt;&lt;td&gt;Sở Nông nghiệp và Môi trường&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;149,6&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;18,7&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;+0,5 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;35&lt;/td&gt;&lt;/tr&gt;
         &lt;/tbody&gt;
       &lt;/table&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;text-small text-muted&quot;&gt;Kế hoạch, giải ngân, tăng so với 31/7 và xếp hạng lấy theo Phụ lục IV ngày 07/8; số tiền hiển thị làm tròn 0,1 tỷ đồng. Các cột KB là kịch bản lũy kế đã phê duyệt trước đó.&lt;/div&gt;
+    &lt;div class=&quot;text-small text-muted&quot;&gt;Kế hoạch, giải ngân, tăng so với 05/8 và xếp hạng lấy theo Phụ lục III–IV ngày 12/8; số tiền hiển thị làm tròn 0,1 tỷ đồng. Các cột KB là kịch bản lũy kế đã phê duyệt trước đó.&lt;/div&gt;
   &lt;/section&gt;
 
   &lt;section data-view=&quot;projects&quot; aria-label=&quot;Tiến độ dự án trọng điểm&quot;&gt;
@@ -1273,21 +1295,21 @@ html&gt;body{padding:0}&lt;/style&gt;
         });
       });
 
-      const actualRates0708 = {
+      const actualRates1208 = {
         &quot;Ban Dân dụng &amp; CN&quot;: 54.6,
-        &quot;Ban phía Đông&quot;: 49.4,
-        &quot;Ban Ea Kar&quot;: 47.0,
-        &quot;Ban Tuy Hòa&quot;: 38.5,
-        &quot;Ban Buôn Ma Thuột&quot;: 36.1,
+        &quot;Ban phía Đông&quot;: 52.8,
+        &quot;Ban Ea Kar&quot;: 47.7,
+        &quot;Ban Tuy Hòa&quot;: 39.6,
+        &quot;Ban Buôn Ma Thuột&quot;: 37.1,
         &quot;Ban Tuy An&quot;: 35.0,
-        &quot;Ban KKT Phú Yên&quot;: 34.8,
-        &quot;Ban Buôn Hồ&quot;: 29.7,
+        &quot;Ban KKT Phú Yên&quot;: 34.9,
+        &quot;Ban Buôn Hồ&quot;: 30.9,
         &quot;Ban GT&amp;NNNT tỉnh&quot;: 23.3,
-        &quot;Sở NN&amp;MT&quot;: 12.2
+        &quot;Sở NN&amp;MT&quot;: 12.5
       };
       root.querySelectorAll(&quot;.scenario-row:not(.header)&quot;).forEach((row) =&gt; {
         const name = row.querySelector(&quot;.scenario-name&quot;)?.textContent.trim();
-        const value = actualRates0708[name];
+        const value = actualRates1208[name];
         const cell = row.querySelector(&quot;.scenario-cell.actual&quot;);
         if (cell &amp;&amp; value !== undefined) {
           cell.style.setProperty(&quot;--pct&quot;, `${value}%`);
