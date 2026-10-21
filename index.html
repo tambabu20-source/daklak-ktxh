@@ -1792,6 +1792,10 @@ html&gt;body{padding:0}&lt;/style&gt;
     #dak-lak-dashboard .dash-head { display:flex; justify-content:space-between; align-items:flex-end; gap:16px; margin-bottom:16px; }
     #dak-lak-dashboard .dash-head h2 { margin:0; }
     #dak-lak-dashboard .dash-head p { margin:4px 0 0; color:var(--muted-foreground); }
+    #dak-lak-dashboard .dash-actions { display:flex; align-items:center; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
+    #dak-lak-dashboard .print-btn { display:inline-flex; align-items:center; justify-content:center; gap:6px; min-height:32px; padding:6px 10px; border:1px solid var(--border); border-radius:8px; background:var(--card); color:var(--foreground); font:inherit; font-size:0.82em; cursor:pointer; }
+    #dak-lak-dashboard .print-btn:hover { background:var(--muted); }
+    #dak-lak-dashboard .section-print-btn { margin-left:auto; flex:0 0 auto; }
     #dak-lak-dashboard .stamp { color:var(--muted-foreground); white-space:nowrap; }
     #dak-lak-dashboard .stats { margin-bottom:22px; }
     #dak-lak-dashboard .viz-stat-value { font-variant-numeric:tabular-nums; }
@@ -1891,6 +1895,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     #dak-lak-dashboard [data-view].active { display:block; }
     @media(max-width:700px){
       #dak-lak-dashboard .dash-head { display:block; }
+      #dak-lak-dashboard .dash-actions { margin-top:8px; justify-content:flex-start; }
       #dak-lak-dashboard .stamp { display:block; margin-top:6px; }
       #dak-lak-dashboard .projects { grid-template-columns:1fr; }
       #dak-lak-dashboard .bar-row { grid-template-columns:110px minmax(80px,1fr) 54px; }
@@ -1927,14 +1932,12 @@ html&gt;body{padding:0}&lt;/style&gt;
       #dak-lak-dashboard .investor-table th:nth-child(1)::after { content:&quot;Chủ đầu tư&quot;; }
       #dak-lak-dashboard .investor-table th:nth-child(2)::after { content:&quot;KH&quot;; }
       #dak-lak-dashboard .investor-table th:nth-child(3)::after { content:&quot;Giải ngân&quot;; }
-      #dak-lak-dashboard .investor-table th:nth-child(4)::after { content:&quot;± tuần&quot;; }
+      #dak-lak-dashboard .investor-table th:nth-child(4)::after { content:&quot;Tỷ lệ&quot;; }
       #dak-lak-dashboard .investor-table th:nth-child(5)::after { content:&quot;Hạng&quot;; }
-      #dak-lak-dashboard .investor-table th:nth-child(6)::after { content:&quot;T8&quot;; }
-      #dak-lak-dashboard .investor-table th:nth-child(7)::after { content:&quot;T9&quot;; }
-      #dak-lak-dashboard .investor-table th:nth-child(8)::after { content:&quot;T10&quot;; }
-      #dak-lak-dashboard .investor-table th:nth-child(9)::after { content:&quot;T11&quot;; }
-      #dak-lak-dashboard .investor-table th:nth-child(10)::after { content:&quot;T12&quot;; }
-      #dak-lak-dashboard .investor-table th:nth-child(11)::after { content:&quot;T1/27&quot;; }
+      #dak-lak-dashboard .investor-table th:nth-child(6)::after { content:&quot;T10&quot;; }
+      #dak-lak-dashboard .investor-table th:nth-child(7)::after { content:&quot;T11&quot;; }
+      #dak-lak-dashboard .investor-table th:nth-child(8)::after { content:&quot;T12&quot;; }
+      #dak-lak-dashboard .investor-table th:nth-child(9)::after { content:&quot;T1/27&quot;; }
       #dak-lak-dashboard .indicator-section .table-responsive { overflow:visible; }
       #dak-lak-dashboard .indicator-table { display:table; width:100%; min-width:0; table-layout:fixed; font-size:7.5px; line-height:1.12; }
       #dak-lak-dashboard .indicator-table thead { display:table-header-group; }
@@ -1955,14 +1958,43 @@ html&gt;body{padding:0}&lt;/style&gt;
       #dak-lak-dashboard .indicator-table th:nth-child(2)::after { content:&quot;Chỉ tiêu&quot;; }
       #dak-lak-dashboard .indicator-table th:nth-child(3)::after { content:&quot;2025&quot;; }
       #dak-lak-dashboard .indicator-table th:nth-child(4)::after { content:&quot;KH26&quot;; }
-      #dak-lak-dashboard .indicator-table th:nth-child(5)::after { content:&quot;6T&quot;; }
-      #dak-lak-dashboard .indicator-table th:nth-child(6)::after { content:&quot;Q3&quot;; }
-      #dak-lak-dashboard .indicator-table th:nth-child(7)::after { content:&quot;Q4&quot;; }
-      #dak-lak-dashboard .indicator-table th:nth-child(8)::after { content:&quot;GĐ tỉnh&quot;; }
-      #dak-lak-dashboard .indicator-table th:nth-child(9)::after { content:&quot;GĐ CT&quot;; }
+      #dak-lak-dashboard .indicator-table th:nth-child(5)::after { content:&quot;9T&quot;; }
+      #dak-lak-dashboard .indicator-table th:nth-child(6)::after { content:&quot;Q4&quot;; }
+      #dak-lak-dashboard .indicator-table th:nth-child(7)::after { content:&quot;GĐ tỉnh&quot;; }
+      #dak-lak-dashboard .indicator-table th:nth-child(8)::after { content:&quot;GĐ CT&quot;; }
       #dak-lak-dashboard .indicator-table td::before { display:none; }
       #dak-lak-dashboard .indicator-band td { display:table-cell; width:auto; padding:4px 2px; }
       #dak-lak-dashboard .indicator-status { align-items:flex-start; }
+    }
+    @media print {
+      @page { size:A4 landscape; margin:9mm; }
+      html, body { background:#fff !important; color:#111 !important; }
+      #dak-lak-dashboard { max-width:none !important; width:100% !important; color:#111 !important; }
+      #dak-lak-dashboard .print-btn,
+      #dak-lak-dashboard .tabs,
+      #dak-lak-dashboard .mobile-scroll-hint { display:none !important; }
+      #dak-lak-dashboard .investor-wide,
+      #dak-lak-dashboard .indicator-section { width:100% !important; margin-left:0 !important; transform:none !important; }
+      #dak-lak-dashboard .section-head { break-before:page; page-break-before:always; margin-top:0; }
+      #dak-lak-dashboard .dash-head + .stats,
+      #dak-lak-dashboard .section-head:first-of-type { break-before:auto; page-break-before:auto; }
+      #dak-lak-dashboard .card,
+      #dak-lak-dashboard .finance-row,
+      #dak-lak-dashboard .scenario-row,
+      #dak-lak-dashboard .bar-row,
+      #dak-lak-dashboard tr { break-inside:avoid; page-break-inside:avoid; }
+      #dak-lak-dashboard [data-view] { display:block !important; }
+      #dak-lak-dashboard .table-responsive,
+      #dak-lak-dashboard .scenario-scroll { overflow:visible !important; }
+      #dak-lak-dashboard .investor-table,
+      #dak-lak-dashboard .indicator-table { font-size:8pt !important; }
+      #dak-lak-dashboard .scenario-chart { font-size:8pt !important; }
+      body.print-one-section #dak-lak-dashboard &gt; * { display:none !important; }
+      body.print-one-section #dak-lak-dashboard &gt; .print-target { display:block !important; }
+      body.print-one-section #dak-lak-dashboard &gt; .print-target.section-head { display:flex !important; break-before:auto; page-break-before:auto; }
+      body.print-one-section #dak-lak-dashboard &gt; .print-target.viz-grid,
+      body.print-one-section #dak-lak-dashboard &gt; .print-target.projects,
+      body.print-one-section #dak-lak-dashboard &gt; .print-target.bars { display:grid !important; }
     }
   &lt;/style&gt;
 
@@ -1971,7 +2003,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       &lt;h2&gt;Tình hình kinh tế – xã hội tỉnh Đắk Lắk&lt;/h2&gt;
       &lt;p&gt;Kết quả kinh tế – xã hội 9 tháng và giải ngân đầu tư công đến 14/10/2026&lt;/p&gt;
     &lt;/div&gt;
-    &lt;span class=&quot;stamp&quot;&gt;Cập nhật 20/10/2026&lt;/span&gt;
+    &lt;div class=&quot;dash-actions&quot;&gt;&lt;span class=&quot;stamp&quot;&gt;Cập nhật 20/10/2026&lt;/span&gt;&lt;button class=&quot;print-btn&quot; type=&quot;button&quot; data-print-all aria-label=&quot;In toàn bộ dashboard&quot;&gt;⎙ In toàn bộ&lt;/button&gt;&lt;/div&gt;
   &lt;/div&gt;
 
   &lt;div class=&quot;viz-grid stats&quot;&gt;
@@ -2161,6 +2193,42 @@ html&gt;body{padding:0}&lt;/style&gt;
   &lt;script&gt;
     (() =&gt; {
       const root = document.getElementById(&quot;dak-lak-dashboard&quot;);
+      const clearPrintMode = () =&gt; {
+        document.body.classList.remove(&quot;print-one-section&quot;);
+        root.querySelectorAll(&quot;.print-target&quot;).forEach((node) =&gt; node.classList.remove(&quot;print-target&quot;));
+      };
+      const printDashboard = () =&gt; {
+        clearPrintMode();
+        window.print();
+      };
+      const printSection = (heading) =&gt; {
+        clearPrintMode();
+        let sectionStart = heading;
+        while (sectionStart.parentElement !== root &amp;&amp; sectionStart.parentElement) sectionStart = sectionStart.parentElement;
+        if (sectionStart !== heading) {
+          sectionStart.classList.add(&quot;print-target&quot;);
+        } else {
+          let node = heading;
+          while (node &amp;&amp; (node === heading || !node.classList.contains(&quot;section-head&quot;))) {
+            node.classList.add(&quot;print-target&quot;);
+            node = node.nextElementSibling;
+          }
+        }
+        document.body.classList.add(&quot;print-one-section&quot;);
+        window.print();
+      };
+      root.querySelector(&quot;[data-print-all]&quot;)?.addEventListener(&quot;click&quot;, printDashboard);
+      root.querySelectorAll(&quot;.section-head&quot;).forEach((heading) =&gt; {
+        const title = heading.querySelector(&quot;h3&quot;)?.textContent.trim() || &quot;mục này&quot;;
+        const button = document.createElement(&quot;button&quot;);
+        button.type = &quot;button&quot;;
+        button.className = &quot;print-btn section-print-btn&quot;;
+        button.textContent = &quot;⎙ In mục&quot;;
+        button.setAttribute(&quot;aria-label&quot;, `In riêng mục ${title}`);
+        button.addEventListener(&quot;click&quot;, () =&gt; printSection(heading));
+        heading.appendChild(button);
+      });
+      window.addEventListener(&quot;afterprint&quot;, clearPrintMode);
       const investorScenarios = {
         &quot;Ban QL các dự án ĐTXD khu vực phía Đông tỉnh&quot;: [&quot;2.453,8&quot;,&quot;2.741,6&quot;,&quot;3.495,2&quot;,&quot;3.767,8&quot;],
         &quot;Ban QLDA ĐTXDCT GT&amp;NNNT tỉnh&quot;: [&quot;965,7&quot;,&quot;1.130,6&quot;,&quot;1.474,3&quot;,&quot;2.866,3&quot;],
