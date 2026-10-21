@@ -1969,15 +1969,21 @@ html&gt;body{padding:0}&lt;/style&gt;
     @media print {
       @page { size:A4 landscape; margin:9mm; }
       html, body { background:#fff !important; color:#111 !important; }
-      #dak-lak-dashboard { max-width:none !important; width:100% !important; color:#111 !important; }
+      #dak-lak-dashboard { max-width:none !important; width:100% !important; color:#111 !important; font-size:9pt; }
       #dak-lak-dashboard .print-btn,
       #dak-lak-dashboard .tabs,
       #dak-lak-dashboard .mobile-scroll-hint { display:none !important; }
       #dak-lak-dashboard .investor-wide,
       #dak-lak-dashboard .indicator-section { width:100% !important; margin-left:0 !important; transform:none !important; }
-      #dak-lak-dashboard .section-head { break-before:page; page-break-before:always; margin-top:0; }
-      #dak-lak-dashboard .dash-head + .stats,
-      #dak-lak-dashboard .section-head:first-of-type { break-before:auto; page-break-before:auto; }
+      #dak-lak-dashboard .dash-head { margin-bottom:7px; }
+      #dak-lak-dashboard .stats { margin-bottom:8px; }
+      #dak-lak-dashboard .section-head { margin:8px 0 5px; break-before:auto; page-break-before:auto; }
+      #dak-lak-dashboard .finance { gap:4px; margin-bottom:8px; }
+      #dak-lak-dashboard .finance-row { gap:7px; }
+      #dak-lak-dashboard .allocation { margin:5px 0 8px; }
+      #dak-lak-dashboard .card { padding:8px !important; }
+      #dak-lak-dashboard .print-page-break,
+      #dak-lak-dashboard .investor-table-page { break-before:page; page-break-before:always; }
       #dak-lak-dashboard .card,
       #dak-lak-dashboard .finance-row,
       #dak-lak-dashboard .scenario-row,
@@ -1992,6 +1998,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       body.print-one-section #dak-lak-dashboard &gt; * { display:none !important; }
       body.print-one-section #dak-lak-dashboard &gt; .print-target { display:block !important; }
       body.print-one-section #dak-lak-dashboard &gt; .print-target.section-head { display:flex !important; break-before:auto; page-break-before:auto; }
+      body.print-one-section #dak-lak-dashboard &gt; .print-target.print-page-break { break-before:auto; page-break-before:auto; }
       body.print-one-section #dak-lak-dashboard &gt; .print-target.viz-grid,
       body.print-one-section #dak-lak-dashboard &gt; .print-target.projects,
       body.print-one-section #dak-lak-dashboard &gt; .print-target.bars { display:grid !important; }
@@ -2038,7 +2045,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Ngân sách địa phương đã giải ngân&lt;/b&gt;&lt;small&gt;4.169,311 / 7.486,030 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:55.69%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;55,7%&lt;/em&gt;&lt;/div&gt;
   &lt;/div&gt;
 
-  &lt;div class=&quot;section-head&quot;&gt;&lt;h3&gt;Vốn năm 2025 kéo dài sang 2026&lt;/h3&gt;&lt;/div&gt;
+  &lt;div class=&quot;section-head print-page-break&quot;&gt;&lt;h3&gt;Vốn năm 2025 kéo dài sang 2026&lt;/h3&gt;&lt;/div&gt;
   &lt;div class=&quot;card viz-stat&quot;&gt;
     &lt;span class=&quot;text-muted&quot;&gt;Đã giải ngân vốn kéo dài&lt;/span&gt;
     &lt;div class=&quot;viz-stat-value&quot;&gt;2.523,888 / 5.628 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt; · 44,85%&lt;/div&gt;
@@ -2090,7 +2097,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban GT&amp;amp;NNNT tỉnh&lt;/span&gt;&lt;span class=&quot;scenario-cell actual&quot; style=&quot;--pct:29.88%&quot;&gt;&lt;b&gt;29,9%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:33.69%&quot;&gt;&lt;b&gt;33,7%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:39.44%&quot;&gt;&lt;b&gt;39,4%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:51.43%&quot;&gt;&lt;b&gt;51,4%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;table-responsive&quot;&gt;
+    &lt;div class=&quot;table-responsive investor-table-page&quot;&gt;
       &lt;table class=&quot;table table-sm investor-table&quot;&gt;
         &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Chủ đầu tư&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;Kế hoạch &lt;span class=&quot;text-small text-muted&quot;&gt;(tỷ đồng)&lt;/span&gt;&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;Đã giải ngân 30/9 &lt;span class=&quot;text-small text-muted&quot;&gt;(tỷ đồng)&lt;/span&gt;&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;Tỷ lệ&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;Xếp theo số tiền&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;KB T10&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;KB T11&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;KB T12&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;KB T1/2027&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
         &lt;tbody&gt;
@@ -2119,7 +2126,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;/div&gt;
   &lt;/section&gt;
 
-  &lt;div class=&quot;section-head&quot;&gt;&lt;h3&gt;Nhiệm vụ điều hành trọng tâm&lt;/h3&gt;&lt;span&gt;Cập nhật báo cáo 9 tháng&lt;/span&gt;&lt;/div&gt;
+  &lt;div class=&quot;section-head print-page-break&quot;&gt;&lt;h3&gt;Nhiệm vụ điều hành trọng tâm&lt;/h3&gt;&lt;span&gt;Cập nhật báo cáo 9 tháng&lt;/span&gt;&lt;/div&gt;
   &lt;div class=&quot;bars&quot; aria-label=&quot;Tiến độ các nhiệm vụ điều hành trọng tâm&quot;&gt;
     &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Tài sản công đã có phương án xử lý&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:92.3%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;851/922&lt;/span&gt;&lt;/div&gt;
     &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Dự án khó khăn, vướng mắc đã tháo gỡ&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:65.65%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;260/396&lt;/span&gt;&lt;/div&gt;
@@ -2132,7 +2139,7 @@ html&gt;body{padding:0}&lt;/style&gt;
   &lt;/div&gt;
   &lt;p class=&quot;text-small text-muted&quot;&gt;Theo Báo cáo 452/BC-UBND và Tờ trình cập nhật ngày 20/10: còn 136/396 dự án tiếp tục xử lý; tỷ lệ lập hồ sơ sức khỏe điện tử trên VNeID đạt 45,3%. Tiến độ chi tiết nhiệm vụ Chương trình 01 và Nghị quyết 57 được giữ theo phụ lục gần nhất khi chưa có mẫu số cập nhật đồng nhất.&lt;/p&gt;
 
-  &lt;section class=&quot;indicator-section&quot; aria-label=&quot;Kết quả chỉ tiêu kinh tế – xã hội&quot;&gt;
+  &lt;section class=&quot;indicator-section print-page-break&quot; aria-label=&quot;Kết quả chỉ tiêu kinh tế – xã hội&quot;&gt;
   &lt;div class=&quot;section-head&quot;&gt;&lt;h3&gt;Kết quả chỉ tiêu kinh tế – xã hội&lt;/h3&gt;&lt;span&gt;Kết quả 9 tháng năm 2026&lt;/span&gt;&lt;/div&gt;
   &lt;div class=&quot;indicator-legend text-small&quot; aria-label=&quot;Chú giải trạng thái chỉ tiêu&quot;&gt;
     &lt;span&gt;&lt;i class=&quot;indicator-dot met&quot;&gt;&lt;/i&gt;Đạt hoặc vượt kịch bản&lt;/span&gt;
