@@ -1979,9 +1979,14 @@ html&gt;body{padding:0}&lt;/style&gt;
       #dak-lak-dashboard .stats { margin-bottom:8px; }
       #dak-lak-dashboard .section-head { margin:8px 0 5px; break-before:auto; page-break-before:auto; }
       #dak-lak-dashboard .finance { gap:4px; margin-bottom:8px; }
-      #dak-lak-dashboard .finance-row { gap:7px; }
+      #dak-lak-dashboard .finance-row { grid-template-columns:minmax(270px,420px) auto; justify-content:start; gap:12px; }
+      #dak-lak-dashboard .finance-row .track { display:none !important; }
+      #dak-lak-dashboard .finance-row em { text-align:left; min-width:90px; }
       #dak-lak-dashboard .allocation { margin:5px 0 8px; }
       #dak-lak-dashboard .card { padding:8px !important; }
+      #dak-lak-dashboard .bar-row { grid-template-columns:minmax(300px,460px) auto; justify-content:start; gap:12px; }
+      #dak-lak-dashboard .bar-row .track { display:none !important; }
+      #dak-lak-dashboard .bar-row .pct { text-align:left; }
       #dak-lak-dashboard .print-page-break,
       #dak-lak-dashboard .investor-table-page { break-before:page; page-break-before:always; }
       #dak-lak-dashboard .card,
@@ -1995,6 +2000,10 @@ html&gt;body{padding:0}&lt;/style&gt;
       #dak-lak-dashboard .investor-table,
       #dak-lak-dashboard .indicator-table { font-size:8pt !important; }
       #dak-lak-dashboard .scenario-chart { font-size:8pt !important; }
+      #dak-lak-dashboard .projects-page .projects { gap:6px; }
+      #dak-lak-dashboard .projects-page .project { padding:6px !important; }
+      #dak-lak-dashboard .projects-page .project &gt; p { margin-bottom:5px; }
+      #dak-lak-dashboard .projects-page .metric { margin-top:4px; }
       body.print-one-section #dak-lak-dashboard &gt; * { display:none !important; }
       body.print-one-section #dak-lak-dashboard &gt; .print-target { display:block !important; }
       body.print-one-section #dak-lak-dashboard &gt; .print-target.section-head { display:flex !important; break-before:auto; page-break-before:auto; }
@@ -2031,7 +2040,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Chi thường xuyên&lt;/b&gt;&lt;small&gt;20.487 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:68.09%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;68,1%&lt;/em&gt;&lt;/div&gt;
   &lt;/div&gt;
 
-  &lt;div class=&quot;section-head&quot;&gt;&lt;h3&gt;Kế hoạch đầu tư công 2026&lt;/h3&gt;&lt;span&gt;Đơn vị: tỷ đồng&lt;/span&gt;&lt;/div&gt;
+  &lt;div class=&quot;section-head print-page-break&quot;&gt;&lt;h3&gt;Kế hoạch đầu tư công 2026&lt;/h3&gt;&lt;span&gt;Đơn vị: tỷ đồng&lt;/span&gt;&lt;/div&gt;
   &lt;div class=&quot;viz-grid allocation&quot;&gt;
     &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Tỉnh giao&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;11.294,185&lt;/div&gt;&lt;p&gt;Cao hơn KH Thủ tướng giao 1.255,741&lt;/p&gt;&lt;/div&gt;
     &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Đã giao chi tiết&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;10.223,441&lt;/div&gt;&lt;p&gt;90,52% · Còn 1.070,744&lt;/p&gt;&lt;/div&gt;
@@ -2045,7 +2054,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Ngân sách địa phương đã giải ngân&lt;/b&gt;&lt;small&gt;4.169,311 / 7.486,030 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:55.69%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;55,7%&lt;/em&gt;&lt;/div&gt;
   &lt;/div&gt;
 
-  &lt;div class=&quot;section-head print-page-break&quot;&gt;&lt;h3&gt;Vốn năm 2025 kéo dài sang 2026&lt;/h3&gt;&lt;/div&gt;
+  &lt;div class=&quot;section-head&quot;&gt;&lt;h3&gt;Vốn năm 2025 kéo dài sang 2026&lt;/h3&gt;&lt;/div&gt;
   &lt;div class=&quot;card viz-stat&quot;&gt;
     &lt;span class=&quot;text-muted&quot;&gt;Đã giải ngân vốn kéo dài&lt;/span&gt;
     &lt;div class=&quot;viz-stat-value&quot;&gt;2.523,888 / 5.628 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt; · 44,85%&lt;/div&gt;
@@ -2059,7 +2068,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Tăng thu, tiết kiệm chi NSTW&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;269,318 tỷ đồng&lt;/div&gt;&lt;/div&gt;
   &lt;/div&gt;
 
-  &lt;div class=&quot;section-head&quot;&gt;
+  &lt;div class=&quot;section-head print-page-break&quot;&gt;
     &lt;h3&gt;Tiến độ giải ngân&lt;/h3&gt;
     &lt;div class=&quot;tabs&quot; role=&quot;group&quot; aria-label=&quot;Chọn nội dung&quot;&gt;
       &lt;button class=&quot;btn btn-primary&quot; type=&quot;button&quot; data-tab=&quot;investors&quot; aria-pressed=&quot;true&quot;&gt;Chủ đầu tư&lt;/button&gt;
@@ -2116,7 +2125,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;div class=&quot;text-small text-muted&quot;&gt;Số liệu kế hoạch, thực hiện 30/9 và kịch bản lũy kế lấy theo Phụ lục III Kế hoạch 435/KH-UBND; gồm vốn năm 2026 và vốn năm 2025 kéo dài sau loại trừ, hiển thị làm tròn 0,1 tỷ đồng.&lt;/div&gt;
   &lt;/section&gt;
 
-  &lt;section data-view=&quot;projects&quot; aria-label=&quot;Tiến độ dự án trọng điểm&quot;&gt;
+  &lt;section data-view=&quot;projects&quot; class=&quot;print-page-break projects-page&quot; aria-label=&quot;Tiến độ dự án trọng điểm&quot;&gt;
     &lt;div class=&quot;projects&quot;&gt;
       &lt;article class=&quot;card project&quot;&gt;&lt;h3&gt;GPMB hồ Krông Pách Thượng – giai đoạn 2 (Ea Pal)&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Kênh chính Bắc:&lt;/b&gt; đã chi trả, bàn giao 11,94/12,8 ha cho 54 hộ, đạt 93,3% diện tích. &lt;b&gt;Kênh nhánh:&lt;/b&gt; đã kiểm kê 13,73/15,6 ha (86%); phê duyệt 8,78 ha (56%); chi trả, bàn giao 6,36 ha (41%).&lt;span class=&quot;change-note&quot;&gt;Cập nhật báo cáo xã Ea Pal ngày 07/8/2026&lt;/span&gt;&lt;/p&gt;&lt;div class=&quot;metric&quot;&gt;&lt;span&gt;Kênh chính Bắc bàn giao&lt;/span&gt;&lt;b&gt;93,3%&lt;/b&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:93.3%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;metric&quot;&gt;&lt;span&gt;Kênh nhánh kiểm kê&lt;/span&gt;&lt;b&gt;86%&lt;/b&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:86%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;metric&quot;&gt;&lt;span&gt;Kênh nhánh bàn giao&lt;/span&gt;&lt;b&gt;41%&lt;/b&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill low&quot; style=&quot;width:41%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;p class=&quot;text-small&quot;&gt;Vướng mắc: 8 hộ đã phê duyệt nhưng chưa nhận tiền/bàn giao; hồ sơ đất thất lạc, quyền sử dụng phức tạp và còn ý kiến về giá, mật độ cây trồng.&lt;/p&gt;&lt;/article&gt;
       &lt;article class=&quot;card project&quot;&gt;&lt;h3&gt;Cao tốc Khánh Hòa – Buôn Ma Thuột&lt;/h3&gt;&lt;p&gt;Thành phần 3 · 48,09 km · Mặt bằng tuyến chính đạt 100%, còn vướng cục bộ 90,6 m² của 01 hộ dân · Giá trị xây lắp 4.209,47/4.276,67 tỷ đồng · Lũy kế giải ngân 4.747,366/6.063,701 tỷ đồng.&lt;span class=&quot;change-note&quot;&gt;Cập nhật báo cáo tháng 8&lt;/span&gt;&lt;/p&gt;&lt;div class=&quot;metric&quot;&gt;&lt;span&gt;Khối lượng thi công&lt;/span&gt;&lt;b&gt;98,43%&lt;/b&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:98.43%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;metric&quot;&gt;&lt;span&gt;Giải ngân lũy kế&lt;/span&gt;&lt;b&gt;78,3%&lt;/b&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:78.29%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/article&gt;
