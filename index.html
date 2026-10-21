@@ -2199,7 +2199,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       };
       const printDashboard = () =&gt; {
         clearPrintMode();
-        window.print();
+        window.parent.postMessage({ type: &quot;dashboard-print&quot; }, &quot;*&quot;);
       };
       const printSection = (heading) =&gt; {
         clearPrintMode();
@@ -2215,7 +2215,7 @@ html&gt;body{padding:0}&lt;/style&gt;
           }
         }
         document.body.classList.add(&quot;print-one-section&quot;);
-        window.print();
+        window.parent.postMessage({ type: &quot;dashboard-print&quot; }, &quot;*&quot;);
       };
       root.querySelector(&quot;[data-print-all]&quot;)?.addEventListener(&quot;click&quot;, printDashboard);
       root.querySelectorAll(&quot;.section-head&quot;).forEach((heading) =&gt; {
@@ -3201,6 +3201,14 @@ html&gt;body{padding:0}&lt;/style&gt;
       // Ignore missing or invalid cache entries and measure the live frame.
     }
   }
+  globalThis.addEventListener("message", (event) => {
+    if (
+      event.source === frame.contentWindow &&
+      event.data?.type === "dashboard-print"
+    ) {
+      globalThis.print();
+    }
+  });
   frame.srcdoc = frameHtml;
   delete frame.dataset.srcdoc;
 })();
