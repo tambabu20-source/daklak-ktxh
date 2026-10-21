@@ -1,22 +1,23 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-visualize-standalone>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<title>Dak Lak Dashboard</title>
+<title>Dashboard kinh tế - xã hội tỉnh Đắk Lắk</title>
 <style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+
 </head>
 <body>
-<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="Dak Lak Dashboard" srcdoc="&lt;!doctype html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+<iframe id="codex-visualization" sandbox="allow-scripts" referrerpolicy="no-referrer" title="Dashboard kinh tế - xã hội tỉnh Đắk Lắk" data-srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot; data-visualize-standalone&gt;
 &lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
 &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 &lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
-&lt;title&gt;Dak Lak Dashboard&lt;/title&gt;
+&lt;title&gt;Dashboard kinh tế - xã hội tỉnh Đắk Lắk&lt;/title&gt;
 &lt;style&gt;:root {
   color-scheme: light dark;
   background-color: var(
@@ -94,7 +95,7 @@
     --color-ring-primary,
     light-dark(rgb(51 156 255), rgb(131 195 255 / 76%))
   );
-  --font-size-base: var(--font-text-md-size, 14px);
+  --font-size-base: var(--font-text-md-size, 16px);
   --blue: light-dark(rgb(51 156 255), rgb(51 156 255));
   --orange: light-dark(rgb(226 85 7), rgb(251 106 34));
   --green: light-dark(rgb(0 162 64), rgb(64 201 119));
@@ -109,7 +110,10 @@
   --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
 
   /* Internal implementation variables; not part of the agent contract. */
-  --font-sans: -apple-system, system-ui, &quot;Segoe UI&quot;, sans-serif;
+  --font-sans:
+    -apple-system-body, ui-sans-serif, -apple-system, system-ui, &quot;Segoe UI&quot;,
+    Helvetica, &quot;Apple Color Emoji&quot;, Arial, sans-serif, &quot;Segoe UI Emoji&quot;,
+    &quot;Segoe UI Symbol&quot;;
   --font-mono:
     ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
     monospace;
@@ -119,16 +123,18 @@
   --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
   --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
   --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
-  --font-weight-normal: 430;
+  --font-weight-normal: 400;
   --font-weight-medium: 500;
+  --icon-size: 16px;
   --line-height-normal: calc(var(--font-size-normal) * 1.5);
   --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
   --line-height-small: calc(var(--font-size-small) + 4px);
-  --radius: var(--border-radius-lg, 12.5px);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
+  --corner-shape: round;
+  --radius: var(--border-radius-lg, 8px);
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.75);
   --radius-lg: var(--radius);
-  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-2xl: calc(var(--radius) * 2);
   --radius-full: 9999px;
   --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
   --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
@@ -174,21 +180,26 @@ html &gt; body {
   );
 
   margin: 0;
-  padding: 5px;
+  padding: var(--visualize-paint-gutter, 0px);
   color: var(--foreground);
   background: transparent !important;
-  font-family: var(--font-sans);
-  font-size: var(--font-size-normal);
+  font-family: var(--font-sans) !important;
+  -webkit-font-smoothing: antialiased;
+  font-size: var(--font-size-base);
+  line-height: calc(var(--font-size-base) * 1.625);
   font-weight: var(--font-weight-normal);
-  line-height: var(--line-height-normal);
+}
+
+.cursor-interaction {
+  cursor: var(--cursor-interaction, pointer);
 }
 
 a {
   color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
-  cursor: pointer;
-  font-weight: var(--font-weight-medium, 500);
+  cursor: var(--cursor-interaction, pointer);
   text-decoration: none;
   text-underline-offset: 2px;
+  font-weight: inherit;
 }
 
 a:is(:hover, :focus-visible) {
@@ -206,39 +217,58 @@ h6,
 p {
   margin-block: 0;
 }
-
-h1 {
-  font-size: var(--font-size-h1);
-  font-weight: var(--font-weight-medium);
-  line-height: 1.25;
-}
-
-h2 {
-  font-size: var(--font-size-h2);
-  font-weight: var(--font-weight-medium);
-  line-height: 1.25;
-}
-
+p,
+h1,
+h2,
 h3,
 h4,
 h5,
-h6 {
-  font-size: var(--font-size-h3);
-  font-weight: var(--font-weight-medium);
-  line-height: 1.3;
+h6,
+li,
+.table {
+  font-family: var(--font-sans);
 }
 
+h1 {
+  font-size: calc(var(--font-size-base) * 1.5);
+  line-height: 1.3333333333;
+}
+
+h2 {
+  font-size: calc(var(--font-size-base) * 1.25);
+  line-height: 1.4;
+}
+h3 {
+  font-size: calc(var(--font-size-base) * 1.125);
+  line-height: 1.5555555556;
+}
+h4 {
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+}
+h5,
+h6 {
+  font-size: var(--font-size-base);
+  line-height: calc(var(--font-size-base) * 1.625);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 b,
 strong,
 th {
-  font-weight: var(--font-weight-medium);
+  font-weight: 600;
 }
 
 code:not(pre code) {
   display: inline;
   padding: 1px 6px;
   border-radius: var(--radius-sm);
-  corner-shape: superellipse(1.5);
+  corner-shape: var(--corner-shape);
   background: var(--muted);
   font-family: var(--font-mono);
   font-size: 0.92em;
@@ -246,6 +276,12 @@ code:not(pre code) {
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   word-break: break-word;
+}
+pre,
+pre code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 20px;
 }
 
 .table-responsive {
@@ -256,10 +292,14 @@ code:not(pre code) {
 
 .table {
   width: 100%;
-  border-collapse: collapse;
   color: var(--foreground);
   font: inherit;
   text-align: start;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: calc(var(--font-size-base) * 0.875);
+  line-height: calc(var(--font-size-base) * 1.625);
+  font-family: var(--font-sans);
 }
 
 .table :is(th, td) {
@@ -269,6 +309,10 @@ code:not(pre code) {
   border-bottom: 1px solid var(--border);
   text-align: start;
   vertical-align: top;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 5%, transparent);
+}
+.table :is(th, td):not(:last-child) {
+  padding-inline-end: calc(var(--font-size-base) * 1.5);
 }
 
 .table-responsive &gt; .table :is(th, td) {
@@ -283,17 +327,21 @@ code:not(pre code) {
   font-weight: 600;
 }
 
-.table thead th {
-  padding-block: 8px;
-  border-bottom-color: color-mix(in srgb, var(--foreground) 16%, transparent);
+.table thead :is(th, td) {
+  border-bottom-color: var(--border-strong, var(--input));
+  padding-block: calc(var(--font-size-base) / 2);
+  line-height: var(--font-size-base);
 }
 
 .table tbody tr:last-child :is(th, td) {
   border-bottom: 0;
 }
+.table tbody :is(th, td) {
+  padding-block: calc(var(--font-size-base) * 0.625);
+}
 
 .table.table-sm :is(th, td) {
-  padding-block: 6px;
+  padding-block: 8px;
 }
 
 .table.table-sm :is(th, td):not(:last-child) {
@@ -328,12 +376,23 @@ code:not(pre code) {
   overflow: hidden;
   overflow-wrap: break-word;
   border-radius: var(--radius-2xl);
-  corner-shape: superellipse(1.5);
+  corner-shape: var(--corner-shape);
   color: var(--card-foreground);
   background: var(--card);
 }
 
-#widget &gt; :not(.card, .progress) {
+.widget {
+  min-width: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  box-shadow: 0 0 0 0.5px var(--border-strong, var(--border));
+  color: var(--foreground);
+  background: var(--background);
+}
+
+#widget &gt; :not(.card, .widget, .progress) {
   width: 100% !important;
   max-width: none !important;
   margin: 0 !important;
@@ -359,19 +418,29 @@ code:not(pre code) {
     var(--tooltip-available-height, calc(100vh - 10px)),
     calc(100vh - 10px)
   );
-  padding: 4px 8px;
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  corner-shape: superellipse(1.5);
-  color: var(--popover-foreground);
-  background: var(--popover);
-  box-shadow: none;
-  font-size: var(--font-size-tooltip);
-  line-height: var(--line-height-tooltip);
+  corner-shape: var(--corner-shape);
   overflow-wrap: break-word;
   white-space: normal;
   pointer-events: none;
   user-select: none;
+  font-family: var(--font-sans);
+  padding: 5px 12px;
+  border-color: color-mix(
+    in oklab,
+    light-dark(var(--primary-foreground), var(--foreground)) 5%,
+    transparent
+  );
+  border-radius: var(--radius-2xl);
+  color: light-dark(var(--primary-foreground), var(--foreground));
+  background: light-dark(var(--foreground), var(--popover));
+  box-shadow: 0 8px 18px rgb(15 23 42 / 20%);
+  letter-spacing: -0.15px;
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: 600;
+  line-height: 18px;
+  text-align: center;
 }
 
 .viz-grid {
@@ -399,13 +468,33 @@ code:not(pre code) {
   gap: 10px;
 }
 
+hr {
+  width: 100%;
+  height: 1px;
+  margin-block: 6px;
+  border: 0;
+  background: var(--border);
+}
+
+.nav {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 4px;
+}
+
 .progress {
   display: flex;
-  height: 6px;
+  height: 8px;
+  margin-block: calc((var(--line-height-normal, 1.5em) - 8px) / 2);
   overflow: hidden;
   border: 0;
   border-radius: var(--radius-full);
   background: var(--muted);
+}
+
+.progress-bar:only-child {
+  border-radius: var(--radius-full);
 }
 
 .progress-bar {
@@ -416,22 +505,31 @@ code:not(pre code) {
 }
 
 .viz-badge {
-  padding: 3px 8px;
-  border-radius: var(--radius-full);
-  color: var(--accent-foreground);
-  background: var(--accent);
-  font-weight: var(--font-weight-medium);
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  color: color-mix(in srgb, var(--foreground) 40%, var(--muted-foreground));
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
+  font-family: var(--font-sans);
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: var(--font-weight-normal);
+  line-height: 1;
 }
 
 small,
-.text-small,
-.viz-badge {
+.text-small {
   font-size: var(--font-size-small);
   line-height: var(--line-height-small);
 }
 
 .text-muted {
   color: var(--muted-foreground);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
 }
 
 .sr-only {
@@ -467,6 +565,7 @@ small,
 }
 
 .btn,
+.nav-link,
 .form-check-input,
 .form-control,
 .form-range,
@@ -474,12 +573,22 @@ small,
   font: inherit;
 }
 
-.btn {
+/* Match inline alignment without overriding a containing flex or grid layout. */
+.btn,
+.nav-link,
+.form-control,
+.form-select,
+.form-range,
+.form-check {
+  vertical-align: middle;
+}
+
+.btn,
+.nav-link {
   appearance: button;
   display: inline-flex;
   inline-size: fit-content;
   max-inline-size: 100%;
-  min-height: 28px;
   align-items: center;
   justify-content: center;
   gap: 4px;
@@ -487,16 +596,31 @@ small,
   padding: 0 8px;
   -webkit-app-region: no-drag;
   border: 1px solid var(--input);
-  border-radius: var(--radius-lg);
-  corner-shape: superellipse(1.5);
-  color: var(--secondary-foreground);
-  background: var(--secondary);
+  corner-shape: var(--corner-shape);
   cursor: var(--cursor-interaction, pointer);
   text-align: center;
   text-decoration: none;
   white-space: nowrap;
   user-select: none;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: inherit;
+  font-family: var(--font-sans);
+  height: fit-content;
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  padding-inline: var(--control-spacing, 12px);
+  border-color: transparent;
+  border-radius: var(--radius-full);
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: var(--font-weight-normal);
+  line-height: 18px;
+}
+
+.btn {
+  border-color: var(--border);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
 }
 
 .btn:is(.btn-block, .viz-tile) {
@@ -510,19 +634,26 @@ small,
 }
 
 a.btn {
-  cursor: pointer;
+  cursor: var(--cursor-interaction, pointer);
   text-decoration: none;
 }
 
 .btn:not(:disabled):hover {
-  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+  background: light-dark(
+    color-mix(in srgb, var(--foreground) 5.5%, transparent),
+    color-mix(in srgb, var(--foreground) 8%, transparent)
+  );
+}
+
+.nav-link:not(:disabled):not([aria-disabled=&quot;true&quot;]):hover {
+  background: color-mix(in srgb, var(--foreground) 10%, transparent);
 }
 
 .btn-primary {
-  border-color: transparent;
+  border-color: var(--border);
   color: var(--primary-foreground);
   background: var(--foreground);
-  background-clip: padding-box;
+  background-clip: border-box;
 }
 
 .btn-primary .text-muted {
@@ -531,7 +662,7 @@ a.btn {
 
 .btn-primary:not(:disabled):hover {
   background: color-mix(in srgb, var(--foreground) 80%, transparent);
-  background-clip: padding-box;
+  background-clip: border-box;
 }
 
 .btn-ghost {
@@ -541,11 +672,222 @@ a.btn {
 }
 
 .btn-ghost:not(:disabled):hover {
-  color: var(--foreground);
-  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+  color: var(--muted-foreground);
+  background: light-dark(
+    color-mix(in srgb, var(--foreground) 5.5%, transparent),
+    color-mix(in srgb, var(--foreground) 8%, transparent)
+  );
 }
 
-.btn:disabled {
+.nav-pills .nav-link {
+  min-width: 0;
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.nav-justified .nav-link {
+  flex: 1 1 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.nav-pills .nav-link.active {
+  color: var(--foreground);
+  background: var(--muted);
+}
+
+/* Shared preview chrome; product styles stay inside each variant. */
+.viz-dotted-background {
+  background-image: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--foreground) 14%, transparent) 0.8px,
+    transparent 0.8px
+  );
+  background-position: center;
+  background-size: 16px 16px;
+}
+
+.viz-carousel {
+  position: relative;
+  min-width: 0;
+}
+
+.viz-carousel:has(&gt; .viz-carousel-controls) {
+  min-height: calc(60px + var(--viz-carousel-picker-height, 0px));
+  padding-bottom: 60px;
+}
+
+.viz-carousel &gt; [data-variant][hidden] {
+  display: none !important;
+}
+
+.viz-carousel &gt; [data-variant] {
+  isolation: isolate;
+}
+
+.viz-carousel-controls {
+  --viz-carousel-hover: light-dark(
+    color-mix(in srgb, var(--foreground) 5.4%, transparent),
+    color-mix(in srgb, var(--foreground) 7.8%, transparent)
+  );
+  position: absolute;
+  z-index: 2;
+  bottom: 8px;
+  left: 50%;
+  display: flex;
+  width: max-content;
+  /* Leave room for the host&#x27;s design-controls launcher at the trailing edge. */
+  max-width: calc(100% - 96px);
+  align-items: center;
+  gap: 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans);
+  /* Match the settings dropdown chrome independently of the content font size. */
+  font-size: 13px;
+  font-weight: var(--font-weight-normal);
+  line-height: 18px;
+  transform: translateX(-50%);
+  user-select: none;
+}
+
+/* Keep authored mockup button styles out of the shared carousel chrome. */
+.viz-carousel-controls button,
+.viz-carousel-picker &gt; summary {
+  display: flex !important;
+  height: auto !important;
+  min-height: 30px;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px;
+  padding: 0 6px !important;
+  -webkit-app-region: no-drag;
+  border: 0 !important;
+  border-radius: 14px !important;
+  color: inherit !important;
+  background: transparent !important;
+  font: inherit !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.viz-carousel-controls &gt; button,
+.viz-carousel-picker &gt; summary {
+  position: relative;
+  isolation: isolate;
+}
+
+.viz-carousel-controls &gt; button {
+  --icon-size: 16px;
+  width: 30px !important;
+  padding: 0 !important;
+}
+
+.viz-carousel-picker &gt; summary {
+  padding-inline: 12px !important;
+}
+
+.viz-carousel-controls .viz-carousel-caret {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  margin: 0;
+  color: inherit;
+  transform: rotate(180deg);
+}
+
+.viz-carousel-controls &gt; button &gt; svg,
+.viz-carousel-controls .viz-carousel-caret,
+.viz-carousel-count {
+  opacity: 0.5;
+}
+
+.viz-carousel-controls &gt; button::before,
+.viz-carousel-picker &gt; summary::before {
+  position: absolute;
+  z-index: -1;
+  inset: 3px;
+  border-radius: 12px;
+  content: &quot;&quot;;
+  pointer-events: none;
+}
+
+.viz-carousel-controls &gt; button:hover::before,
+.viz-carousel-picker &gt; summary:hover::before {
+  background: var(--viz-carousel-hover);
+}
+
+.viz-carousel-controls &gt; button,
+.viz-carousel-controls [data-lucide],
+.viz-carousel-controls .lucide {
+  flex-shrink: 0;
+}
+
+.viz-carousel-picker {
+  min-width: 0;
+}
+
+.viz-carousel-picker &gt; summary {
+  min-width: 0;
+  list-style: none;
+}
+
+.viz-carousel-picker &gt; summary::-webkit-details-marker {
+  display: none;
+}
+
+.viz-carousel-count {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.viz-carousel-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.viz-carousel-options {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 4px);
+  left: 0;
+  display: flex;
+  max-height: 240px;
+  flex-direction: column;
+  gap: 2px;
+  overflow: auto;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--background);
+  box-shadow: 0 4px 12px light-dark(rgb(0 0 0 / 6%), rgb(0 0 0 / 25%));
+}
+
+.viz-carousel-options &gt; button {
+  border-radius: max(0px, calc(var(--radius-lg) - 5px)) !important;
+  width: 100% !important;
+  min-height: 28px;
+  justify-content: flex-start !important;
+  padding: 4px 8px !important;
+  font-size: var(--font-size-small) !important;
+  text-align: start;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.viz-carousel-options &gt; [aria-current=&quot;true&quot;],
+.viz-carousel-options &gt; button:hover {
+  background: var(--viz-carousel-hover) !important;
+}
+
+.btn:disabled,
+.nav-link:disabled,
+.nav-link[aria-disabled=&quot;true&quot;] {
   cursor: not-allowed;
   opacity: 0.4;
 }
@@ -563,14 +905,42 @@ a.btn {
 .form-control {
   display: block;
   width: 100%;
-  min-height: 28px;
   padding: 0 8px;
   outline: none;
   border: 1px solid var(--input);
-  border-radius: var(--radius-lg);
-  corner-shape: superellipse(1.5);
+  corner-shape: var(--corner-shape);
   color: var(--foreground);
-  background: var(--secondary);
+  font-family: var(--font-sans);
+  height: calc(12px + 2 * var(--control-spacing, 12px));
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  padding-inline: calc(4px + var(--control-spacing, 12px) / 2);
+  border-color: var(--input);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--popover) 96%, transparent);
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.4285714286;
+}
+.form-control:is(
+  [type=&quot;file&quot;],
+  [type=&quot;date&quot;],
+  [type=&quot;datetime-local&quot;],
+  [type=&quot;month&quot;],
+  [type=&quot;week&quot;],
+  [type=&quot;color&quot;]
+) {
+  height: calc(12px + 2 * var(--control-spacing, 12px));
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  line-height: 18px;
+}
+.form-control:is(
+  [type=&quot;date&quot;],
+  [type=&quot;datetime-local&quot;],
+  [type=&quot;month&quot;],
+  [type=&quot;week&quot;]
+) {
+  padding-inline: var(--control-spacing, 12px);
 }
 
 .form-control::placeholder {
@@ -578,14 +948,12 @@ a.btn {
 }
 
 .form-control[type=&quot;file&quot;] {
-  padding: 0;
   overflow: hidden;
   cursor: var(--cursor-interaction, pointer);
+  padding: 0;
 }
 
 .form-control[type=&quot;file&quot;]::file-selector-button {
-  min-height: 26px;
-  margin-right: 8px;
   padding: 0 8px;
   border: 0;
   border-right: 1px solid var(--input);
@@ -593,6 +961,9 @@ a.btn {
   background: var(--secondary);
   cursor: inherit;
   font: inherit;
+  min-height: calc(10px + 2 * var(--control-spacing, 12px));
+  padding-inline: var(--control-spacing, 12px);
+  margin-inline-end: var(--control-spacing, 12px);
 }
 
 .form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
@@ -601,7 +972,7 @@ a.btn {
 
 .form-control-color[type=&quot;color&quot;] {
   width: 40px;
-  height: 28px;
+  height: calc(12px + 2 * var(--control-spacing, 12px));
   padding: 3px;
   cursor: var(--cursor-interaction, pointer);
 }
@@ -613,63 +984,99 @@ a.btn {
 .form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
   border: 0;
   border-radius: calc(var(--radius-lg) - 4px);
-  corner-shape: superellipse(1.5);
+  corner-shape: var(--corner-shape);
 }
 
 textarea.form-control {
   height: auto;
-  min-height: 72px;
-  padding: 8px 10px;
   resize: vertical;
+  min-height: 96px;
+  padding: 8px 10px;
 }
 
 .form-control:focus-visible {
   border-color: var(--ring);
-  box-shadow: inset 0 0 0 1px var(--ring);
+  box-shadow: none;
+}
+.form-control:disabled {
+  color: var(--muted-foreground);
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
+  opacity: 1;
+}
+.form-control[aria-invalid=&quot;true&quot;] {
+  border-color: var(--red);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--red) 20%, transparent);
 }
 
 .form-control:disabled,
 .form-select:disabled {
   cursor: not-allowed;
-  opacity: 0.4;
 }
 
 .form-select {
   appearance: none;
   display: block;
   width: 100%;
-  min-height: 28px;
+  height: fit-content;
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
   margin: 0;
-  padding: 0 32px 0 8px;
+  /* The secondary icon role is 14px at compact density and 16px at web density. */
+  --icon-size: calc(10px + var(--control-spacing, 12px) / 2);
+  /* Settings dropdowns retain a 12px inset and a 4px text-to-chevron gap. */
+  padding: 0 calc(16px + var(--icon-size)) 0 12px;
   outline: none;
-  border: 1px solid var(--input);
-  border-radius: var(--radius-lg);
-  corner-shape: superellipse(1.5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  corner-shape: var(--corner-shape);
   color: var(--foreground);
   background-color: var(--secondary);
   background-image:
-    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
-    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
+    linear-gradient(
+      45deg,
+      transparent calc(50% - 0.6px),
+      var(--muted-foreground) calc(50% - 0.6px) calc(50% + 0.6px),
+      transparent calc(50% + 0.6px)
+    ),
+    linear-gradient(
+      135deg,
+      transparent calc(50% - 0.6px),
+      var(--muted-foreground) calc(50% - 0.6px) calc(50% + 0.6px),
+      transparent calc(50% + 0.6px)
+    );
   background-position:
-    calc(100% - 14px) 50%,
-    calc(100% - 10px) 50%;
+    calc(100% - 12px - var(--icon-size) / 2) 50%,
+    calc(100% - 12px - var(--icon-size) * 0.18) 50%;
   background-repeat: no-repeat;
-  background-size: 4px 4px;
+  background-size: calc(var(--icon-size) * 0.32) calc(var(--icon-size) * 0.32);
   cursor: var(--cursor-interaction, default);
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: var(--font-weight-normal);
+  line-height: 18px;
+}
+
+.form-select option {
+  color: var(--popover-foreground);
+  background-color: var(--popover);
 }
 
 .form-select:not(:disabled):hover {
-  background-color: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+  background-color: light-dark(
+    color-mix(in srgb, var(--foreground) 5.5%, transparent),
+    color-mix(in srgb, var(--foreground) 8%, transparent)
+  );
 }
 
 .form-select:focus-visible {
-  border-color: var(--ring);
-  box-shadow: inset 0 0 0 1px var(--ring);
+  box-shadow: 0 0 0 2px var(--ring);
+}
+.form-select:disabled {
+  opacity: 0.4;
 }
 
 .form-check {
   display: flex;
-  min-height: 20px;
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
   align-items: center;
   gap: 6px;
 }
@@ -691,11 +1098,15 @@ textarea.form-control {
 }
 
 .form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
-  border-color: var(--input);
-  border-radius: var(--radius-sm);
-  corner-shape: superellipse(1.5);
-  background-color: var(--secondary);
+  corner-shape: round;
   box-shadow: var(--shadow-sm);
+  position: relative;
+  width: calc(10px + var(--control-spacing, 12px) / 2);
+  height: calc(10px + var(--control-spacing, 12px) / 2);
+  border-color: var(--border-strong, var(--input));
+  border-radius: calc(var(--radius-sm) / 2);
+  background-color: transparent;
+  color: var(--foreground);
 }
 
 .form-check:not(.form-switch)
@@ -703,9 +1114,10 @@ textarea.form-control {
   background-color: var(--card);
 }
 
-.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:checked {
-  border-color: var(--primary);
-  background-color: var(--primary);
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:is(:checked, :indeterminate) {
+  border-color: var(--border-strong, var(--input));
+  background-color: color-mix(in srgb, var(--popover) 96%, transparent);
 }
 
 .form-check:not(.form-switch)
@@ -716,24 +1128,48 @@ textarea.form-control {
   background: var(--primary-foreground);
   content: &quot;&quot;;
   mask: var(--checkmark-image) center / 12px 12px no-repeat;
+  background-color: var(--foreground);
+}
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:indeterminate::before {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 65%;
+  height: 6.65%;
+  margin: auto;
+  border-radius: var(--radius-full);
+  background: var(--foreground);
+  mask: none;
+  content: &quot;&quot;;
 }
 
 .form-check-input[type=&quot;radio&quot;] {
-  width: 14px;
-  height: 14px;
   border-radius: var(--radius-full);
+  width: 16px;
+  height: 16px;
+  border: 0;
+  box-shadow: inset 0 0 0 1px var(--input);
 }
 
 .form-check-input[type=&quot;radio&quot;]:checked {
-  border: 2px solid var(--primary);
-  background:
-    radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
-    var(--primary);
+  border: 0;
+  background: radial-gradient(
+    circle,
+    var(--primary-foreground) 0 3px,
+    var(--foreground) 3px
+  );
+  box-shadow: none;
 }
 
 .form-check:not(.form-switch) .form-check-input:focus-visible {
   outline: 2px solid var(--ring);
   outline-offset: 2px;
+}
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:focus-visible {
+  border-color: var(--ring);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ring);
 }
 
 .form-check:not(.form-switch) .form-check-input:disabled {
@@ -743,6 +1179,12 @@ textarea.form-control {
 
 .form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
   cursor: not-allowed;
+}
+.form-check:not(.form-switch) .form-check-input[type=&quot;radio&quot;]:disabled,
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;radio&quot;]:disabled
+  + .form-check-label {
+  opacity: 0.5;
 }
 
 .form-switch .form-check-input:disabled,
@@ -776,15 +1218,16 @@ textarea.form-control {
   box-sizing: border-box;
   border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
   border-radius: var(--radius-full);
-  background: light-dark(var(--primary-foreground), var(--foreground));
   box-shadow: var(--shadow-sm);
   content: &quot;&quot;;
   transform: translate(2px, -50%);
   transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+  border-color: #fff;
+  background: #fff;
 }
 
 .form-switch .form-check-input:checked {
-  background: var(--primary);
+  background: var(--blue);
 }
 
 .form-switch .form-check-input:checked::before {
@@ -793,49 +1236,54 @@ textarea.form-control {
 
 .form-switch .form-check-input:focus-visible {
   box-shadow: 0 0 0 2px var(--ring);
+  outline: none;
 }
 
 .form-range {
   appearance: none;
   display: block;
   width: 100%;
-  height: 28px;
   flex: 1;
   margin: 0;
   padding: 0;
-  outline: none;
   border: 0;
   accent-color: var(--primary);
-  background: linear-gradient(
-      color-mix(in srgb, var(--foreground) 7%, transparent),
-      color-mix(in srgb, var(--foreground) 7%, transparent)
-    )
-    center / 100% 2px no-repeat;
+  height: calc(12px + 2 * var(--control-spacing, 12px));
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  outline: none;
+  border-radius: var(--radius-full);
+  color: var(--foreground);
+  background: transparent;
 }
 
 .form-range::-webkit-slider-runnable-track {
-  height: 28px;
-  background: transparent;
+  background: var(--form-range-track, var(--border));
+  height: 2px;
+  border-radius: var(--radius-full);
 }
 
 .form-range::-webkit-slider-thumb {
   appearance: none;
   width: 20px;
   height: 20px;
-  margin-top: 4px;
   border: 1px solid var(--border);
   border-radius: var(--radius-full);
-  background: light-dark(var(--primary-foreground), var(--foreground));
+  margin-top: -9px;
+  border-color: transparent;
+  background: currentColor;
+  box-shadow: var(--shadow-sm);
 }
 
-.form-range:focus-visible::-webkit-slider-thumb {
-  border-color: var(--ring);
-  box-shadow: inset 0 0 0 1px var(--ring);
+/* Outline the native track and thumb, preserving the larger input hit area. */
+.form-range:focus-visible::-webkit-slider-runnable-track {
+  outline: 2px auto Highlight;
+  outline-color: -webkit-focus-ring-color;
 }
 
 .form-range::-moz-range-track {
-  height: 28px;
-  background: transparent;
+  background: var(--form-range-track, var(--border));
+  height: 2px;
+  border-radius: var(--radius-full);
 }
 
 .form-range::-moz-range-thumb {
@@ -843,17 +1291,19 @@ textarea.form-control {
   height: 20px;
   border: 1px solid var(--border);
   border-radius: var(--radius-full);
-  background: light-dark(var(--primary-foreground), var(--foreground));
+  border-color: transparent;
+  background: currentColor;
+  box-shadow: var(--shadow-sm);
 }
 
 .form-range:focus-visible::-moz-range-thumb {
-  border-color: var(--ring);
-  box-shadow: inset 0 0 0 1px var(--ring);
+  outline: 2px solid Highlight;
+  outline-offset: 2px;
 }
 
 .form-range:disabled {
-  cursor: not-allowed;
-  opacity: 0.4;
+  opacity: 1;
+  cursor: default;
 }
 
 .btn:not(.btn-primary, .viz-tile):is(
@@ -861,9 +1311,9 @@ textarea.form-control {
   [aria-selected=&quot;true&quot;],
   .is-selected
 ) {
-  border-color: var(--primary);
+  border-color: transparent;
   color: var(--primary-foreground);
-  background: var(--primary);
+  background: var(--blue);
 }
 
 .btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
@@ -871,9 +1321,154 @@ textarea.form-control {
   box-shadow: inset 0 0 0 1px var(--primary);
 }
 
-.btn:focus-visible {
-  outline: 2px solid var(--ring);
+.btn:focus-visible,
+.nav-link:focus-visible {
   outline-offset: 2px;
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.viz-carousel-controls :is(button, summary):focus-visible {
+  outline: 2px solid var(--ring) !important;
+  outline-offset: 2px !important;
+}
+
+/* Web recipes are the default, including on renderers without inline style queries. */
+@supports (border-radius: if(style(--corner-shape: round): 1px; else: 2px)) {
+  /* Match the host&#x27;s proportional text-sm scale at every text preference. */
+  .tooltip,
+  .viz-badge,
+  .btn,
+  .nav-link,
+  .form-control,
+  .form-select {
+    font-size: if(
+      style(--corner-shape: round): round(
+          nearest,
+          calc(var(--font-size-base) * 14 / 16),
+          1px
+        );
+        else: round(nearest, calc(var(--font-size-base) * 13 / 14), 1px)
+    );
+  }
+
+  .btn,
+  .nav-link,
+  .form-select {
+    border-radius: if(
+      style(--corner-shape: round): var(--radius-full); else: var(--radius-lg)
+    );
+  }
+
+  .form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+    border-radius: if(
+      style(--corner-shape: round): calc(var(--radius-sm) / 2);
+        else: calc(var(--radius-lg) * 0.4)
+    );
+  }
+
+  .tooltip {
+    font-weight: if(
+      style(--corner-shape: round): 600; else: var(--font-weight-normal)
+    );
+  }
+}
+
+@media (pointer: coarse) {
+  .viz-carousel:has(&gt; .viz-carousel-controls) {
+    min-height: calc(76px + var(--viz-carousel-picker-height, 0px));
+    padding-bottom: 76px;
+  }
+
+  .btn,
+  .nav-link,
+  .viz-carousel-controls button,
+  .viz-carousel-picker &gt; summary,
+  .form-control,
+  .form-select {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Keep small-screen WebKit from zooming when a text field receives focus. */
+  .form-control,
+  .form-select {
+    font-size: max(16px, calc(var(--font-size-base) * 14 / 16));
+    font-size: max(
+      16px,
+      round(nearest, calc(var(--font-size-base) * 14 / 16), 1px)
+    );
+  }
+  .form-control:is(
+    [type=&quot;file&quot;],
+    [type=&quot;date&quot;],
+    [type=&quot;datetime-local&quot;],
+    [type=&quot;month&quot;],
+    [type=&quot;week&quot;],
+    [type=&quot;time&quot;],
+    [type=&quot;color&quot;]
+  ) {
+    height: 44px;
+    min-height: 44px;
+    font-size: max(16px, calc(var(--font-size-base) * 14 / 16));
+    font-size: max(
+      16px,
+      round(nearest, calc(var(--font-size-base) * 14 / 16), 1px)
+    );
+  }
+
+  .form-control[type=&quot;file&quot;]::file-selector-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .form-control-color[type=&quot;color&quot;] {
+    width: 44px;
+    height: 44px;
+  }
+
+  .form-control:is(
+    [type=&quot;date&quot;],
+    [type=&quot;datetime-local&quot;],
+    [type=&quot;month&quot;],
+    [type=&quot;time&quot;],
+    [type=&quot;week&quot;]
+  ) {
+    min-width: 0;
+    max-width: 100%;
+    padding-block: 8px;
+  }
+
+  .form-check {
+    min-height: 44px;
+    padding-inline: 15px;
+  }
+
+  .form-check-input {
+    position: relative;
+  }
+
+  .form-check-input::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    content: &quot;&quot;;
+    transform: translate(-50%, -50%);
+  }
+
+  .form-check-label {
+    display: inline-flex;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .form-range {
+    height: 44px;
+    touch-action: pan-y;
+  }
 }
 
 svg {
@@ -889,8 +1484,8 @@ svg {
 /* Model-authored chart rules can otherwise stretch icons after these styles load. */
 svg.lucide {
   display: block;
-  width: 16px !important;
-  height: 16px !important;
+  width: var(--icon-size) !important;
+  height: var(--icon-size) !important;
   flex: none;
   margin: 0 !important;
   stroke-width: 1.6;
@@ -904,6 +1499,293 @@ svg.lucide {
 html&gt;body{padding:0}&lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
+&lt;script type=&quot;application/json&quot; id=&quot;codex-visualization-widget-state&quot;&gt;__CODEX_VISUALIZATION_WIDGET_STATE__&lt;/script&gt;
+&lt;script&gt;(() =&gt; {
+  const root = document.documentElement;
+  const mediaQuery = globalThis.matchMedia(&quot;(prefers-color-scheme: dark)&quot;);
+  const apply = Reflect.apply;
+  const isArray = Array.isArray;
+  const hasOwn = Object.hasOwn;
+  const parentWindow = globalThis.parent;
+  const stringify = JSON.stringify;
+  const parse = JSON.parse;
+  const encode = TextEncoder.prototype.encode.bind(new TextEncoder());
+  const initialStateElement = document.getElementById(
+    &quot;codex-visualization-widget-state&quot;,
+  );
+  const initialGlobals = parse(initialStateElement?.textContent ?? &quot;{}&quot;);
+  initialStateElement?.remove();
+  /** @type {Record&lt;string, unknown&gt; | null} */
+  let state = initialGlobals.widgetState ?? null;
+  const statePersistence = initialGlobals.statePersistence ?? &quot;none&quot;;
+  let nextStateRequestId = 0;
+  /** @type {Map&lt;number, { resolve: () =&gt; void; reject: (error: Error) =&gt; void; timeout: ReturnType&lt;typeof globalThis.setTimeout&gt;; serializedState: string }&gt;} */
+  const pendingStateWrites = new Map();
+  const persistenceError = () =&gt;
+    Object.assign(
+      new Error(&quot;The host could not persist the widget state update&quot;),
+      {
+        code: -32000,
+        data: { code: &quot;widget_state_persistence_failed&quot;, retryable: false },
+      },
+    );
+  /**
+   * @param {object} prototype
+   * @param {string} property
+   */
+  const getPrototypeGetter = (prototype, property) =&gt; {
+    // oxlint-disable-next-line typescript/unbound-method -- invoked through captured Reflect.apply
+    const getter = Object.getOwnPropertyDescriptor(prototype, property)?.get;
+    if (getter == null) {
+      throw new Error(`Missing ${property} getter`);
+    }
+    return getter;
+  };
+  const getMessageData = getPrototypeGetter(MessageEvent.prototype, &quot;data&quot;);
+  const getMessagePorts = getPrototypeGetter(MessageEvent.prototype, &quot;ports&quot;);
+  const getMessageSource = getPrototypeGetter(MessageEvent.prototype, &quot;source&quot;);
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const addHostMessageListener = MessagePort.prototype.addEventListener;
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const postHostMessage = MessagePort.prototype.postMessage;
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const startHostPort = MessagePort.prototype.start;
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const stopMessagePropagation = Event.prototype.stopImmediatePropagation;
+  /** @type {MessagePort | null} */
+  let hostPort = null;
+  const postToHost = (type, payload) =&gt; {
+    if (hostPort != null) {
+      apply(postHostMessage, hostPort, [{ type, ...payload }]);
+    }
+  };
+  const openExternal = ({ href }) =&gt; {
+    if (globalThis.navigator.userActivation?.isActive === true) {
+      postToHost(&quot;open-external&quot;, { href });
+    }
+  };
+  const sendFollowUpMessage = ({ context, prompt, title }) =&gt; {
+    if (globalThis.navigator.userActivation?.isActive === true) {
+      postToHost(&quot;follow-up&quot;, { context, prompt, title });
+    }
+    return Promise.resolve();
+  };
+  /**
+   * @param {Record&lt;string, unknown&gt; | ((previous: Record&lt;string, unknown&gt; | null) =&gt; Record&lt;string, unknown&gt;)} next
+   * @returns {Promise&lt;void&gt;}
+   */
+  const setWidgetState = async (next) =&gt; {
+    const nextState = typeof next === &quot;function&quot; ? next(state) : next;
+    if (
+      nextState == null ||
+      typeof nextState !== &quot;object&quot; ||
+      isArray(nextState)
+    ) {
+      throw new TypeError(&quot;Widget state must be a JSON object&quot;);
+    }
+    const inputState = stringify(
+      nextState,
+      (_key, /** @type {unknown} */ value) =&gt; {
+        if (
+          typeof value === &quot;undefined&quot; ||
+          typeof value === &quot;function&quot; ||
+          typeof value === &quot;symbol&quot; ||
+          (typeof value === &quot;number&quot; &amp;&amp; !Number.isFinite(value))
+        ) {
+          throw new TypeError(&quot;Widget state must be a JSON object&quot;);
+        }
+        return value;
+      },
+    );
+    const parsedState = parse(inputState);
+    if (
+      parsedState == null ||
+      typeof parsedState !== &quot;object&quot; ||
+      isArray(parsedState)
+    ) {
+      throw new TypeError(&quot;Widget state must be a JSON object&quot;);
+    }
+    const storedState = {
+      modelContent: null,
+      privateContent: null,
+      ...parsedState,
+    };
+    const serializedState = stringify(storedState);
+    if (encode(serializedState).length &gt; 16 * 1024) {
+      throw new TypeError(
+        &quot;Widget state must be a JSON object of at most 16 KiB&quot;,
+      );
+    }
+    if (
+      hasOwn(storedState, &quot;imageIds&quot;) &amp;&amp;
+      (!isArray(storedState.imageIds) ||
+        storedState.imageIds.some(
+          (/** @type {unknown} */ id) =&gt; typeof id !== &quot;string&quot;,
+        ))
+    ) {
+      throw new TypeError(&quot;Widget state imageIds must be an array of strings&quot;);
+    }
+    if (storedState.imageIds?.length &gt; 0) {
+      throw Object.assign(
+        new TypeError(&quot;Visualization state does not support image attachments&quot;),
+        { code: -32602, data: { code: &quot;images_unsupported&quot; } },
+      );
+    }
+    state = storedState;
+    globalThis.openai.widgetState = state;
+    globalThis.dispatchEvent(
+      new CustomEvent(&quot;openai:set_globals&quot;, {
+        detail: { globals: { widgetState: state } },
+      }),
+    );
+    if (statePersistence === &quot;none&quot;) {
+      throw persistenceError();
+    }
+    const id = ++nextStateRequestId;
+    return new Promise((resolve, reject) =&gt; {
+      const timeout = globalThis.setTimeout(() =&gt; {
+        pendingStateWrites.delete(id);
+        reject(persistenceError());
+      }, 30_000);
+      pendingStateWrites.set(id, { resolve, reject, timeout, serializedState });
+      postToHost(&quot;widget-state-write&quot;, { id, state: serializedState });
+    });
+  };
+  const syncTheme = () =&gt; {
+    const theme = mediaQuery.matches ? &quot;dark&quot; : &quot;light&quot;;
+    root.dataset.theme = theme;
+    globalThis.openai = {
+      ...globalThis.openai,
+      openExternal,
+      sendFollowUpMessage,
+      setWidgetState,
+      theme,
+      visualizationStyleVariables: {},
+      visualizationTheme: theme,
+      widgetState: state,
+      statePersistence,
+      stateModelContext: &quot;none&quot;,
+    };
+    globalThis.dispatchEvent(
+      new CustomEvent(&quot;openai:set_globals&quot;, {
+        detail: { globals: globalThis.openai },
+      }),
+    );
+  };
+  const sendHeight = () =&gt; {
+    postToHost(&quot;height&quot;, {
+      height: Math.ceil(
+        Math.max(
+          document.body.scrollHeight,
+          document.body.getBoundingClientRect().height,
+        ),
+      ),
+    });
+  };
+
+  globalThis.addEventListener(
+    &quot;message&quot;,
+    (event) =&gt; {
+      const data = apply(getMessageData, event, []);
+      const ports = apply(getMessagePorts, event, []);
+      const source = apply(getMessageSource, event, []);
+      if (
+        hostPort != null ||
+        source !== parentWindow ||
+        typeof data !== &quot;object&quot; ||
+        data?.type !== &quot;codex-visualization-initialize&quot; ||
+        !isArray(ports) ||
+        ports.length !== 1
+      ) {
+        return;
+      }
+      apply(stopMessagePropagation, event, []);
+      const nextHostPort = ports[0];
+      try {
+        apply(addHostMessageListener, nextHostPort, [
+          &quot;message&quot;,
+          (event) =&gt; {
+            const data = apply(getMessageData, event, []);
+            if (typeof data === &quot;object&quot; &amp;&amp; data?.type === &quot;measure&quot;) {
+              sendHeight();
+            } else if (
+              typeof data === &quot;object&quot; &amp;&amp;
+              data?.type === &quot;widget-state-result&quot;
+            ) {
+              /** @type {unknown} */
+              const id = data.id;
+              if (typeof id !== &quot;number&quot;) {
+                return;
+              }
+              const pending = pendingStateWrites.get(id);
+              if (pending != null) {
+                pendingStateWrites.delete(id);
+                globalThis.clearTimeout(pending.timeout);
+                if (data.ok === true) {
+                  pending.resolve();
+                } else {
+                  pending.reject(persistenceError());
+                }
+              }
+            }
+          },
+        ]);
+        apply(startHostPort, nextHostPort, []);
+      } catch {
+        return;
+      }
+      hostPort = nextHostPort;
+      for (const [id, { serializedState }] of pendingStateWrites) {
+        postToHost(&quot;widget-state-write&quot;, { id, state: serializedState });
+      }
+      sendHeight();
+    },
+    { capture: true },
+  );
+  document.currentScript?.remove();
+  mediaQuery.addEventListener(&quot;change&quot;, syncTheme);
+  globalThis.addEventListener(&quot;click&quot;, (event) =&gt; {
+    if (event.defaultPrevented) {
+      return;
+    }
+    let element = null;
+    if (event.target instanceof globalThis.Element) {
+      element = event.target;
+    } else if (event.target instanceof globalThis.Node) {
+      element = event.target.parentElement;
+    }
+    const link = element?.closest(&quot;a[href]&quot;);
+    const href = link?.getAttribute(&quot;href&quot;);
+    if (href == null) {
+      return;
+    }
+    if (href.startsWith(&quot;#&quot;)) {
+      let id;
+      try {
+        id = decodeURIComponent(href.slice(1));
+      } catch {
+        return;
+      }
+      const target = id.length === 0 ? root : document.getElementById(id);
+      if (
+        target == null ||
+        globalThis.navigator.userActivation?.isActive !== true
+      ) {
+        return;
+      }
+      event.preventDefault();
+      postToHost(&quot;scroll-to&quot;, {
+        top: target.getBoundingClientRect().top + globalThis.scrollY,
+      });
+      return;
+    }
+    event.preventDefault();
+    openExternal({ href });
+  });
+  new ResizeObserver(sendHeight).observe(document.body);
+  syncTheme();
+})();
+&lt;/script&gt;
 &lt;div id=&quot;dak-lak-dashboard&quot;&gt;
   &lt;style&gt;
     #dak-lak-dashboard { color:var(--foreground); width:100%; max-width:736px; margin:0 auto; }
@@ -1087,48 +1969,49 @@ html&gt;body{padding:0}&lt;/style&gt;
   &lt;div class=&quot;dash-head&quot;&gt;
     &lt;div&gt;
       &lt;h2&gt;Tình hình kinh tế – xã hội tỉnh Đắk Lắk&lt;/h2&gt;
-      &lt;p&gt;Báo cáo kinh tế – xã hội tháng 8 và giải ngân đầu tư công đến 26/8/2026&lt;/p&gt;
+      &lt;p&gt;Kết quả kinh tế – xã hội 9 tháng và giải ngân đầu tư công đến 14/10/2026&lt;/p&gt;
     &lt;/div&gt;
-    &lt;span class=&quot;stamp&quot;&gt;Cập nhật 26/08/2026&lt;/span&gt;
+    &lt;span class=&quot;stamp&quot;&gt;Cập nhật 20/10/2026&lt;/span&gt;
   &lt;/div&gt;
 
   &lt;div class=&quot;viz-grid stats&quot;&gt;
-    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Thu ngân sách · 8 tháng&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;11.397,5 tỷ đồng&lt;/div&gt;&lt;div class=&quot;delta&quot;&gt;63% kế hoạch năm&lt;span class=&quot;change-note&quot;&gt;+7,8% so với cùng kỳ&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Chi ngân sách · 8 tháng&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;27.672,532 tỷ đồng&lt;/div&gt;&lt;div class=&quot;delta&quot;&gt;67,05% kế hoạch năm&lt;span class=&quot;change-note&quot;&gt;+3,6% so với cùng kỳ&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Giải ngân ĐTC đến 26/8&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;3.618,602 tỷ đồng&lt;/div&gt;&lt;div class=&quot;delta&quot;&gt;36,48% KH giao chi tiết&lt;span class=&quot;change-note&quot;&gt;36,05% KH Thủ tướng giao · +52,129 tỷ đồng/tuần&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;IIP lũy kế 8 tháng&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;+14,63%&lt;/div&gt;&lt;div class=&quot;delta&quot;&gt;Tháng 8 tăng 21,31%&lt;span class=&quot;change-note&quot;&gt;Vượt 1,64 điểm % so với kịch bản tháng&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Thu ngân sách · 9 tháng&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;12.626 tỷ đồng&lt;/div&gt;&lt;div class=&quot;delta&quot;&gt;69,76% kế hoạch tỉnh&lt;span class=&quot;change-note&quot;&gt;+3,99% so với cùng kỳ&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Chi ngân sách · 9 tháng&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;30.597 tỷ đồng&lt;/div&gt;&lt;div class=&quot;delta&quot;&gt;74,14% dự toán tỉnh&lt;span class=&quot;change-note&quot;&gt;Chi đầu tư phát triển đạt 96,51%&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Giải ngân ĐTC đến 14/10&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;4.806,147 tỷ đồng&lt;/div&gt;&lt;div class=&quot;delta&quot;&gt;47,01% KH giao chi tiết&lt;span class=&quot;change-note&quot;&gt;47,88% KH Thủ tướng giao · +21,984 tỷ đồng/tuần&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;GRDP 9 tháng&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;+8,22%&lt;/div&gt;&lt;div class=&quot;delta&quot;&gt;Đạt 99,14% kịch bản&lt;span class=&quot;change-note&quot;&gt;Thấp hơn kịch bản 1.078 tỷ đồng&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
   &lt;/div&gt;
 
   &lt;div class=&quot;section-head&quot;&gt;&lt;h3&gt;Thu – chi ngân sách năm 2026&lt;/h3&gt;&lt;span&gt;Thực hiện / dự toán Trung ương&lt;/span&gt;&lt;/div&gt;
   &lt;div class=&quot;finance&quot; aria-label=&quot;Tiến độ thu chi ngân sách&quot;&gt;
-    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Tổng thu ngân sách · 8 tháng&lt;/b&gt;&lt;small&gt;11.397,5 / 18.100 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:62.97%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;63,0%&lt;span class=&quot;change-note&quot;&gt;+7,8% so với cùng kỳ&lt;/span&gt;&lt;/em&gt;&lt;/div&gt;
-    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Thu nội địa&lt;/b&gt;&lt;small&gt;11.240 / 17.952 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:62.61%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;62,6%&lt;/em&gt;&lt;/div&gt;
-    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Thu thuế và phí&lt;/b&gt;&lt;small&gt;8.002 / 10.874 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:73.59%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;73,6%&lt;/em&gt;&lt;/div&gt;
-    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Thu tiền sử dụng đất&lt;/b&gt;&lt;small&gt;2.475 / 6.090 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:40.64%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;40,6%&lt;/em&gt;&lt;/div&gt;
-    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Tổng chi ngân sách · 8 tháng&lt;/b&gt;&lt;small&gt;27.672,532 / 41.271 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:67.05%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;67,05%&lt;/em&gt;&lt;/div&gt;
-    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Chi thường xuyên&lt;/b&gt;&lt;small&gt;18.344,509 / 30.086 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:60.98%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;61,0%&lt;/em&gt;&lt;/div&gt;
+    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Tổng thu ngân sách · 9 tháng&lt;/b&gt;&lt;small&gt;12.626 / 18.100 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:69.76%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;69,8%&lt;span class=&quot;change-note&quot;&gt;+3,99% so với cùng kỳ&lt;/span&gt;&lt;/em&gt;&lt;/div&gt;
+    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Thu nội địa&lt;/b&gt;&lt;small&gt;12.455 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:69.38%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;+3,77%&lt;/em&gt;&lt;/div&gt;
+    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Thu nội địa không kể tiền sử dụng đất&lt;/b&gt;&lt;small&gt;9.531 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:100%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;106,3% KB 9 tháng&lt;/em&gt;&lt;/div&gt;
+    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Thu tiền sử dụng đất&lt;/b&gt;&lt;small&gt;2.924 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill low&quot; style=&quot;width:40.42%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;40,4% KB năm&lt;/em&gt;&lt;/div&gt;
+    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Tổng chi ngân sách · 9 tháng&lt;/b&gt;&lt;small&gt;30.597 / 41.271 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:74.14%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;74,1%&lt;/em&gt;&lt;/div&gt;
+    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Chi đầu tư phát triển&lt;/b&gt;&lt;small&gt;10.104 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:96.51%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;96,5%&lt;/em&gt;&lt;/div&gt;
+    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Chi thường xuyên&lt;/b&gt;&lt;small&gt;20.487 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:68.09%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;68,1%&lt;/em&gt;&lt;/div&gt;
   &lt;/div&gt;
 
   &lt;div class=&quot;section-head&quot;&gt;&lt;h3&gt;Kế hoạch đầu tư công 2026&lt;/h3&gt;&lt;span&gt;Đơn vị: tỷ đồng&lt;/span&gt;&lt;/div&gt;
   &lt;div class=&quot;viz-grid allocation&quot;&gt;
-    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Tỉnh giao&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;11.294,185&lt;/div&gt;&lt;p&gt;Cập nhật báo cáo tháng 8&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Đã giao chi tiết&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;9.918,583&lt;/div&gt;&lt;p&gt;87,82% · Còn 1.375,602&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Đã giải ngân đến 26/8&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;3.618,602&lt;/div&gt;&lt;p&gt;36,48% KH giao chi tiết · 36,05% KH TTg&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Tỉnh giao&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;11.294,185&lt;/div&gt;&lt;p&gt;Cao hơn KH Thủ tướng giao 1.255,741&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Đã giao chi tiết&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;10.223,441&lt;/div&gt;&lt;p&gt;90,52% · Còn 1.070,744&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Đã giải ngân đến 14/10&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;4.806,147&lt;/div&gt;&lt;p&gt;47,01% KH giao chi tiết · 47,88% KH TTg&lt;/p&gt;&lt;/div&gt;
   &lt;/div&gt;
-  &lt;div class=&quot;text-small text-muted&quot;&gt;Theo Phụ lục giải ngân ngày 26/8: số giải ngân tăng 52,129 tỷ đồng so với 19/8; kế hoạch giao chi tiết tăng lên 9.918,583 tỷ đồng nên tỷ lệ được tính trên mẫu số mới.&lt;/div&gt;
+  &lt;div class=&quot;text-small text-muted&quot;&gt;Theo dự thảo báo cáo giải ngân đến 14/10: giải ngân tăng 21,984 tỷ đồng so với 07/10; tỷ lệ bình quân cả nước đến 08/10 là 63,8%, Đắk Lắk xếp 32/34.&lt;/div&gt;
   &lt;div class=&quot;finance&quot; aria-label=&quot;Tiến độ đầu tư công theo nguồn vốn&quot;&gt;
-    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Ngân sách Trung ương đã phân bổ&lt;/b&gt;&lt;small&gt;2.224,855 / 3.077,944 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:72.28%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;72,28%&lt;/em&gt;&lt;/div&gt;
-    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Ngân sách Trung ương đã giải ngân&lt;/b&gt;&lt;small&gt;514,805 / 2.224,855 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill low&quot; style=&quot;width:23.14%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;23,14%&lt;span class=&quot;change-note&quot;&gt;+14,214 tỷ đồng so với tuần trước&lt;/span&gt;&lt;/em&gt;&lt;/div&gt;
-    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Ngân sách địa phương đã phân bổ&lt;/b&gt;&lt;small&gt;7.387,160 / 8.066,241 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:91.58%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;91,58%&lt;/em&gt;&lt;/div&gt;
-    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Ngân sách địa phương đã giải ngân&lt;/b&gt;&lt;small&gt;2.936,268 / 7.387,160 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:39.75%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;39,75%&lt;span class=&quot;change-note&quot;&gt;+126,412 tỷ đồng so với tuần trước&lt;/span&gt;&lt;/em&gt;&lt;/div&gt;
+    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Ngân sách Trung ương đã phân bổ&lt;/b&gt;&lt;small&gt;2.737,411 / 3.227,944 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:84.80%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;84,8%&lt;/em&gt;&lt;/div&gt;
+    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Ngân sách Trung ương đã giải ngân&lt;/b&gt;&lt;small&gt;636,836 / 2.737,411 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill low&quot; style=&quot;width:23.26%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;23,3%&lt;/em&gt;&lt;/div&gt;
+    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Ngân sách địa phương đã phân bổ&lt;/b&gt;&lt;small&gt;7.486,030 / 8.066,241 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:92.81%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;92,8%&lt;/em&gt;&lt;/div&gt;
+    &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Ngân sách địa phương đã giải ngân&lt;/b&gt;&lt;small&gt;4.169,311 / 7.486,030 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:55.69%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;55,7%&lt;/em&gt;&lt;/div&gt;
   &lt;/div&gt;
 
   &lt;div class=&quot;section-head&quot;&gt;&lt;h3&gt;Vốn năm 2025 kéo dài sang 2026&lt;/h3&gt;&lt;/div&gt;
   &lt;div class=&quot;card viz-stat&quot;&gt;
     &lt;span class=&quot;text-muted&quot;&gt;Đã giải ngân vốn kéo dài&lt;/span&gt;
-    &lt;div class=&quot;viz-stat-value&quot;&gt;1.841,347 / 5.628 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt; · 32,72%&lt;/div&gt;
-    &lt;p&gt;&lt;span class=&quot;viz-badge&quot;&gt;Cập nhật đến 26/8/2026&lt;/span&gt;&lt;/p&gt;
-    &lt;p class=&quot;text-small text-muted&quot;&gt;NSTW 1.181,924 tỷ đồng · NSĐP 659,424 tỷ đồng. Sau khi trừ 157,430 tỷ đồng hết nhiệm vụ chi: đạt 33,66%.&lt;/p&gt;
+    &lt;div class=&quot;viz-stat-value&quot;&gt;2.523,888 / 5.628 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt; · 44,85%&lt;/div&gt;
+    &lt;p&gt;&lt;span class=&quot;viz-badge&quot;&gt;+37,589 tỷ đồng so với tuần trước&lt;/span&gt;&lt;/p&gt;
+    &lt;p class=&quot;text-small text-muted&quot;&gt;Sau khi trừ 556,624 tỷ đồng hết nhiệm vụ chi: đạt 49,77%; còn phải giải ngân thực tế 2.547,488 tỷ đồng trước 31/12/2026.&lt;/p&gt;
   &lt;/div&gt;
   &lt;div class=&quot;viz-grid&quot;&gt;
     &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;HĐND tỉnh cho phép kéo dài&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;2.815,239 tỷ đồng&lt;/div&gt;&lt;/div&gt;
@@ -1145,18 +2028,18 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;div class=&quot;viz-row&quot; aria-label=&quot;Tổng giải ngân đầu tư công năm 2026&quot;&gt;
-    &lt;b&gt;Tổng giải ngân: 3.618,602 tỷ đồng&lt;/b&gt;
-    &lt;span class=&quot;text-small text-muted&quot;&gt;Đến hết 26/8 · đạt 36,48% kế hoạch giao chi tiết · 36,05% kế hoạch Thủ tướng giao · tăng 52,129 tỷ đồng so với 19/8&lt;/span&gt;
+    &lt;b&gt;Tổng giải ngân vốn năm 2026: 4.806,147 tỷ đồng&lt;/b&gt;
+    &lt;span class=&quot;text-small text-muted&quot;&gt;Đến hết 14/10 · đạt 47,01% kế hoạch giao chi tiết · 47,88% kế hoạch Thủ tướng giao · tăng 21,984 tỷ đồng so với 07/10&lt;/span&gt;
   &lt;/div&gt;
   &lt;div class=&quot;viz-grid allocation&quot; aria-label=&quot;Khoảng cách so với kịch bản giải ngân&quot;&gt;
-    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Kịch bản tổng vốn cuối tháng 8&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;8.007,640&lt;/div&gt;&lt;p&gt;Đã giải ngân 5.459,949 · còn 2.547,691 tỷ đồng&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Kịch bản tổng vốn cuối tháng 9&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;11.029,529&lt;/div&gt;&lt;p&gt;Còn 5.569,580 tỷ đồng từ 27/8&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Kịch bản tổng vốn cuối tháng 12&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;15.179,335&lt;/div&gt;&lt;p&gt;Còn 9.719,385 tỷ đồng từ 27/8&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Tổng hai nguồn đã giải ngân&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;7.330,035&lt;/div&gt;&lt;p&gt;Vốn 2026 và vốn 2025 kéo dài · +59,573 tỷ đồng/tuần&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Kịch bản lũy kế cuối tháng 10&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;8.407,461&lt;/div&gt;&lt;p&gt;Đạt 87,18% · còn 1.077,426 tỷ đồng&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Đăng ký Bộ Tài chính cuối tháng 10&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;8.422,538&lt;/div&gt;&lt;p&gt;Đạt 87,03% · còn 1.092,503 tỷ đồng&lt;/p&gt;&lt;/div&gt;
   &lt;/div&gt;
   &lt;div class=&quot;legend text-small&quot; aria-label=&quot;Chú giải màu biểu đồ&quot;&gt;
-    &lt;span&gt;&lt;i class=&quot;good&quot;&gt;&lt;/i&gt;Tiến độ thực tế tháng 7 và đến 26/8/2026&lt;/span&gt;
+    &lt;span&gt;&lt;i class=&quot;good&quot;&gt;&lt;/i&gt;Tiến độ chi tiết theo chủ đầu tư đến 26/8/2026&lt;/span&gt;
     &lt;span&gt;&lt;i&gt;&lt;/i&gt;Kịch bản lũy kế tháng&lt;/span&gt;
-    &lt;span&gt;Cột T7 và T8: cam = thực tế, xanh = kịch bản&lt;/span&gt;
+    &lt;span&gt;Cột T7 và T8: cam = thực tế, xanh = kịch bản; nguồn mới không kèm phụ lục chi tiết từng chủ đầu tư&lt;/span&gt;
     &lt;span&gt;Đơn vị: % kế hoạch vốn năm 2026&lt;/span&gt;
   &lt;/div&gt;
 
@@ -1207,21 +2090,21 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;/div&gt;
   &lt;/section&gt;
 
-  &lt;div class=&quot;section-head&quot;&gt;&lt;h3&gt;Nhiệm vụ điều hành trọng tâm&lt;/h3&gt;&lt;span&gt;Cập nhật đến 18/8/2026&lt;/span&gt;&lt;/div&gt;
+  &lt;div class=&quot;section-head&quot;&gt;&lt;h3&gt;Nhiệm vụ điều hành trọng tâm&lt;/h3&gt;&lt;span&gt;Cập nhật báo cáo 9 tháng&lt;/span&gt;&lt;/div&gt;
   &lt;div class=&quot;bars&quot; aria-label=&quot;Tiến độ các nhiệm vụ điều hành trọng tâm&quot;&gt;
-    &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Tài sản công đã có phương án xử lý&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:89.16%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;765/858&lt;/span&gt;&lt;/div&gt;
-    &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Dự án chậm, tồn đọng đã xử lý&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:58.84%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;233/396&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Tài sản công đã có phương án xử lý&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:92.3%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;851/922&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Dự án khó khăn, vướng mắc đã tháo gỡ&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:65.65%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;260/396&lt;/span&gt;&lt;/div&gt;
     &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Nhiệm vụ Chương trình 01 đến hết quý III đã hoàn thành&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:70.34%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;83/118&lt;/span&gt;&lt;/div&gt;
     &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Nhiệm vụ Nghị quyết 57 đã hoàn thành&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:61.96%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;171/276&lt;/span&gt;&lt;/div&gt;
     &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Khám sức khỏe trực tiếp&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill low&quot; style=&quot;width:3.79%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;60.370 · 3,79%&lt;/span&gt;&lt;/div&gt;
-    &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Bao phủ các hình thức kiểm tra sức khỏe&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:66.7%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;66,7%&lt;/span&gt;&lt;/div&gt;
-    &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Văn bản quy phạm pháp luật đã xử lý&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:53.42%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;195/365&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Bao phủ các hình thức khám, kiểm tra sức khỏe&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:73.81%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;2.287.309/3.099.000&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Văn bản quy phạm pháp luật đã xử lý&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:63.01%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;230/365&lt;/span&gt;&lt;/div&gt;
     &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Nhiệm vụ nghị quyết trụ cột chưa hoàn thành&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill low&quot; style=&quot;width:70.78%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;327/462&lt;/span&gt;&lt;/div&gt;
   &lt;/div&gt;
-  &lt;p class=&quot;text-small text-muted&quot;&gt;Theo báo cáo Bộ Tài chính: còn 163 dự án chậm, tồn đọng; 153 dự án đã có phương án xử lý và 10 dự án chờ cấp có thẩm quyền. Có thêm 4 nhiệm vụ quý IV thuộc Chương trình 01 hoàn thành trước hạn. Nghị quyết 57 có 99 nhiệm vụ thường xuyên và 6 nhiệm vụ đang triển khai trong hạn.&lt;/p&gt;
+  &lt;p class=&quot;text-small text-muted&quot;&gt;Theo Báo cáo 452/BC-UBND và Tờ trình cập nhật ngày 20/10: còn 136/396 dự án tiếp tục xử lý; tỷ lệ lập hồ sơ sức khỏe điện tử trên VNeID đạt 45,3%. Tiến độ chi tiết nhiệm vụ Chương trình 01 và Nghị quyết 57 được giữ theo phụ lục gần nhất khi chưa có mẫu số cập nhật đồng nhất.&lt;/p&gt;
 
   &lt;section class=&quot;indicator-section&quot; aria-label=&quot;Kết quả chỉ tiêu kinh tế – xã hội&quot;&gt;
-  &lt;div class=&quot;section-head&quot;&gt;&lt;h3&gt;Kết quả chỉ tiêu kinh tế – xã hội&lt;/h3&gt;&lt;span&gt;Số liệu 6 tháng và ước thực hiện 8 tháng/2026&lt;/span&gt;&lt;/div&gt;
+  &lt;div class=&quot;section-head&quot;&gt;&lt;h3&gt;Kết quả chỉ tiêu kinh tế – xã hội&lt;/h3&gt;&lt;span&gt;Kết quả 9 tháng năm 2026&lt;/span&gt;&lt;/div&gt;
   &lt;div class=&quot;indicator-legend text-small&quot; aria-label=&quot;Chú giải trạng thái chỉ tiêu&quot;&gt;
     &lt;span&gt;&lt;i class=&quot;indicator-dot met&quot;&gt;&lt;/i&gt;Đạt hoặc vượt kịch bản&lt;/span&gt;
     &lt;span&gt;&lt;i class=&quot;indicator-dot unmet&quot;&gt;&lt;/i&gt;Chưa đạt kịch bản&lt;/span&gt;
@@ -1230,44 +2113,44 @@ html&gt;body{padding:0}&lt;/style&gt;
   &lt;div class=&quot;mobile-scroll-hint text-small text-muted&quot;&gt;Vuốt ngang bảng để xem kịch bản quý III, quý IV và các cột giai đoạn 2026–2030.&lt;/div&gt;
   &lt;div class=&quot;table-responsive&quot;&gt;
     &lt;table class=&quot;table table-sm indicator-table&quot;&gt;
-      &lt;thead&gt;&lt;tr&gt;&lt;th&gt;STT&lt;/th&gt;&lt;th&gt;Chỉ tiêu&lt;/th&gt;&lt;th&gt;Kết quả 2025&lt;/th&gt;&lt;th&gt;Kế hoạch 2026&lt;/th&gt;&lt;th&gt;Kết quả cập nhật 2026&lt;/th&gt;&lt;th&gt;Kịch bản quý III/2026&lt;/th&gt;&lt;th&gt;Kịch bản quý IV/2026&lt;/th&gt;&lt;th&gt;GĐ 2026–2030 (Nghị quyết ĐHĐB tỉnh)&lt;/th&gt;&lt;th&gt;GĐ 2026–2030 (CTHĐ thực hiện NQĐH XIV)&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+      &lt;thead&gt;&lt;tr&gt;&lt;th&gt;STT&lt;/th&gt;&lt;th&gt;Chỉ tiêu&lt;/th&gt;&lt;th&gt;Kết quả 2025&lt;/th&gt;&lt;th&gt;Kế hoạch 2026&lt;/th&gt;&lt;th&gt;Kết quả 9 tháng/2026&lt;/th&gt;&lt;th&gt;Kịch bản quý III/2026&lt;/th&gt;&lt;th&gt;Yêu cầu quý IV/2026&lt;/th&gt;&lt;th&gt;GĐ 2026–2030 (Nghị quyết ĐHĐB tỉnh)&lt;/th&gt;&lt;th&gt;GĐ 2026–2030 (CTHĐ thực hiện NQĐH XIV)&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
       &lt;tbody&gt;
         &lt;tr class=&quot;indicator-band&quot;&gt;&lt;td colspan=&quot;7&quot;&gt;CHỈ TIÊU KINH TẾ CHỦ YẾU&lt;/td&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;1.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tăng trưởng GRDP bình quân&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;6,68%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;≥ 10,02%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;7,84%; KB 9,16%&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot unmet&quot;&gt;&lt;/i&gt;Chưa đạt kịch bản&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 10,5%/năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 11%/năm&lt;/td&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Nông, lâm nghiệp, thủy sản&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;4,53%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;5,86%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;5,98%; KB 5,62%&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot met&quot;&gt;&lt;/i&gt;Vượt kịch bản&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;5,56%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;5,56%&lt;/td&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Công nghiệp – xây dựng&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;9,19%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;18,48%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;11,12%; KB 14,33%&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot unmet&quot;&gt;&lt;/i&gt;Chưa đạt kịch bản&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;16,38%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;18,58%; điều chỉnh 18,33%&lt;/td&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Dịch vụ&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;7,48%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;9,6%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;7,34%; KB 9,09%&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot unmet&quot;&gt;&lt;/i&gt;Chưa đạt kịch bản&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;11,1%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;11,1%&lt;/td&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Thuế sản phẩm trừ trợ cấp sản phẩm&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;5,85%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;6,02%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;7,3%; KB 5,5%&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot met&quot;&gt;&lt;/i&gt;Vượt kịch bản&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;5,82%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;5,82%&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;1.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tăng trưởng GRDP bình quân&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;6,68%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;≥ 10,02%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 9 tháng/2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;8,22%; KB 9,16%&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 99,14% giá trị kịch bản · thiếu 1.078 tỷ đồng&lt;/span&gt;&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot unmet&quot;&gt;&lt;/i&gt;Chưa đạt kịch bản&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 10,5%/năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 11%/năm&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Nông, lâm nghiệp, thủy sản&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;4,53%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;5,86%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 9 tháng/2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;5,98%&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 100,03% giá trị kịch bản&lt;/span&gt;&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot met&quot;&gt;&lt;/i&gt;Đạt kịch bản&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;5,56%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;5,56%&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Công nghiệp – xây dựng&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;9,19%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;18,48%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 9 tháng/2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;9,07%&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 94,97% giá trị kịch bản · thiếu 1.499 tỷ đồng&lt;/span&gt;&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot unmet&quot;&gt;&lt;/i&gt;Chưa đạt kịch bản&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;16,38%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;18,58%; điều chỉnh 18,33%&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Dịch vụ&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;7,48%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;9,6%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 9 tháng/2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;9,01%&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 100,46% giá trị kịch bản · vượt 266 tỷ đồng&lt;/span&gt;&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot met&quot;&gt;&lt;/i&gt;Vượt kịch bản&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;11,1%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;11,1%&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Thuế sản phẩm trừ trợ cấp sản phẩm&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;5,85%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;5,2%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 9 tháng/2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;9,05%&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 101,86% giá trị kịch bản · vượt 102 tỷ đồng&lt;/span&gt;&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot met&quot;&gt;&lt;/i&gt;Vượt kịch bản&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;5,82%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;5,82%&lt;/td&gt;&lt;/tr&gt;
         &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;2.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;GRDP bình quân đầu người&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;79,2 triệu đồng&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;92 triệu đồng&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;Đánh giá cuối năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 153 triệu đồng&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 157 triệu đồng&lt;/td&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;3.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tổng vốn đầu tư toàn xã hội&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;57.899 tỷ đồng&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;80.390 tỷ đồng&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;27.174,5 tỷ đồng; KB 29.320 tỷ đồng; đạt 33,8% kế hoạch&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot unmet&quot;&gt;&lt;/i&gt;Chưa đạt kịch bản&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 620.000 tỷ đồng; chiếm 35% GRDP&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 625.000 tỷ đồng; chiếm 38% GRDP&lt;/td&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;4.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Kim ngạch xuất khẩu&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;2,8 tỷ USD; tăng 26% so 2024&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;3,077 tỷ USD&lt;/td&gt;&lt;td data-label=&quot;Kết quả cập nhật 2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;2,064 tỷ USD&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 67,1% kế hoạch · tăng 1,8% · cao hơn KB 2 triệu USD&lt;/span&gt;&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot met&quot;&gt;&lt;/i&gt;Vượt kịch bản 8 tháng&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 13 tỷ USD; tăng 5–6%/năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 16 tỷ USD; tăng 5–6%/năm&lt;/td&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;5.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tổng mức bán lẻ hàng hóa và doanh thu dịch vụ tiêu dùng&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;189.245 tỷ đồng&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;221.400 tỷ đồng&lt;/td&gt;&lt;td data-label=&quot;Kết quả cập nhật 2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;143.254,7 tỷ đồng&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 64,7% kế hoạch · tăng 16,9% · cao hơn KB 384,7 tỷ đồng&lt;/span&gt;&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot met&quot;&gt;&lt;/i&gt;Vượt kịch bản 8 tháng&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;1.240.000 tỷ đồng/5 năm; tăng 10%/năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;Bình quân tăng ≥ 17,48%/năm&lt;/td&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;6.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Lượt khách du lịch&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;7,3 triệu lượt; tăng 13,57% so 2024&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;10 triệu lượt&lt;/td&gt;&lt;td data-label=&quot;Kết quả cập nhật 2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;7,49 triệu lượt&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 75% kế hoạch · tăng 40% · cao hơn KB 190.000 lượt&lt;/span&gt;&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot met&quot;&gt;&lt;/i&gt;Vượt kịch bản 8 tháng&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;43 triệu lượt/5 năm; tăng 9,7%/năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;50 triệu lượt/5 năm; tăng 10,35%/năm&lt;/td&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tổng thu từ du lịch&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;13.625 tỷ đồng; tăng 46,4% so 2024&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;19.227 tỷ đồng&lt;/td&gt;&lt;td data-label=&quot;Kết quả cập nhật 2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;14.052 tỷ đồng&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 73,1% kế hoạch · tăng 42% · cao hơn KB 310 tỷ đồng&lt;/span&gt;&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot met&quot;&gt;&lt;/i&gt;Vượt kịch bản 8 tháng&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;97.150 tỷ đồng/5 năm; tăng 14,5%/năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;111.300 tỷ đồng/5 năm; tăng 17,10%/năm&lt;/td&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;7.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tổng thu NSNN trên địa bàn&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;18.154 tỷ đồng&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;18.100 tỷ đồng&lt;/td&gt;&lt;td data-label=&quot;Kết quả cập nhật 2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;11.397,5 tỷ đồng&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 63% kế hoạch tỉnh · tăng 7,8%&lt;/span&gt;&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot met&quot;&gt;&lt;/i&gt;Tiến độ tích cực&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 11%/năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 11%/năm&lt;/td&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;8.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tỷ lệ đảm bảo tưới cây trồng&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;83,7%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;84,1%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;Đánh giá cuối năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 86%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 86%&lt;/td&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;9.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Nhà ở xã hội hoàn thành và khởi công&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;2.800 căn&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;3.900 căn; tăng 8% so 2025&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;1.348 căn; đạt 34,6% kế hoạch&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;38.400 căn (theo QĐ TTg)&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;38.400 căn (theo QĐ TTg)&lt;/td&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;10.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Số doanh nghiệp thành lập mới&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;3.168 doanh nghiệp&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;3.200 doanh nghiệp&lt;/td&gt;&lt;td data-label=&quot;Kết quả cập nhật 2026&quot;&gt;2.500 doanh nghiệp&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 78,1% kế hoạch · tăng 18%&lt;/span&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;15.500 doanh nghiệp/5 năm; tăng ≥ 13%/năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;Tăng ≥ 12%/năm&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;3.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tổng vốn đầu tư toàn xã hội&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;57.900 tỷ đồng&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;80.390 tỷ đồng&lt;/td&gt;&lt;td data-label=&quot;Kết quả 9 tháng/2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;45.803,6 tỷ đồng&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 56,98% kế hoạch · tăng 7,91% · bằng 88,16% kịch bản&lt;/span&gt;&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot unmet&quot;&gt;&lt;/i&gt;Chưa đạt kịch bản&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 620.000 tỷ đồng; chiếm 35% GRDP&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 625.000 tỷ đồng; chiếm 38% GRDP&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;4.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Kim ngạch xuất khẩu&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;2,8 tỷ USD; tăng 26% so 2024&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;3,077 tỷ USD&lt;/td&gt;&lt;td data-label=&quot;Kết quả 9 tháng/2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;2,312 tỷ USD&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 75,14% kế hoạch · tăng 6,25% · bằng 103,45% kịch bản&lt;/span&gt;&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot met&quot;&gt;&lt;/i&gt;Vượt kịch bản&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 13 tỷ USD; tăng 5–6%/năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 16 tỷ USD; tăng 5–6%/năm&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;5.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tổng mức bán lẻ hàng hóa và doanh thu dịch vụ tiêu dùng&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;189.245 tỷ đồng&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;221.400 tỷ đồng&lt;/td&gt;&lt;td data-label=&quot;Kết quả 9 tháng/2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;163.203 tỷ đồng&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 73,71% kế hoạch · tăng 17,55% · bằng 100,63% kịch bản&lt;/span&gt;&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot met&quot;&gt;&lt;/i&gt;Vượt kịch bản&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;1.240.000 tỷ đồng/5 năm; tăng 10%/năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;Bình quân tăng ≥ 17,48%/năm&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;6.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Lượt khách du lịch&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;7,3 triệu lượt; tăng 13,57% so 2024&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;8 triệu lượt&lt;/td&gt;&lt;td data-label=&quot;Kết quả 9 tháng/2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;8,34 triệu lượt&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 104,25% kế hoạch · tăng 35,94%&lt;/span&gt;&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot met&quot;&gt;&lt;/i&gt;Vượt kế hoạch năm&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;43 triệu lượt/5 năm; tăng 9,7%/năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;50 triệu lượt/5 năm; tăng 10,35%/năm&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tổng thu từ du lịch&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;13.625 tỷ đồng; tăng 46,4% so 2024&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;16.000 tỷ đồng&lt;/td&gt;&lt;td data-label=&quot;Kết quả 9 tháng/2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;15.837 tỷ đồng&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 98,98% kế hoạch · tăng 38,13%&lt;/span&gt;&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot met&quot;&gt;&lt;/i&gt;Tiệm cận kế hoạch năm&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;97.150 tỷ đồng/5 năm; tăng 14,5%/năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;111.300 tỷ đồng/5 năm; tăng 17,10%/năm&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;7.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tổng thu NSNN trên địa bàn&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;18.154 tỷ đồng&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;18.100 tỷ đồng&lt;/td&gt;&lt;td data-label=&quot;Kết quả 9 tháng/2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;12.626 tỷ đồng&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 69,76% kế hoạch tỉnh · tăng 3,99% · đạt 63,51% kịch bản năm&lt;/span&gt;&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot&quot;&gt;&lt;/i&gt;Cần tăng tốc quý IV&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 11%/năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 11%/năm&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;8.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tỷ lệ đảm bảo tưới cây trồng&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;83,7%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;84,1%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 9 tháng/2026&quot;&gt;83,7%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 86%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 86%&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;9.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Nhà ở xã hội hoàn thành và khởi công&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;2.800 căn&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;3.900 căn&lt;/td&gt;&lt;td data-label=&quot;Kết quả 9 tháng/2026&quot;&gt;66 căn&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 1,69% kế hoạch&lt;/span&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;38.400 căn (theo QĐ TTg)&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;38.400 căn (theo QĐ TTg)&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;10.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Số doanh nghiệp thành lập mới&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;3.168 doanh nghiệp&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;3.200 doanh nghiệp&lt;/td&gt;&lt;td data-label=&quot;Kết quả 9 tháng/2026&quot;&gt;2.830 doanh nghiệp&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 88,4% kế hoạch · tăng 19,7%&lt;/span&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;15.500 doanh nghiệp/5 năm; tăng ≥ 13%/năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;Tăng ≥ 12%/năm&lt;/td&gt;&lt;/tr&gt;
         &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;11.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Quy mô kinh tế số trong GRDP&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;7,67% GRDP&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;14% GRDP&lt;/td&gt;&lt;td data-label=&quot;Kết quả cập nhật 2026&quot;&gt;Đánh giá cuối năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 30% GRDP&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 30% GRDP&lt;/td&gt;&lt;/tr&gt;
 
         &lt;tr class=&quot;indicator-band&quot;&gt;&lt;td colspan=&quot;7&quot;&gt;CHỈ TIÊU VĂN HÓA – XÃ HỘI&lt;/td&gt;&lt;/tr&gt;
         &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;12.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Giảm tỷ lệ hộ nghèo&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;0,95%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;≥ 2%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;Đánh giá cuối năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 2%/năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 2%/năm&lt;/td&gt;&lt;/tr&gt;
         &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Mức giảm tỷ lệ hộ nghèo trong đồng bào dân tộc thiểu số&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;1,62%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;≥ 3%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;Đánh giá cuối năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 3%/năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 3%/năm&lt;/td&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;13.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tỷ lệ trường đạt chuẩn quốc gia&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;61,73%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;63%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;62%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 70%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 70%&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;13.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tỷ lệ trường đạt chuẩn quốc gia&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;61,73%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;63%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 9 tháng/2026&quot;&gt;62%&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 98,41% kế hoạch&lt;/span&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 70%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 70%&lt;/td&gt;&lt;/tr&gt;
         &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;14.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Giảm tỷ lệ thất nghiệp khu vực thành thị đến năm 2030&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;2,15%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;2%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;Đánh giá cuối năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;2%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;2%&lt;/td&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Số lao động được tạo việc làm hằng năm&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;55.960 lao động&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;56.000 lao động&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;27.600 người&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 56.000 lao động&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 56.000 lao động&lt;/td&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Trong đó xuất khẩu lao động hằng năm&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;2.596 người&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;2.600 người&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;1.750 người&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;2.000–2.500 người&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;2.000–2.500 người&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Số lao động được tạo việc làm hằng năm&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;55.950 lao động&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;56.000 lao động&lt;/td&gt;&lt;td data-label=&quot;Kết quả 9 tháng/2026&quot;&gt;44.600 người&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 79,64% kế hoạch · tăng 6,19%&lt;/span&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 56.000 lao động&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 56.000 lao động&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Trong đó xuất khẩu lao động hằng năm&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;2.569 người&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;2.500 người&lt;/td&gt;&lt;td data-label=&quot;Kết quả 9 tháng/2026&quot;&gt;2.420 người&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 96,8% kế hoạch · tăng 42,35%&lt;/span&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;2.000–2.500 người&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;2.000–2.500 người&lt;/td&gt;&lt;/tr&gt;
         &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tỷ lệ lao động qua đào tạo&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;61%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;72%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;Đánh giá cuối năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 75%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 75%&lt;/td&gt;&lt;/tr&gt;
         &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tỷ lệ lao động qua đào tạo có bằng cấp, chứng chỉ&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;27%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;27%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;Đánh giá cuối năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 30%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 35%&lt;/td&gt;&lt;/tr&gt;
         &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;15.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tỷ lệ trẻ em dưới 5 tuổi suy dinh dưỡng&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;13,6%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;13,3%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;13,3%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;Còn 12,15%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;Còn 12,15%&lt;/td&gt;&lt;/tr&gt;
         &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Giường bệnh/vạn dân&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;29,8&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;31,5&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;31,5&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;33 giường&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;33 giường&lt;/td&gt;&lt;/tr&gt;
         &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Bác sĩ/vạn dân&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;8,6&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;9,06&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;9,06&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;10,2 bác sĩ&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;10,2 bác sĩ&lt;/td&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tỷ lệ bao phủ bảo hiểm y tế&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;95%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;95,2%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;93,7%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;96,5%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;100%&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tỷ lệ bao phủ bảo hiểm y tế&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;95%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;95,2%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 9 tháng/2026&quot;&gt;95,2%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;96,5%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;100%&lt;/td&gt;&lt;/tr&gt;
         &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;16.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Xã nông thôn mới&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;26/88 xã (29,5%)&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;32/88 xã; 2 xã NTMNC; 1 xã NTMHĐ&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;Đánh giá cuối năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;68/88 xã NTM; 08/88 xã NTMHĐ&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;68/88 xã NTM; 08/88 xã NTMHĐ&lt;/td&gt;&lt;/tr&gt;
 
         &lt;tr class=&quot;indicator-band&quot;&gt;&lt;td colspan=&quot;7&quot;&gt;CHỈ TIÊU MÔI TRƯỜNG&lt;/td&gt;&lt;/tr&gt;
         &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;17.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tỷ lệ che phủ rừng&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;41,06%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;41,38%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;Đánh giá cuối năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 42%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 42%&lt;/td&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tỷ lệ dân số đô thị dùng nước sạch&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;93,13%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;94,43%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;93,13%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;98%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;98%&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tỷ lệ dân số đô thị dùng nước sạch&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;93,13%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;93,43%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 9 tháng/2026&quot;&gt;93,23%&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 99,79% kế hoạch&lt;/span&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;98%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;98%&lt;/td&gt;&lt;/tr&gt;
         &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tỷ lệ dân nông thôn dùng nước hợp vệ sinh&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;98,49%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;98,6%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;Đánh giá cuối năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;98,7%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;98,7%&lt;/td&gt;&lt;/tr&gt;
         &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tỷ lệ cụm công nghiệp có xử lý nước thải đạt chuẩn&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;38,46%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;26,3%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;26,3%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;100%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;100%&lt;/td&gt;&lt;/tr&gt;
         &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tỷ lệ thu gom, xử lý chất thải rắn sinh hoạt đô thị&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;92,39%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;92%&lt;/td&gt;&lt;td data-label=&quot;Kết quả 6 tháng/2026&quot;&gt;92,39%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;98%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;98%&lt;/td&gt;&lt;/tr&gt;
@@ -1275,6 +2158,8 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;/table&gt;
   &lt;/div&gt;
   &lt;/section&gt;
+
+  &lt;p class=&quot;text-small text-muted&quot;&gt;&lt;b&gt;Nguồn cập nhật:&lt;/b&gt; Báo cáo số 452/BC-UBND ngày 07/10/2026; Tờ trình cập nhật ngày 20/10/2026; dự thảo báo cáo giải ngân đến 14/10/2026; Phụ lục I, II và III cập nhật kèm báo cáo 9 tháng. Số liệu tổng hợp ưu tiên văn bản chính thức mới hơn; bảng chi tiết từng chủ đầu tư giữ mốc 26/8 vì hồ sơ lần này không kèm phụ lục giải ngân theo từng đơn vị.&lt;/p&gt;
 
   &lt;script&gt;
     (() =&gt; {
@@ -1314,17 +2199,17 @@ html&gt;body{padding:0}&lt;/style&gt;
         .forEach((row) =&gt; scenarioChart.appendChild(row));
 
       const quarterlyScenarios = {
-        &quot;Tăng trưởng GRDP bình quân&quot;: [&quot;11,56%&quot;,&quot;11,71%&quot;],
-        &quot;Nông, lâm nghiệp, thủy sản&quot;: [&quot;5,91%&quot;,&quot;5,74%&quot;],
-        &quot;Công nghiệp – xây dựng&quot;: [&quot;22,04%&quot;,&quot;26,31%&quot;],
-        &quot;Dịch vụ&quot;: [&quot;10,68%&quot;,&quot;12,31%&quot;],
-        &quot;Thuế sản phẩm trừ trợ cấp sản phẩm&quot;: [&quot;6,51%&quot;,&quot;2,37%&quot;],
-        &quot;Tổng vốn đầu tư toàn xã hội&quot;: [&quot;24.778 tỷ đồng&quot;,&quot;28.438 tỷ đồng&quot;],
-        &quot;Kim ngạch xuất khẩu&quot;: [&quot;735 triệu USD&quot;,&quot;765 triệu USD&quot;],
-        &quot;Tổng mức bán lẻ hàng hóa và doanh thu dịch vụ tiêu dùng&quot;: [&quot;57.058 tỷ đồng&quot;,&quot;59.212 tỷ đồng&quot;],
-        &quot;Lượt khách du lịch&quot;: [&quot;2,82 triệu lượt&quot;,&quot;1,85 triệu lượt&quot;],
-        &quot;Tổng thu từ du lịch&quot;: [&quot;5.925 tỷ đồng&quot;,&quot;3.700 tỷ đồng&quot;],
-        &quot;Tổng thu NSNN trên địa bàn&quot;: [&quot;3.524,879 tỷ đồng&quot;,&quot;7.421,756 tỷ đồng&quot;]
+        &quot;Tăng trưởng GRDP bình quân&quot;: [&quot;8,66%&quot;,&quot;13,62%&quot;],
+        &quot;Nông, lâm nghiệp, thủy sản&quot;: [&quot;5,99%&quot;,&quot;5,78%&quot;],
+        &quot;Công nghiệp – xây dựng&quot;: [&quot;7,68%&quot;,&quot;Tăng tốc bù thiếu hụt&quot;],
+        &quot;Dịch vụ&quot;: [&quot;10,67%&quot;,&quot;Duy trì phần vượt&quot;],
+        &quot;Thuế sản phẩm trừ trợ cấp sản phẩm&quot;: [&quot;10,24%&quot;,&quot;2,37%&quot;],
+        &quot;Tổng vốn đầu tư toàn xã hội&quot;: [&quot;18.413,1 tỷ đồng&quot;,&quot;34.586 tỷ đồng&quot;],
+        &quot;Kim ngạch xuất khẩu&quot;: [&quot;Kết quả lũy kế 2.312 triệu USD&quot;,&quot;765 triệu USD&quot;],
+        &quot;Tổng mức bán lẻ hàng hóa và doanh thu dịch vụ tiêu dùng&quot;: [&quot;Kết quả lũy kế 163.203 tỷ đồng&quot;,&quot;58.197 tỷ đồng&quot;],
+        &quot;Lượt khách du lịch&quot;: [&quot;3,01 triệu lượt&quot;,&quot;Đã vượt kế hoạch năm&quot;],
+        &quot;Tổng thu từ du lịch&quot;: [&quot;6.235 tỷ đồng&quot;,&quot;3.390 tỷ đồng&quot;],
+        &quot;Tổng thu NSNN trên địa bàn&quot;: [&quot;Kết quả lũy kế 12.626 tỷ đồng&quot;,&quot;7.254 tỷ đồng&quot;]
       };
       root.querySelectorAll(&quot;.indicator-table tbody tr&quot;).forEach((row) =&gt; {
         if (row.classList.contains(&quot;indicator-band&quot;)) {
@@ -1411,11 +2296,18 @@ html&gt;body{padding:0}&lt;/style&gt;
   let autoUpdateCleanup = null;
   let positionRequest = 0;
   let skipDelayUntil = 0;
+  let lastPointerWasTouch = false;
+  let pinnedByTouch = false;
 
-  const getTrigger = (target) =&gt;
-    target?.nodeType === Node.ELEMENT_NODE
-      ? target.closest(&quot;[data-tooltip]&quot;)
-      : null;
+  const getTrigger = (event) =&gt; {
+    for (const target of event.composedPath()) {
+      if (target?.nodeType === Node.ELEMENT_NODE) {
+        const trigger = target.closest(&quot;[data-tooltip]&quot;);
+        if (trigger) return trigger;
+      }
+    }
+    return null;
+  };
   const containsTarget = (trigger, target) =&gt;
     target?.nodeType != null &amp;&amp; trigger.contains(target);
   const getContent = (trigger) =&gt;
@@ -1459,6 +2351,7 @@ html&gt;body{padding:0}&lt;/style&gt;
   };
   const closeTooltip = (activateSkipDelay = true) =&gt; {
     clearOpenTimeout();
+    pinnedByTouch = false;
     positionRequest += 1;
     autoUpdateCleanup?.();
     autoUpdateCleanup = null;
@@ -1559,14 +2452,47 @@ html&gt;body{padding:0}&lt;/style&gt;
     if (event.pointerType === &quot;touch&quot;) {
       return;
     }
-    const trigger = getTrigger(event.target);
+    const trigger = getTrigger(event);
     if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
       return;
     }
     requestOpen(trigger);
   };
+  const handlePointer = (event) =&gt; {
+    lastPointerWasTouch =
+      event.type === &quot;pointerdown&quot; &amp;&amp; event.pointerType === &quot;touch&quot;;
+  };
+  const handleTouchClick = (event) =&gt; {
+    const isTouch = event.pointerType === &quot;touch&quot; || lastPointerWasTouch;
+    lastPointerWasTouch = false;
+    if (!isTouch || event.detail === 0) {
+      return;
+    }
+    const trigger = getTrigger(event);
+    if (
+      trigger == null ||
+      !trigger.isConnected ||
+      getContent(trigger).length === 0 ||
+      (pinnedByTouch &amp;&amp; activeTrigger === trigger)
+    ) {
+      if (pinnedByTouch) {
+        closeTooltip();
+      }
+      return;
+    }
+    openTooltip(trigger);
+    pinnedByTouch = activeTrigger === trigger;
+    window.setTimeout(() =&gt; {
+      if (activeTrigger === trigger &amp;&amp; !trigger.isConnected) {
+        closeTooltip(false);
+      }
+    }, 0);
+  };
   const handleLeave = (event) =&gt; {
-    const trigger = getTrigger(event.target);
+    if (pinnedByTouch) {
+      return;
+    }
+    const trigger = getTrigger(event);
     if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
       return;
     }
@@ -1575,7 +2501,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     }
   };
   const handleFocusIn = (event) =&gt; {
-    const trigger = getTrigger(event.target);
+    const trigger = getTrigger(event);
     if (trigger?.matches(&quot;:focus-visible&quot;)) {
       requestOpen(trigger, true);
     }
@@ -1586,30 +2512,335 @@ html&gt;body{padding:0}&lt;/style&gt;
     }
   };
   const handleContextMenu = (event) =&gt; {
-    const trigger = getTrigger(event.target);
+    lastPointerWasTouch = false;
+    const trigger = getTrigger(event);
     if (activeTrigger === trigger || pendingTrigger === trigger) {
       closeTooltip();
     }
   };
+  const handlers = {
+    pointerover: handlePointerOpen,
+    pointerdown: handlePointer,
+    pointercancel: handlePointer,
+    click: handleTouchClick,
+    pointerout: handleLeave,
+    focusin: handleFocusIn,
+    focusout: handleLeave,
+    keydown: handleKeyDown,
+    contextmenu: handleContextMenu,
+  };
+  const roots = new Map();
+  const handledEvents = new WeakSet();
+  const handleEvent = (event) =&gt; {
+    if (handledEvents.has(event)) return;
+    handledEvents.add(event);
+    handlers[event.type](event);
+  };
+  const discoverRoots = (node) =&gt; {
+    if (node.shadowRoot) listen(node.shadowRoot);
+    for (const element of node.querySelectorAll(&quot;*&quot;)) {
+      if (element.shadowRoot) listen(element.shadowRoot);
+    }
+  };
+  const listen = (root) =&gt; {
+    if (roots.has(root)) return;
+    for (const type of Object.keys(handlers)) root.addEventListener(type, handleEvent);
+    const observer = new window.MutationObserver((records) =&gt; {
+      for (const { addedNodes } of records) {
+        for (const node of addedNodes) {
+          if (node.nodeType === Node.ELEMENT_NODE) discoverRoots(node);
+        }
+      }
+      for (const [root, cleanup] of roots) {
+        if (root.host &amp;&amp; !root.host.isConnected) {
+          cleanup();
+          roots.delete(root);
+        }
+      }
+      if (activeTrigger &amp;&amp; !activeTrigger.isConnected) closeTooltip(false);
+    });
+    observer.observe(root, { childList: true, subtree: true });
+    roots.set(root, () =&gt; {
+      observer.disconnect();
+      for (const type of Object.keys(handlers)) root.removeEventListener(type, handleEvent);
+    });
+    discoverRoots(root);
+  };
   const destroy = () =&gt; {
     closeTooltip(false);
-    document.removeEventListener(&quot;pointerover&quot;, handlePointerOpen);
-    document.removeEventListener(&quot;pointerout&quot;, handleLeave);
-    document.removeEventListener(&quot;focusin&quot;, handleFocusIn);
-    document.removeEventListener(&quot;focusout&quot;, handleLeave);
-    document.removeEventListener(&quot;keydown&quot;, handleKeyDown);
-    document.removeEventListener(&quot;contextmenu&quot;, handleContextMenu);
+    lastPointerWasTouch = false;
+    for (const cleanup of roots.values()) cleanup();
+    roots.clear();
     tooltip = null;
   };
 
-  document.addEventListener(&quot;pointerover&quot;, handlePointerOpen);
-  document.addEventListener(&quot;pointerout&quot;, handleLeave);
-  document.addEventListener(&quot;focusin&quot;, handleFocusIn);
-  document.addEventListener(&quot;focusout&quot;, handleLeave);
-  document.addEventListener(&quot;keydown&quot;, handleKeyDown);
-  document.addEventListener(&quot;contextmenu&quot;, handleContextMenu);
+  // Events between children of one shadow root never reach the document.
+  listen(document);
   window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
 })();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-tabs&quot;&gt;
+(() =&gt; {
+  const selector = &#x27;.nav[role=&quot;tablist&quot;] [role=&quot;tab&quot;]&#x27;;
+  const disabled = &#x27;:disabled,[aria-disabled=&quot;true&quot;]&#x27;;
+  const selectTab = (selected) =&gt; {
+    const panelId = selected.getAttribute(&quot;aria-controls&quot;);
+    for (const tab of selected.closest(&#x27;[role=&quot;tablist&quot;]&#x27;).querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;)) {
+      const active = tab === selected;
+      tab.classList.toggle(&quot;active&quot;, active);
+      tab.setAttribute(&quot;aria-selected&quot;, String(active));
+      const id = tab.getAttribute(&quot;aria-controls&quot;);
+      const panel = id &amp;&amp; document.getElementById(id);
+      if (panel != null) {
+        panel.hidden = id !== panelId;
+        if (!panel.hidden &amp;&amp; selected.id) {
+          panel.setAttribute(&quot;aria-labelledby&quot;, selected.id);
+        }
+      }
+    }
+  };
+  const interact = (event) =&gt; {
+    const tab = event.target?.closest?.(selector);
+    if (event.defaultPrevented || tab == null || tab.matches(disabled)) {
+      return;
+    }
+    if (event.type === &quot;click&quot;) {
+      selectTab(tab);
+      return;
+    }
+    const tabs = Array.from(
+      tab.closest(&#x27;[role=&quot;tablist&quot;]&#x27;).querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;),
+    ).filter((candidate) =&gt; !candidate.matches(disabled));
+    const current = tabs.indexOf(tab);
+    let next;
+    if (event.key === &quot;ArrowRight&quot; || event.key === &quot;ArrowDown&quot;) {
+      next = (current + 1) % tabs.length;
+    } else if (event.key === &quot;ArrowLeft&quot; || event.key === &quot;ArrowUp&quot;) {
+      next = (current + tabs.length - 1) % tabs.length;
+    } else if (event.key === &quot;Home&quot;) {
+      next = 0;
+    } else if (event.key === &quot;End&quot;) {
+      next = tabs.length - 1;
+    } else {
+      return;
+    }
+    event.preventDefault();
+    tabs[next].focus();
+    selectTab(tabs[next]);
+  };
+
+  for (const list of document.querySelectorAll(&#x27;.nav[role=&quot;tablist&quot;]&#x27;)) {
+    const selected =
+      list.querySelector(&#x27;[role=&quot;tab&quot;][aria-selected=&quot;true&quot;]&#x27;) ??
+      list.querySelector(&#x27;[role=&quot;tab&quot;].active&#x27;) ??
+      list.querySelector(&#x27;[role=&quot;tab&quot;]&#x27;);
+    if (selected != null) {
+      selectTab(selected);
+    }
+  }
+  document.addEventListener(&quot;click&quot;, interact);
+  document.addEventListener(&quot;keydown&quot;, interact);
+  window.addEventListener(&quot;pagehide&quot;, () =&gt; {
+    document.removeEventListener(&quot;click&quot;, interact);
+    document.removeEventListener(&quot;keydown&quot;, interact);
+  }, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-carousel&quot;&gt;
+  (() =&gt; {
+    for (const root of document.querySelectorAll(&quot;.viz-carousel&quot;)) {
+      const panels = Array.from(
+        root.querySelectorAll(&quot;:scope &gt; [data-variant]&quot;),
+      );
+      if (panels.length === 0) {
+        continue;
+      }
+      root.setAttribute(&quot;role&quot;, &quot;group&quot;);
+      panels.forEach((panel, index) =&gt; {
+        panel.hidden = index !== 0;
+        panel.setAttribute(&quot;role&quot;, &quot;group&quot;);
+        if (!panel.hasAttribute(&quot;aria-label&quot;)) {
+          panel.setAttribute(&quot;aria-label&quot;, panel.dataset.variant);
+        }
+      });
+      root.dataset.activeVariant = panels[0].dataset.variant;
+      if (panels.length === 1) {
+        continue;
+      }
+
+      const controls = document.createElement(&quot;div&quot;);
+      controls.className = &quot;viz-carousel-controls&quot;;
+      // Portable copy of the settings dropdown&#x27;s legacy glyph; no 14px icon-package preset matches it.
+      // https://github.com/openai/openai/blob/master/codex/codex-apps/webview/src/icons/chevron.svg
+      controls.innerHTML = `
+      &lt;button type=&quot;button&quot; class=&quot;viz-carousel-previous cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;chevron-left&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+      &lt;details class=&quot;viz-carousel-picker&quot;&gt;
+        &lt;summary class=&quot;cursor-interaction&quot;&gt;
+          &lt;span class=&quot;viz-carousel-count tabular-nums&quot;&gt;&lt;/span&gt;
+          &lt;span class=&quot;viz-carousel-name&quot;&gt;&lt;/span&gt;
+          &lt;svg class=&quot;viz-carousel-caret&quot; width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 20 21&quot; fill=&quot;none&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;
+            &lt;path d=&quot;M15.2793 7.71101C15.539 7.45131 15.961 7.45131 16.2207 7.71101C16.4804 7.97071 16.4804 8.39272 16.2207 8.65242L10.4707 14.4024C10.211 14.6621 9.78902 14.6621 9.52932 14.4024L3.77932 8.65242L3.69436 8.54792C3.52385 8.28979 3.55205 7.93828 3.77932 7.71101C4.00659 7.48374 4.3581 7.45554 4.61623 7.62605L4.72073 7.71101L10 12.9903L15.2793 7.71101Z&quot; fill=&quot;currentColor&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;0.6&quot; /&gt;
+          &lt;/svg&gt;
+        &lt;/summary&gt;
+        &lt;div class=&quot;viz-carousel-options&quot;&gt;&lt;/div&gt;
+      &lt;/details&gt;
+      &lt;button type=&quot;button&quot; class=&quot;viz-carousel-next cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;chevron-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;`;
+      const previous = controls.querySelector(&quot;.viz-carousel-previous&quot;);
+      const next = controls.querySelector(&quot;.viz-carousel-next&quot;);
+      const picker = controls.querySelector(&quot;.viz-carousel-picker&quot;);
+      const summary = picker.querySelector(&quot;summary&quot;);
+      const count = controls.querySelector(&quot;.viz-carousel-count&quot;);
+      const name = controls.querySelector(&quot;.viz-carousel-name&quot;);
+      const options = controls.querySelector(&quot;.viz-carousel-options&quot;);
+      const status = document.createElement(&quot;span&quot;);
+      status.className = &quot;sr-only&quot;;
+      status.setAttribute(&quot;role&quot;, &quot;status&quot;);
+      status.setAttribute(&quot;aria-live&quot;, &quot;polite&quot;);
+      status.setAttribute(&quot;aria-atomic&quot;, &quot;true&quot;);
+      previous.setAttribute(
+        &quot;aria-label&quot;,
+        root.dataset.previousLabel ?? &quot;Previous variant&quot;,
+      );
+      next.setAttribute(&quot;aria-label&quot;, root.dataset.nextLabel ?? &quot;Next variant&quot;);
+
+      let active = 0;
+      let mousePointerId = null;
+      let summaryPointerHandled = false;
+      summary.addEventListener(&quot;pointerdown&quot;, (event) =&gt; {
+        summaryPointerHandled =
+          event.pointerType === &quot;mouse&quot; &amp;&amp; event.button === 0 &amp;&amp; !event.ctrlKey;
+        if (!summaryPointerHandled) {
+          return;
+        }
+        event.preventDefault();
+        summary.focus({ preventScroll: true });
+        picker.open = !picker.open;
+        mousePointerId = picker.open ? event.pointerId : null;
+      });
+      summary.addEventListener(&quot;click&quot;, (event) =&gt; {
+        if (summaryPointerHandled &amp;&amp; event.detail &gt; 0) {
+          event.preventDefault();
+        }
+      });
+      const choices = panels.map((panel, index) =&gt; {
+        const choice = document.createElement(&quot;button&quot;);
+        choice.type = &quot;button&quot;;
+        choice.className = &quot;cursor-interaction&quot;;
+        choice.textContent = panel.dataset.variant;
+        choice.addEventListener(&quot;click&quot;, () =&gt; {
+          select(index);
+          summary.focus();
+        });
+        choice.addEventListener(&quot;pointerup&quot;, (event) =&gt; {
+          if (
+            picker.open &amp;&amp;
+            event.pointerType === &quot;mouse&quot; &amp;&amp;
+            event.button === 0 &amp;&amp;
+            event.pointerId === mousePointerId
+          ) {
+            choice.click();
+          }
+        });
+        options.appendChild(choice);
+        return choice;
+      });
+      const select = (index) =&gt; {
+        const changed = active !== index;
+        active = index;
+        panels.forEach((panel, position) =&gt; {
+          panel.hidden = position !== active;
+          choices[position].setAttribute(
+            &quot;aria-current&quot;,
+            String(position === active),
+          );
+        });
+        root.dataset.activeVariant = panels[active].dataset.variant;
+        count.textContent = `${active + 1} / ${panels.length}`;
+        name.textContent = panels[active].dataset.variant;
+        picker.open = false;
+        mousePointerId = null;
+        if (changed) {
+          status.textContent = `${count.textContent}: ${name.textContent}`;
+        }
+      };
+      previous.addEventListener(&quot;click&quot;, () =&gt;
+        select((active + panels.length - 1) % panels.length),
+      );
+      next.addEventListener(&quot;click&quot;, () =&gt;
+        select((active + 1) % panels.length),
+      );
+      picker.addEventListener(&quot;keydown&quot;, (event) =&gt; {
+        if (event.key === &quot;Escape&quot; &amp;&amp; picker.open) {
+          event.preventDefault();
+          picker.open = false;
+          mousePointerId = null;
+          summary.focus();
+          return;
+        }
+        if (event.altKey || event.ctrlKey || event.metaKey) {
+          return;
+        }
+        const index = choices.indexOf(document.activeElement);
+        let nextIndex;
+        if (event.key === &quot;ArrowDown&quot;) {
+          nextIndex = index &lt; 0 ? active : (index + 1) % choices.length;
+        } else if (event.key === &quot;ArrowUp&quot;) {
+          nextIndex = index &lt; 0 ? active : (index + choices.length - 1) % choices.length;
+        } else if (picker.open &amp;&amp; event.key === &quot;Home&quot;) {
+          nextIndex = 0;
+        } else if (picker.open &amp;&amp; event.key === &quot;End&quot;) {
+          nextIndex = choices.length - 1;
+        } else {
+          return;
+        }
+        event.preventDefault();
+        picker.open = true;
+        choices[nextIndex].focus();
+      });
+      picker.addEventListener(&quot;focusout&quot;, (event) =&gt; {
+        if (!picker.contains(event.relatedTarget)) {
+          picker.open = false;
+          mousePointerId = null;
+        }
+      });
+      const dismiss = (event) =&gt; {
+        if (!summary.contains(event.target)) {
+          mousePointerId = null;
+        }
+        if (!picker.contains(event.target)) {
+          picker.open = false;
+        }
+      };
+      const endPointerSelection = () =&gt; {
+        mousePointerId = null;
+      };
+      const sizePicker = () =&gt; {
+        root.style.setProperty(
+          &quot;--viz-carousel-picker-height&quot;,
+          `${picker.open ? options.offsetHeight : 0}px`,
+        );
+      };
+      picker.addEventListener(&quot;toggle&quot;, sizePicker);
+      window.addEventListener(&quot;resize&quot;, sizePicker);
+      document.addEventListener(&quot;pointerdown&quot;, dismiss);
+      document.addEventListener(&quot;pointerup&quot;, endPointerSelection);
+      document.addEventListener(&quot;pointercancel&quot;, endPointerSelection);
+      window.addEventListener(&quot;blur&quot;, endPointerSelection);
+      window.addEventListener(
+        &quot;pagehide&quot;,
+        () =&gt; {
+          document.removeEventListener(&quot;pointerdown&quot;, dismiss);
+          document.removeEventListener(&quot;pointerup&quot;, endPointerSelection);
+          document.removeEventListener(&quot;pointercancel&quot;, endPointerSelection);
+          window.removeEventListener(&quot;blur&quot;, endPointerSelection);
+          window.removeEventListener(&quot;resize&quot;, sizePicker);
+        },
+        { once: true },
+      );
+      root.append(controls, status);
+      select(0);
+    }
+  })();
 &lt;/script&gt;
 &lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
 &lt;script&gt;
@@ -1630,5 +2861,284 @@ html&gt;body{padding:0}&lt;/style&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 "></iframe>
+
+<script>(() => {
+  const frame = document.getElementById("codex-visualization");
+  if (!(frame instanceof HTMLIFrameElement)) {
+    return;
+  }
+  const isShare = document.documentElement.classList.contains(
+    "visualization-share-root",
+  );
+  let viewportHeight = globalThis.innerHeight;
+  let sizeFingerprint = null;
+  let sizeWriteTimeout;
+  let lastSize = null;
+  let pendingSize = null;
+  const storageKey = `codex:visualization-widget-state-v2:${JSON.stringify([
+    globalThis.location.pathname,
+    globalThis.location.search,
+  ])}`;
+  const sizeStorageKey = `${storageKey}:share-size-v1`;
+  const parseState = (serializedState) => {
+    if (
+      typeof serializedState !== "string" ||
+      new TextEncoder().encode(serializedState).length > 16 * 1024
+    ) {
+      throw new TypeError(
+        "Widget state must be a JSON object of at most 16 KiB",
+      );
+    }
+    /** @type {unknown} */
+    const state = JSON.parse(serializedState);
+    if (
+      state == null ||
+      typeof state !== "object" ||
+      Array.isArray(state) ||
+      ("imageIds" in state &&
+        (!Array.isArray(state.imageIds) || state.imageIds.length > 0))
+    ) {
+      throw new TypeError("Widget state must be a JSON object");
+    }
+    const storedState = { modelContent: null, privateContent: null, ...state };
+    const canonicalState = JSON.stringify(
+      storedState,
+      (_key, /** @type {unknown} */ value) => {
+        if (typeof value === "number" && !Number.isFinite(value)) {
+          throw new TypeError("Widget state must contain finite numbers");
+        }
+        return value;
+      },
+    );
+    if (new TextEncoder().encode(canonicalState).length > 16 * 1024) {
+      throw new TypeError(
+        "Widget state must be a JSON object of at most 16 KiB",
+      );
+    }
+    return storedState;
+  };
+  let storage = null;
+  let state = null;
+  try {
+    const localStorage = globalThis.localStorage;
+    const probeKey = `${storageKey}:probe`;
+    localStorage.setItem(probeKey, "1");
+    localStorage.removeItem(probeKey);
+    storage = localStorage;
+    const savedState = storage.getItem(storageKey);
+    if (savedState != null) {
+      try {
+        state = parseState(savedState);
+      } catch {
+        // Invalid saved state does not disable future writes.
+      }
+    }
+  } catch {
+    storage = null;
+  }
+  const persistSize = () => {
+    globalThis.clearTimeout(sizeWriteTimeout);
+    if (pendingSize == null) {
+      return;
+    }
+    try {
+      storage?.setItem(sizeStorageKey, pendingSize);
+    } catch {
+      // A denied or full cache must not affect the visualization.
+    }
+    pendingSize = null;
+  };
+  if (isShare) {
+    globalThis.addEventListener("pagehide", persistSize);
+  }
+  const initialGlobals = {
+    widgetState: state,
+    statePersistence: storage == null ? "none" : "local",
+  };
+
+  const channel = new MessageChannel();
+  channel.port1.addEventListener("message", (event) => {
+    const data = event.data;
+    if (typeof data !== "object" || data == null) {
+      return;
+    }
+    if (data.type === "widget-state-write") {
+      if (!Number.isSafeInteger(data.id) || data.id <= 0) {
+        return;
+      }
+      let ok = false;
+      try {
+        if (storage != null) {
+          const state = parseState(data.state);
+          storage.setItem(storageKey, JSON.stringify(state));
+          ok = true;
+        }
+      } catch {
+        // Storage denial, quota limits, and invalid state return a failed receipt.
+      }
+      channel.port1.postMessage({
+        type: "widget-state-result",
+        id: data.id,
+        ok,
+      });
+      return;
+    }
+    if (data.type === "height") {
+      const height = data.height;
+      if (
+        typeof height !== "number" ||
+        !Number.isFinite(height) ||
+        height < 0
+      ) {
+        return;
+      }
+      if (height <= 10_000) {
+        const width = isShare && storage != null ? frame.clientWidth : null;
+        frame.style.height = Math.ceil(height) + "px";
+        if (isShare && storage != null) {
+          const size = JSON.stringify({
+            fingerprint: sizeFingerprint,
+            width,
+            viewportHeight: globalThis.innerHeight,
+            dark: globalThis.matchMedia("(prefers-color-scheme: dark)").matches,
+            scale: globalThis.devicePixelRatio,
+            height: Math.ceil(height),
+          });
+          if (size !== lastSize) {
+            lastSize = size;
+            pendingSize = size;
+            globalThis.clearTimeout(sizeWriteTimeout);
+            sizeWriteTimeout = globalThis.setTimeout(persistSize, 100);
+          }
+        }
+      }
+      if (isShare) {
+        // Keep unusually tall content accessible without accepting an unbounded height.
+        if (height > 10_000 && Number.parseFloat(frame.style.height) === 0) {
+          frame.style.removeProperty("height");
+        }
+        frame.scrolling = height > 10_000 ? "auto" : "no";
+        document.documentElement.classList.add("visualization-share-ready");
+      }
+      return;
+    }
+    if (data.type === "scroll-to") {
+      const top = data.top;
+      if (
+        typeof top === "number" &&
+        Number.isFinite(top) &&
+        top >= 0 &&
+        globalThis.navigator.userActivation?.isActive === true
+      ) {
+        globalThis.scrollTo({
+          top: Math.ceil(
+            globalThis.scrollY + frame.getBoundingClientRect().top + top,
+          ),
+        });
+      }
+      return;
+    }
+    if (data.type === "open-external") {
+      const rawHref = data.href;
+      if (typeof rawHref !== "string") {
+        return;
+      }
+      let href;
+      try {
+        const url = new URL(rawHref, document.baseURI);
+        if (url.protocol !== "https:") {
+          return;
+        }
+        href = url.href;
+      } catch {
+        return;
+      }
+      if (globalThis.navigator.userActivation?.isActive === true) {
+        const anchor = document.createElement("a");
+        anchor.href = href;
+        anchor.rel = "noopener noreferrer";
+        anchor.target = "_blank";
+        document.body.appendChild(anchor);
+        anchor.click();
+        anchor.remove();
+      }
+      return;
+    }
+    if (data.type === "follow-up") {
+      const prompt = data.prompt;
+      if (
+        typeof prompt !== "string" ||
+        globalThis.navigator.userActivation?.isActive !== true
+      ) {
+        return;
+      }
+      const title = data.title;
+      globalThis.prompt(typeof title === "string" ? title : prompt, prompt);
+    }
+  });
+  channel.port1.start();
+  const srcdoc = frame.dataset.srcdoc;
+  if (srcdoc == null) {
+    return;
+  }
+  globalThis.addEventListener("resize", () => {
+    const height = Number.parseFloat(frame.style.height);
+    if (!isShare && (!Number.isFinite(height) || height <= viewportHeight)) {
+      frame.style.removeProperty("height");
+    }
+    viewportHeight = globalThis.innerHeight;
+    channel.port1.postMessage({ type: "measure" });
+  });
+  frame.addEventListener(
+    "load",
+    () => {
+      frame.contentWindow?.postMessage(
+        { type: "codex-visualization-initialize" },
+        "*",
+        [channel.port2],
+      );
+    },
+    { once: true },
+  );
+  // Match the trusted bootstrap element, not the same text in an authored title.
+  const frameHtml = srcdoc.replace(
+    '<script type="application/json" id="codex-visualization-widget-state">__CODEX_VISUALIZATION_WIDGET_STATE__<\/script>',
+    () =>
+      '<script type="application/json" id="codex-visualization-widget-state">' +
+      JSON.stringify(initialGlobals).replaceAll("<", "\\u003c") +
+      "<\/script>",
+  );
+  if (isShare && storage != null) {
+    // Fingerprint the rendered document, including restored widget state, without
+    // storing its content. This is a layout cache, not a security identity.
+    let hash = 5381;
+    for (let index = 0; index < frameHtml.length; index += 1) {
+      hash = (hash * 33 + frameHtml.charCodeAt(index)) % 4_294_967_296;
+    }
+    sizeFingerprint = hash.toString(36);
+    try {
+      const size = JSON.parse(storage.getItem(sizeStorageKey) ?? "null");
+      if (
+        size?.fingerprint === sizeFingerprint &&
+        size.width === frame.clientWidth &&
+        size.viewportHeight === globalThis.innerHeight &&
+        size.dark ===
+          globalThis.matchMedia("(prefers-color-scheme: dark)").matches &&
+        size.scale === globalThis.devicePixelRatio &&
+        typeof size.height === "number" &&
+        Number.isFinite(size.height) &&
+        size.height >= 0 &&
+        size.height <= 10_000
+      ) {
+        frame.style.height = size.height + "px";
+      }
+    } catch {
+      // Ignore missing or invalid cache entries and measure the live frame.
+    }
+  }
+  frame.srcdoc = frameHtml;
+  delete frame.dataset.srcdoc;
+})();
+</script>
 </body>
 </html>
