@@ -2285,6 +2285,96 @@ html&gt;body{padding:0}&lt;/style&gt;
         })
         .forEach((row) =&gt; scenarioChart.appendChild(row));
 
+      const officialIndicators = [
+        {group:&quot;KINH TẾ&quot;, n:1, name:&quot;Tốc độ tăng trưởng GRDP&quot;, y25:&quot;6,68%&quot;, plan:&quot;10,02%&quot;, actual:&quot;8,15%&quot;, y27:&quot;≥ 10,81%&quot;, status:&quot;unmet&quot;, note:&quot;thấp hơn kế hoạch 1,87 điểm %&quot;, nq1:&quot;≥ 10,5%/năm&quot;, nq2:&quot;≥ 11%/năm&quot;},
+        {group:&quot;KINH TẾ&quot;, n:2, name:&quot;GRDP bình quân đầu người&quot;, y25:&quot;79,2 triệu đồng&quot;, plan:&quot;92 triệu đồng&quot;, actual:&quot;88,2 triệu đồng&quot;, y27:&quot;100 triệu đồng&quot;, status:&quot;unmet&quot;, nq1:&quot;≥ 153 triệu đồng&quot;, nq2:&quot;≥ 157 triệu đồng&quot;},
+        {group:&quot;KINH TẾ&quot;, n:3, name:&quot;Tổng vốn đầu tư toàn xã hội&quot;, y25:&quot;57.900 tỷ đồng&quot;, plan:&quot;80.390 tỷ đồng&quot;, actual:&quot;71.080 tỷ đồng&quot;, y27:&quot;100.000 tỷ đồng&quot;, status:&quot;unmet&quot;, note:&quot;đạt 88,4% kế hoạch&quot;, nq1:&quot;≥ 620.000 tỷ đồng/5 năm; 35% GRDP&quot;, nq2:&quot;≥ 625.000 tỷ đồng/5 năm; 38% GRDP&quot;},
+        {group:&quot;KINH TẾ&quot;, n:4, name:&quot;Tốc độ tăng năng suất lao động&quot;, y25:&quot;—&quot;, plan:&quot;9,06%&quot;, actual:&quot;7,15%&quot;, y27:&quot;9,7%&quot;, status:&quot;unmet&quot;, nq1:&quot;—&quot;, nq2:&quot;—&quot;},
+        {group:&quot;KINH TẾ&quot;, n:5, name:&quot;Chỉ số sản xuất công nghiệp (IIP)&quot;, y25:&quot;Tăng 11,27%&quot;, plan:&quot;Tăng 9,5%&quot;, actual:&quot;Tăng 16,62%&quot;, y27:&quot;Tăng 12,5%&quot;, status:&quot;exceeded&quot;, nq1:&quot;—&quot;, nq2:&quot;—&quot;},
+        {group:&quot;KINH TẾ&quot;, n:6, name:&quot;Tỷ trọng công nghiệp chế biến, chế tạo trong GRDP&quot;, y25:&quot;—&quot;, plan:&quot;5,49%&quot;, actual:&quot;5,50%&quot;, y27:&quot;—&quot;, status:&quot;met&quot;, nq1:&quot;—&quot;, nq2:&quot;—&quot;},
+        {group:&quot;KINH TẾ&quot;, n:7, name:&quot;Giá trị tăng thêm ngành chế biến, chế tạo bình quân đầu người&quot;, y25:&quot;—&quot;, plan:&quot;193 USD&quot;, actual:&quot;195 USD&quot;, y27:&quot;—&quot;, status:&quot;met&quot;, nq1:&quot;—&quot;, nq2:&quot;—&quot;},
+        {group:&quot;KINH TẾ&quot;, n:8, name:&quot;Điện thương phẩm&quot;, y25:&quot;3.614 triệu kWh&quot;, plan:&quot;Tăng 8,74% · 3.930 triệu kWh&quot;, actual:&quot;Tăng 11,57% · 4.032 triệu kWh&quot;, y27:&quot;4.443,3 triệu kWh&quot;, status:&quot;exceeded&quot;, nq1:&quot;—&quot;, nq2:&quot;—&quot;},
+        {group:&quot;KINH TẾ&quot;, n:9, name:&quot;Tổng mức bán lẻ hàng hóa và doanh thu dịch vụ tiêu dùng&quot;, y25:&quot;189.245,9 tỷ đồng&quot;, plan:&quot;204.500 tỷ đồng · tăng 17%&quot;, actual:&quot;221.400 tỷ đồng · tăng 17%&quot;, y27:&quot;260.090 tỷ đồng&quot;, status:&quot;met&quot;, nq1:&quot;1.240.000 tỷ đồng/5 năm; tăng 10%/năm&quot;, nq2:&quot;Bình quân tăng ≥ 17,48%/năm&quot;},
+        {group:&quot;KINH TẾ&quot;, n:10, name:&quot;Kim ngạch xuất khẩu&quot;, y25:&quot;2.806 triệu USD&quot;, plan:&quot;2.920,8 triệu USD · tăng 4,3%&quot;, actual:&quot;3.077 triệu USD · tăng 9,66%&quot;, y27:&quot;3.234 triệu USD&quot;, status:&quot;exceeded&quot;, nq1:&quot;≥ 13 tỷ USD; tăng 5–6%/năm&quot;, nq2:&quot;≥ 16 tỷ USD; tăng 5–6%/năm&quot;},
+        {group:&quot;KINH TẾ&quot;, n:11, name:&quot;Kim ngạch nhập khẩu&quot;, y25:&quot;861 triệu USD&quot;, plan:&quot;870 triệu USD · tăng 1,05%&quot;, actual:&quot;980 triệu USD · tăng 13,82%&quot;, y27:&quot;1.023 triệu USD&quot;, status:&quot;exceeded&quot;, nq1:&quot;—&quot;, nq2:&quot;—&quot;},
+        {group:&quot;KINH TẾ&quot;, n:12, name:&quot;Tổng khách và doanh thu du lịch&quot;, y25:&quot;7,335 triệu lượt · 13.626 tỷ đồng&quot;, plan:&quot;8 triệu lượt · 16.000 tỷ đồng&quot;, actual:&quot;10,2 triệu lượt · 20.067 tỷ đồng&quot;, y27:&quot;11,5 triệu lượt · 24.000 tỷ đồng&quot;, status:&quot;exceeded&quot;, nq1:&quot;43 triệu lượt/5 năm · 97.150 tỷ đồng&quot;, nq2:&quot;50 triệu lượt/5 năm · 111.300 tỷ đồng&quot;},
+        {group:&quot;KINH TẾ&quot;, n:13, name:&quot;Quy mô kinh tế số trong GRDP&quot;, y25:&quot;7,67% GRDP&quot;, plan:&quot;14% GRDP&quot;, actual:&quot;14% GRDP&quot;, y27:&quot;18% GRDP&quot;, status:&quot;met&quot;, nq1:&quot;≥ 30% GRDP&quot;, nq2:&quot;≥ 30% GRDP&quot;},
+        {group:&quot;KINH TẾ&quot;, n:14, name:&quot;Tỷ lệ doanh nghiệp có hoạt động đổi mới sáng tạo&quot;, y25:&quot;—&quot;, plan:&quot;10%&quot;, actual:&quot;10%&quot;, y27:&quot;15%&quot;, status:&quot;met&quot;, nq1:&quot;—&quot;, nq2:&quot;—&quot;},
+        {group:&quot;KINH TẾ&quot;, n:15, name:&quot;Tỷ lệ đô thị hóa&quot;, y25:&quot;41,28%&quot;, plan:&quot;43,83%&quot;, actual:&quot;41,28%&quot;, y27:&quot;48,35%&quot;, status:&quot;unmet&quot;, nq1:&quot;—&quot;, nq2:&quot;—&quot;},
+        {group:&quot;KINH TẾ&quot;, n:16, name:&quot;Tốc độ tăng thu NSNN không kể tiền sử dụng đất&quot;, y25:&quot;—&quot;, plan:&quot;Tăng 10%&quot;, actual:&quot;13.612 tỷ đồng · tăng 4,96%&quot;, y27:&quot;Tăng khoảng 9%&quot;, status:&quot;unmet&quot;, nq1:&quot;≥ 11%/năm&quot;, nq2:&quot;≥ 11%/năm&quot;},
+        {group:&quot;KINH TẾ&quot;, n:17, name:&quot;Nhà ở xã hội hoàn thành và khởi công&quot;, y25:&quot;2.800 căn&quot;, plan:&quot;3.900 căn&quot;, actual:&quot;200 căn&quot;, y27:&quot;1.500 căn&quot;, status:&quot;unmet&quot;, note:&quot;đạt kế hoạch điều chỉnh 200 căn&quot;, nq1:&quot;38.400 căn&quot;, nq2:&quot;38.400 căn&quot;},
+        {group:&quot;KINH TẾ&quot;, n:18, name:&quot;Tăng trưởng ngành công nghiệp văn hóa&quot;, y25:&quot;—&quot;, plan:&quot;—&quot;, actual:&quot;Chưa có phương pháp tính&quot;, y27:&quot;—&quot;, status:&quot;pending&quot;, nq1:&quot;—&quot;, nq2:&quot;—&quot;},
+
+        {group:&quot;NÔNG NGHIỆP VÀ MÔI TRƯỜNG&quot;, n:19, name:&quot;Tỷ lệ đảm bảo tưới cho cây trồng có nhu cầu tưới&quot;, y25:&quot;83,7%&quot;, plan:&quot;84,1%&quot;, actual:&quot;84,1%&quot;, y27:&quot;84,5%&quot;, status:&quot;met&quot;, nq1:&quot;≥ 86%&quot;, nq2:&quot;≥ 86%&quot;},
+        {group:&quot;NÔNG NGHIỆP VÀ MÔI TRƯỜNG&quot;, n:20, name:&quot;Khu công nghiệp có hệ thống xử lý nước thải tập trung đạt quy chuẩn&quot;, y25:&quot;—&quot;, plan:&quot;100%&quot;, actual:&quot;100%&quot;, y27:&quot;—&quot;, status:&quot;met&quot;, nq1:&quot;100%&quot;, nq2:&quot;100%&quot;},
+        {group:&quot;NÔNG NGHIỆP VÀ MÔI TRƯỜNG&quot;, n:21, name:&quot;Cụm công nghiệp có hệ thống xử lý nước thải tập trung đạt quy chuẩn&quot;, y25:&quot;38,46%&quot;, plan:&quot;26,3%&quot;, actual:&quot;20%&quot;, y27:&quot;30% (06/20 cụm)&quot;, status:&quot;unmet&quot;, nq1:&quot;100%&quot;, nq2:&quot;100%&quot;},
+        {group:&quot;NÔNG NGHIỆP VÀ MÔI TRƯỜNG&quot;, n:22, name:&quot;Tỷ lệ xử lý và tái sử dụng nước thải ra môi trường lưu vực các sông&quot;, y25:&quot;—&quot;, plan:&quot;20%&quot;, actual:&quot;20%&quot;, y27:&quot;—&quot;, status:&quot;met&quot;, nq1:&quot;—&quot;, nq2:&quot;—&quot;},
+        {group:&quot;NÔNG NGHIỆP VÀ MÔI TRƯỜNG&quot;, n:23, name:&quot;Cơ sở sản xuất, kinh doanh đạt quy chuẩn về môi trường&quot;, y25:&quot;—&quot;, plan:&quot;98%&quot;, actual:&quot;98%&quot;, y27:&quot;—&quot;, status:&quot;met&quot;, nq1:&quot;—&quot;, nq2:&quot;—&quot;},
+        {group:&quot;NÔNG NGHIỆP VÀ MÔI TRƯỜNG&quot;, n:24, name:&quot;Doanh nghiệp công nghiệp áp dụng giải pháp sử dụng năng lượng tiết kiệm, hiệu quả&quot;, y25:&quot;—&quot;, plan:&quot;70%&quot;, actual:&quot;70%&quot;, y27:&quot;—&quot;, status:&quot;met&quot;, nq1:&quot;—&quot;, nq2:&quot;—&quot;},
+        {group:&quot;NÔNG NGHIỆP VÀ MÔI TRƯỜNG&quot;, n:25, name:&quot;Tỷ lệ che phủ rừng&quot;, y25:&quot;41,06%&quot;, plan:&quot;41,38%&quot;, actual:&quot;41,38%&quot;, y27:&quot;41,44%&quot;, status:&quot;met&quot;, nq1:&quot;≥ 42%&quot;, nq2:&quot;≥ 42%&quot;},
+        {group:&quot;NÔNG NGHIỆP VÀ MÔI TRƯỜNG&quot;, n:26, name:&quot;Tỷ lệ dân số đô thị được cung cấp nước sạch&quot;, y25:&quot;93,13%&quot;, plan:&quot;93,43%&quot;, actual:&quot;93,43%&quot;, y27:&quot;94,33%&quot;, status:&quot;met&quot;, nq1:&quot;98%&quot;, nq2:&quot;98%&quot;},
+        {group:&quot;NÔNG NGHIỆP VÀ MÔI TRƯỜNG&quot;, n:27, name:&quot;Tỷ lệ dân số nông thôn sử dụng nước hợp vệ sinh&quot;, y25:&quot;98,49%&quot;, plan:&quot;98,6%&quot;, actual:&quot;98,6%&quot;, y27:&quot;98,63%&quot;, status:&quot;met&quot;, nq1:&quot;98,7%&quot;, nq2:&quot;98,7%&quot;},
+        {group:&quot;NÔNG NGHIỆP VÀ MÔI TRƯỜNG&quot;, n:28, name:&quot;Tỷ lệ chất thải rắn đô thị được thu gom, xử lý&quot;, y25:&quot;92%&quot;, plan:&quot;92%&quot;, actual:&quot;92,39%&quot;, y27:&quot;94%&quot;, status:&quot;exceeded&quot;, nq1:&quot;98%&quot;, nq2:&quot;98%&quot;},
+        {group:&quot;NÔNG NGHIỆP VÀ MÔI TRƯỜNG&quot;, n:29, name:&quot;Xã đạt chuẩn nông thôn mới&quot;, y25:&quot;26/88 xã&quot;, plan:&quot;32/88 xã&quot;, actual:&quot;Chưa có xã mới được công nhận&quot;, y27:&quot;8/88 xã&quot;, status:&quot;unmet&quot;, nq1:&quot;68/88 xã; 08/88 xã NTM nâng cao&quot;, nq2:&quot;68/88 xã; 08/88 xã NTM nâng cao&quot;},
+
+        {group:&quot;VĂN HÓA VÀ XÃ HỘI&quot;, n:30, name:&quot;Tuổi thọ trung bình&quot;, y25:&quot;—&quot;, plan:&quot;Theo Nghị quyết 34/NQ-HĐND&quot;, actual:&quot;Đạt kế hoạch&quot;, y27:&quot;—&quot;, status:&quot;met&quot;, nq1:&quot;—&quot;, nq2:&quot;—&quot;},
+        {group:&quot;VĂN HÓA VÀ XÃ HỘI&quot;, n:31, name:&quot;Tỷ trọng lao động nông nghiệp trong tổng lao động xã hội&quot;, y25:&quot;61,27%&quot;, plan:&quot;60%&quot;, actual:&quot;60%&quot;, y27:&quot;59%&quot;, status:&quot;met&quot;, nq1:&quot;—&quot;, nq2:&quot;—&quot;},
+        {group:&quot;VĂN HÓA VÀ XÃ HỘI&quot;, n:32, name:&quot;Tỷ lệ lao động qua đào tạo có bằng cấp, chứng chỉ&quot;, y25:&quot;27%&quot;, plan:&quot;28,5%&quot;, actual:&quot;28,5%&quot;, y27:&quot;30%&quot;, status:&quot;met&quot;, nq1:&quot;≥ 30%&quot;, nq2:&quot;≥ 35%&quot;},
+        {group:&quot;VĂN HÓA VÀ XÃ HỘI&quot;, n:33, name:&quot;Tỷ lệ lao động có kỹ năng công nghệ thông tin&quot;, y25:&quot;—&quot;, plan:&quot;Theo Nghị quyết 34/NQ-HĐND&quot;, actual:&quot;40%&quot;, y27:&quot;—&quot;, status:&quot;met&quot;, nq1:&quot;—&quot;, nq2:&quot;—&quot;},
+        {group:&quot;VĂN HÓA VÀ XÃ HỘI&quot;, n:34, name:&quot;Quy mô đào tạo STEM&quot;, y25:&quot;—&quot;, plan:&quot;Theo Nghị quyết 34/NQ-HĐND&quot;, actual:&quot;Đạt kế hoạch&quot;, y27:&quot;—&quot;, status:&quot;met&quot;, nq1:&quot;—&quot;, nq2:&quot;—&quot;},
+        {group:&quot;VĂN HÓA VÀ XÃ HỘI&quot;, n:35, name:&quot;Mức giảm tỷ lệ hộ nghèo&quot;, y25:&quot;0,95%&quot;, plan:&quot;≥ 2%&quot;, actual:&quot;2%&quot;, y27:&quot;≥ 2%&quot;, status:&quot;met&quot;, note:&quot;hộ nghèo DTTS giảm 5,77%&quot;, nq1:&quot;≥ 2%/năm; DTTS ≥ 3%/năm&quot;, nq2:&quot;≥ 2%/năm; DTTS ≥ 3%/năm&quot;},
+        {group:&quot;VĂN HÓA VÀ XÃ HỘI&quot;, n:36, name:&quot;Số bác sĩ trên một vạn dân&quot;, y25:&quot;8,6 bác sĩ&quot;, plan:&quot;9,06 bác sĩ&quot;, actual:&quot;9,06 bác sĩ&quot;, y27:&quot;9,32 bác sĩ&quot;, status:&quot;met&quot;, nq1:&quot;10,2 bác sĩ&quot;, nq2:&quot;10,2 bác sĩ&quot;},
+        {group:&quot;VĂN HÓA VÀ XÃ HỘI&quot;, n:37, name:&quot;Tỷ lệ dân số được khám, kiểm tra sức khỏe&quot;, y25:&quot;—&quot;, plan:&quot;Theo Nghị quyết 34/NQ-HĐND&quot;, actual:&quot;Ước 95%&quot;, y27:&quot;&gt; 95%&quot;, status:&quot;met&quot;, note:&quot;đến 05/11 đạt 89,85%&quot;, nq1:&quot;—&quot;, nq2:&quot;—&quot;},
+        {group:&quot;VĂN HÓA VÀ XÃ HỘI&quot;, n:38, name:&quot;Chỉ số phát triển con người (HDI)&quot;, y25:&quot;—&quot;, plan:&quot;Theo Nghị quyết 34/NQ-HĐND&quot;, actual:&quot;Đạt kế hoạch&quot;, y27:&quot;—&quot;, status:&quot;met&quot;, nq1:&quot;—&quot;, nq2:&quot;—&quot;},
+        {group:&quot;VĂN HÓA VÀ XÃ HỘI&quot;, n:39, name:&quot;Lao động được giải quyết việc làm&quot;, y25:&quot;55.950 người&quot;, plan:&quot;56.000 người&quot;, actual:&quot;58.600 người&quot;, y27:&quot;56.200 người&quot;, status:&quot;met&quot;, note:&quot;xuất khẩu lao động 2.700 người&quot;, nq1:&quot;≥ 56.000 người/năm&quot;, nq2:&quot;≥ 56.000 người/năm&quot;},
+        {group:&quot;VĂN HÓA VÀ XÃ HỘI&quot;, n:40, name:&quot;Các chỉ tiêu y tế chủ yếu&quot;, y25:&quot;SDD 13,6% · 29,5 giường/vạn dân · BHYT 95%&quot;, plan:&quot;SDD 13,3% · 31,5 giường/vạn dân · BHYT 95,2%&quot;, actual:&quot;SDD 13,3% · 31,5 giường/vạn dân · BHYT 95,2%&quot;, y27:&quot;SDD 13% · 31,14 giường/vạn dân · BHYT 96,2%&quot;, status:&quot;met&quot;, nq1:&quot;SDD 12,15% · 33 giường · BHYT 96,5%&quot;, nq2:&quot;SDD 12,15% · 33 giường · BHYT 100%&quot;},
+        {group:&quot;VĂN HÓA VÀ XÃ HỘI&quot;, n:41, name:&quot;Tỷ lệ trường học đạt chuẩn quốc gia&quot;, y25:&quot;61,73%&quot;, plan:&quot;63%&quot;, actual:&quot;43,93%&quot;, y27:&quot;46,38%&quot;, status:&quot;unmet&quot;, nq1:&quot;≥ 70%&quot;, nq2:&quot;≥ 70%&quot;},
+        {group:&quot;VĂN HÓA VÀ XÃ HỘI&quot;, n:42, name:&quot;Tỷ lệ đào tạo lại, đào tạo thường xuyên cho lao động&quot;, y25:&quot;39.972 học viên&quot;, plan:&quot;35.700 học viên&quot;, actual:&quot;35.700 học viên&quot;, y27:&quot;36.000 học viên&quot;, status:&quot;met&quot;, nq1:&quot;—&quot;, nq2:&quot;—&quot;},
+        {group:&quot;VĂN HÓA VÀ XÃ HỘI&quot;, n:43, name:&quot;Tăng trưởng số doanh nghiệp thành lập mới&quot;, y25:&quot;3.168 doanh nghiệp&quot;, plan:&quot;Tăng 7%&quot;, actual:&quot;3.550 doanh nghiệp · tăng 12,06%&quot;, y27:&quot;3.980 doanh nghiệp&quot;, status:&quot;exceeded&quot;, nq1:&quot;15.500 doanh nghiệp/5 năm; tăng ≥ 13%/năm&quot;, nq2:&quot;Tăng ≥ 12%/năm&quot;},
+
+        {group:&quot;QUỐC PHÒNG VÀ AN NINH&quot;, n:44, name:&quot;Tỷ lệ hoàn thành chỉ tiêu tuyển quân&quot;, y25:&quot;100%&quot;, plan:&quot;100%&quot;, actual:&quot;100%&quot;, y27:&quot;100%&quot;, status:&quot;met&quot;, nq1:&quot;—&quot;, nq2:&quot;—&quot;},
+        {group:&quot;QUỐC PHÒNG VÀ AN NINH&quot;, n:45, name:&quot;Tỷ lệ điều tra, khám phá tội phạm về trật tự xã hội&quot;, y25:&quot;86,56%&quot;, plan:&quot;&gt; 75%; án rất nghiêm trọng &gt; 90%&quot;, actual:&quot;92,4%; án rất nghiêm trọng 97,62%&quot;, y27:&quot;&gt; 75%; án rất nghiêm trọng &gt; 90%&quot;, status:&quot;met&quot;, nq1:&quot;—&quot;, nq2:&quot;—&quot;},
+        {group:&quot;QUỐC PHÒNG VÀ AN NINH&quot;, n:46, name:&quot;Kiềm giảm tai nạn giao thông&quot;, y25:&quot;Giảm cả 3 tiêu chí&quot;, plan:&quot;Giảm cả 3 tiêu chí&quot;, actual:&quot;Giảm cả 3 tiêu chí&quot;, y27:&quot;Giảm cả 3 tiêu chí&quot;, status:&quot;met&quot;, nq1:&quot;—&quot;, nq2:&quot;—&quot;}
+      ];
+      const statusText = {exceeded:&quot;Vượt kế hoạch&quot;, met:&quot;Đạt kế hoạch&quot;, unmet:&quot;Chưa đạt kế hoạch&quot;, pending:&quot;Chưa đủ cơ sở đánh giá&quot;};
+      const indicatorBody = root.querySelector(&quot;.indicator-table tbody&quot;);
+      indicatorBody.textContent = &quot;&quot;;
+      let indicatorGroup = &quot;&quot;;
+      officialIndicators.forEach((item) =&gt; {
+        if (item.group !== indicatorGroup) {
+          indicatorGroup = item.group;
+          const band = document.createElement(&quot;tr&quot;);
+          band.className = &quot;indicator-band&quot;;
+          const cell = document.createElement(&quot;td&quot;);
+          cell.colSpan = 8;
+          cell.textContent = item.group;
+          band.appendChild(cell);
+          indicatorBody.appendChild(band);
+        }
+        const row = document.createElement(&quot;tr&quot;);
+        [String(item.n), item.name, item.y25, item.plan, item.actual, item.y27, item.nq1, item.nq2].forEach((value, index) =&gt; {
+          const cell = document.createElement(&quot;td&quot;);
+          cell.dataset.label = [&quot;STT&quot;,&quot;Chỉ tiêu&quot;,&quot;Kết quả 2025&quot;,&quot;Kế hoạch 2026&quot;,&quot;Ước thực hiện 2026&quot;,&quot;Kế hoạch 2027&quot;,&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;,&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;][index];
+          cell.textContent = value || &quot;—&quot;;
+          if (index === 4) {
+            if (item.note) {
+              const note = document.createElement(&quot;span&quot;);
+              note.className = &quot;indicator-secondary&quot;;
+              note.textContent = `· ${item.note}`;
+              cell.appendChild(note);
+            }
+            const status = document.createElement(&quot;span&quot;);
+            status.className = &quot;indicator-status text-small&quot;;
+            const dot = document.createElement(&quot;i&quot;);
+            dot.className = `indicator-dot ${item.status === &quot;unmet&quot; ? &quot;unmet&quot; : item.status === &quot;pending&quot; ? &quot;&quot; : &quot;met&quot;}`;
+            status.append(dot, document.createTextNode(statusText[item.status]));
+            cell.appendChild(status);
+          }
+          row.appendChild(cell);
+        });
+        indicatorBody.appendChild(row);
+      });
+
       const plan2027 = {
         &quot;Tăng trưởng GRDP bình quân&quot;: [&quot;10,81%&quot;],
         &quot;Nông, lâm nghiệp, thủy sản&quot;: [&quot;5,49%&quot;],
@@ -2325,6 +2415,7 @@ html&gt;body{padding:0}&lt;/style&gt;
           row.cells[0].colSpan = 8;
           return;
         }
+        if (row.cells.length &gt;= 8) return;
         const values = plan2027[row.cells[1].textContent.trim()] || [&quot;—&quot;];
         const anchor = row.cells[5];
         values.forEach((value, index) =&gt; {
