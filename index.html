@@ -1880,10 +1880,6 @@ html&gt;body{padding:0}&lt;/style&gt;
     #dak-lak-dashboard .indicator-table th:nth-child(7) { width:10%; }
     #dak-lak-dashboard .indicator-table th:nth-child(8),
     #dak-lak-dashboard .indicator-table th:nth-child(9) { width:13.5%; }
-    #dak-lak-dashboard .indicator-table th:nth-child(7),
-    #dak-lak-dashboard .indicator-table td:nth-child(7),
-    #dak-lak-dashboard .indicator-table th:nth-child(8),
-    #dak-lak-dashboard .indicator-table td:nth-child(8) { display:none; }
     #dak-lak-dashboard .indicator-table th:nth-child(5),
     #dak-lak-dashboard .indicator-table td:nth-child(5) { background:color-mix(in srgb, var(--viz-series-1) 12%, transparent); }
     #dak-lak-dashboard .indicator-table th:nth-child(6),
@@ -1943,17 +1939,13 @@ html&gt;body{padding:0}&lt;/style&gt;
       #dak-lak-dashboard .investor-table th:nth-child(6)::after { content:&quot;T11&quot;; }
       #dak-lak-dashboard .investor-table th:nth-child(7)::after { content:&quot;T12&quot;; }
       #dak-lak-dashboard .investor-table th:nth-child(8)::after { content:&quot;T1/27&quot;; }
-      #dak-lak-dashboard .indicator-section .table-responsive { overflow:visible; }
-      #dak-lak-dashboard .indicator-table { display:table; width:100%; min-width:0; table-layout:fixed; font-size:7.5px; line-height:1.12; }
+      #dak-lak-dashboard .indicator-section .table-responsive { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+      #dak-lak-dashboard .indicator-table { display:table; width:100%; min-width:920px; table-layout:fixed; font-size:7.5px; line-height:1.12; }
       #dak-lak-dashboard .indicator-table thead { display:table-header-group; }
       #dak-lak-dashboard .indicator-table tbody { display:table-row-group; }
       #dak-lak-dashboard .indicator-table tr { display:table-row; }
       #dak-lak-dashboard .indicator-table th,
       #dak-lak-dashboard .indicator-table td { display:table-cell; padding:3px 2px; overflow-wrap:anywhere; vertical-align:top; }
-      #dak-lak-dashboard .indicator-table th:nth-child(7),
-      #dak-lak-dashboard .indicator-table td:nth-child(7),
-      #dak-lak-dashboard .indicator-table th:nth-child(8),
-      #dak-lak-dashboard .indicator-table td:nth-child(8) { display:none !important; }
       #dak-lak-dashboard .indicator-table td { font-size:7.5px; line-height:1.12; }
       #dak-lak-dashboard .indicator-table td:nth-child(2) { font-size:8px; line-height:1.12; }
       #dak-lak-dashboard .indicator-table .indicator-secondary,
@@ -2169,7 +2161,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;span&gt;&lt;i class=&quot;indicator-dot unmet&quot;&gt;&lt;/i&gt;Chưa đạt kế hoạch 2026&lt;/span&gt;
     &lt;span&gt;&lt;i class=&quot;indicator-dot&quot;&gt;&lt;/i&gt;Chưa đủ cơ sở đánh giá&lt;/span&gt;
   &lt;/div&gt;
-  &lt;div class=&quot;mobile-scroll-hint text-small text-muted&quot;&gt;Bảng được thu gọn để xem đồng thời kết quả năm 2026 và kế hoạch năm 2027.&lt;/div&gt;
+  &lt;div class=&quot;mobile-scroll-hint text-small text-muted&quot;&gt;Vuốt ngang bảng để xem đầy đủ kế hoạch năm 2027 và hai cột Nghị quyết giai đoạn 2026–2030.&lt;/div&gt;
   &lt;div class=&quot;table-responsive&quot;&gt;
     &lt;table class=&quot;table table-sm indicator-table&quot;&gt;
       &lt;thead&gt;&lt;tr&gt;&lt;th&gt;STT&lt;/th&gt;&lt;th&gt;Chỉ tiêu&lt;/th&gt;&lt;th&gt;Kết quả 2025&lt;/th&gt;&lt;th&gt;Kế hoạch 2026&lt;/th&gt;&lt;th&gt;Ước thực hiện 2026&lt;/th&gt;&lt;th&gt;Kế hoạch 2027&lt;/th&gt;&lt;th&gt;GĐ 2026–2030 (Nghị quyết ĐHĐB tỉnh)&lt;/th&gt;&lt;th&gt;GĐ 2026–2030 (CTHĐ thực hiện NQĐH XIV)&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
