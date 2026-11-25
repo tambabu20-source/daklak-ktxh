@@ -1795,6 +1795,8 @@ html&gt;body{padding:0}&lt;/style&gt;
     #dak-lak-dashboard .dash-actions { display:flex; align-items:center; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
     #dak-lak-dashboard .print-btn { display:inline-flex; align-items:center; justify-content:center; gap:6px; min-height:32px; padding:6px 10px; border:1px solid var(--border); border-radius:8px; background:var(--card); color:var(--foreground); font:inherit; font-size:0.82em; cursor:pointer; }
     #dak-lak-dashboard .print-btn:hover { background:var(--muted); }
+    #dak-lak-dashboard .source-link { display:inline-flex; align-items:center; min-height:32px; padding:6px 10px; border:1px solid var(--border); border-radius:8px; background:var(--card); color:var(--foreground); text-decoration:none; font-size:0.82em; }
+    #dak-lak-dashboard .source-link:hover { background:var(--muted); }
     #dak-lak-dashboard .section-print-btn { margin-left:auto; flex:0 0 auto; }
     #dak-lak-dashboard .stamp { color:var(--muted-foreground); white-space:nowrap; }
     #dak-lak-dashboard .stats { margin-bottom:22px; }
@@ -1821,7 +1823,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     #dak-lak-dashboard .investor-wide { width:min(1200px,100vw); margin-left:50%; transform:translateX(-50%); }
     #dak-lak-dashboard .scenario-scroll { overflow:visible; margin-top:10px; }
     #dak-lak-dashboard .scenario-chart { width:100%; min-width:0; display:grid; gap:4px; font-size:0.78em; }
-    #dak-lak-dashboard .scenario-row { display:grid; grid-template-columns:160px repeat(4,minmax(0,1fr)); gap:3px; align-items:stretch; }
+    #dak-lak-dashboard .scenario-row { display:grid; grid-template-columns:160px repeat(3,minmax(0,1fr)); gap:3px; align-items:stretch; }
     #dak-lak-dashboard .scenario-row.header { color:var(--muted-foreground); text-align:center; }
     #dak-lak-dashboard .scenario-row.header &gt; span:first-child { text-align:left; }
     #dak-lak-dashboard .scenario-name { display:flex; align-items:center; font-weight:500; }
@@ -1878,6 +1880,10 @@ html&gt;body{padding:0}&lt;/style&gt;
     #dak-lak-dashboard .indicator-table th:nth-child(7) { width:10%; }
     #dak-lak-dashboard .indicator-table th:nth-child(8),
     #dak-lak-dashboard .indicator-table th:nth-child(9) { width:13.5%; }
+    #dak-lak-dashboard .indicator-table th:nth-child(7),
+    #dak-lak-dashboard .indicator-table td:nth-child(7),
+    #dak-lak-dashboard .indicator-table th:nth-child(8),
+    #dak-lak-dashboard .indicator-table td:nth-child(8) { display:none; }
     #dak-lak-dashboard .indicator-table th:nth-child(5),
     #dak-lak-dashboard .indicator-table td:nth-child(5) { background:color-mix(in srgb, var(--viz-series-1) 12%, transparent); }
     #dak-lak-dashboard .indicator-table th:nth-child(6),
@@ -1904,11 +1910,11 @@ html&gt;body{padding:0}&lt;/style&gt;
       #dak-lak-dashboard .mobile-scroll-hint { display:none; }
       #dak-lak-dashboard .scenario-chart { font-size:8px; gap:2px; }
       #dak-lak-dashboard .scenario-row,
-      #dak-lak-dashboard .scenario-row:not(.header) { grid-template-columns:minmax(76px,1.9fr) repeat(4,minmax(0,1fr)); gap:2px; padding:2px 0; border-bottom:1px solid var(--border); }
+      #dak-lak-dashboard .scenario-row:not(.header) { grid-template-columns:minmax(76px,1.9fr) repeat(3,minmax(0,1fr)); gap:2px; padding:2px 0; border-bottom:1px solid var(--border); }
       #dak-lak-dashboard .scenario-row.header { display:grid; line-height:1.05; }
       #dak-lak-dashboard .scenario-name { min-height:25px; line-height:1.12; }
       #dak-lak-dashboard .scenario-cell { min-height:25px; padding:2px 1px; justify-content:center; font-size:8px; }
-      #dak-lak-dashboard .scenario-cell::after { content:none !important; }
+      #dak-lak-dashboard .scenario-cell.current::after { height:42%; }
       #dak-lak-dashboard .investor-table { display:table; width:100%; table-layout:fixed; font-size:7.5px; line-height:1.08; }
       #dak-lak-dashboard .investor-table thead { display:table-header-group; }
       #dak-lak-dashboard .investor-table tbody { display:table-row-group; }
@@ -1944,6 +1950,10 @@ html&gt;body{padding:0}&lt;/style&gt;
       #dak-lak-dashboard .indicator-table tr { display:table-row; }
       #dak-lak-dashboard .indicator-table th,
       #dak-lak-dashboard .indicator-table td { display:table-cell; padding:3px 2px; overflow-wrap:anywhere; vertical-align:top; }
+      #dak-lak-dashboard .indicator-table th:nth-child(7),
+      #dak-lak-dashboard .indicator-table td:nth-child(7),
+      #dak-lak-dashboard .indicator-table th:nth-child(8),
+      #dak-lak-dashboard .indicator-table td:nth-child(8) { display:none !important; }
       #dak-lak-dashboard .indicator-table td { font-size:7.5px; line-height:1.12; }
       #dak-lak-dashboard .indicator-table td:nth-child(2) { font-size:8px; line-height:1.12; }
       #dak-lak-dashboard .indicator-table .indicator-secondary,
@@ -2016,9 +2026,13 @@ html&gt;body{padding:0}&lt;/style&gt;
   &lt;div class=&quot;dash-head&quot;&gt;
     &lt;div&gt;
       &lt;h2&gt;Tình hình kinh tế – xã hội tỉnh Đắk Lắk&lt;/h2&gt;
-      &lt;p&gt;Ước thực hiện kinh tế – xã hội năm 2026 và giải ngân đầu tư công đến 19/11/2026&lt;/p&gt;
+      &lt;p&gt;Ước thực hiện kinh tế – xã hội năm 2026, kế hoạch năm 2027 và giải ngân đầu tư công đến 19/11/2026&lt;/p&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;dash-actions&quot;&gt;&lt;span class=&quot;stamp&quot;&gt;Cập nhật 25/11/2026&lt;/span&gt;&lt;button class=&quot;print-btn&quot; type=&quot;button&quot; data-print-all aria-label=&quot;In toàn bộ dashboard&quot;&gt;⎙ In toàn bộ&lt;/button&gt;&lt;/div&gt;
+    &lt;div class=&quot;dash-actions&quot;&gt;
+      &lt;a class=&quot;source-link&quot; href=&quot;https://docs.google.com/document/d/1cUPbhJc2pSXDGsEM1xwt0ldZI_VWqakpuhirYwwapCc&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Xem báo cáo&lt;/a&gt;
+      &lt;a class=&quot;source-link&quot; href=&quot;https://docs.google.com/spreadsheets/d/10zDTafbPoJ_YJBNlGVrW-UbbDrYshMerN-ZXPtxTuvY&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Xem phụ lục II&lt;/a&gt;
+      &lt;span class=&quot;stamp&quot;&gt;Cập nhật 25/11/2026&lt;/span&gt;&lt;button class=&quot;print-btn&quot; type=&quot;button&quot; data-print-all aria-label=&quot;In toàn bộ dashboard&quot;&gt;⎙ In toàn bộ&lt;/button&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 
   &lt;div class=&quot;viz-grid stats&quot;&gt;
@@ -2042,10 +2056,17 @@ html&gt;body{padding:0}&lt;/style&gt;
   &lt;div class=&quot;section-head print-page-break&quot;&gt;&lt;h3&gt;Kế hoạch đầu tư công 2026&lt;/h3&gt;&lt;span&gt;Đơn vị: tỷ đồng&lt;/span&gt;&lt;/div&gt;
   &lt;div class=&quot;viz-grid allocation&quot;&gt;
     &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Tỉnh giao&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;10.515,291&lt;/div&gt;&lt;p&gt;Cao hơn KH Thủ tướng giao 1.255,741&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Đã giao chi tiết&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;10.272,171&lt;/div&gt;&lt;p&gt;97,69% · Còn 243,120&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Đã phân bổ thực hiện nhiệm vụ, dự án&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;10.272,171&lt;/div&gt;&lt;p&gt;Còn chưa phân bổ 243,120&lt;/p&gt;&lt;/div&gt;
     &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Đã giải ngân đến 19/11&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;5.966,985&lt;/div&gt;&lt;p&gt;64,44% KH TTg · 66,70% sau trừ tiết kiệm&lt;/p&gt;&lt;/div&gt;
   &lt;/div&gt;
-  &lt;div class=&quot;text-small text-muted&quot;&gt;Theo báo cáo ngày 24/11, số giải ngân tăng 108,127 tỷ đồng so với 12/11. Bình quân cả nước đến 12/11 đạt 75,3% kế hoạch giao; Đắk Lắk đạt 64,44% kế hoạch Thủ tướng giao.&lt;/div&gt;
+  &lt;div class=&quot;legend text-small&quot; aria-label=&quot;Chú giải tiến độ giải ngân&quot;&gt;
+    &lt;span&gt;&lt;i class=&quot;good&quot;&gt;&lt;/i&gt;Thực hiện đến 19/11/2026&lt;/span&gt;
+    &lt;span&gt;&lt;i&gt;&lt;/i&gt;Kịch bản cuối tháng 11&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;bars&quot; aria-label=&quot;Tiến độ giải ngân so với kế hoạch&quot;&gt;
+    &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Tổng hai nguồn so với KB T11&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:92.08%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;92,08%&lt;/span&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;p class=&quot;text-small text-muted&quot;&gt;Đã giải ngân 8.997,613/9.771,525 tỷ đồng so với mục tiêu cuối tháng 11; còn 773,912 tỷ đồng.&lt;/p&gt;
   &lt;div class=&quot;finance&quot; aria-label=&quot;Tiến độ đầu tư công theo nguồn vốn&quot;&gt;
     &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Kế hoạch ngân sách Trung ương&lt;/b&gt;&lt;small&gt;2.449,050 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:100%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;100%&lt;/em&gt;&lt;/div&gt;
     &lt;div class=&quot;finance-row&quot;&gt;&lt;div&gt;&lt;b&gt;Ngân sách Trung ương đã giải ngân&lt;/b&gt;&lt;small&gt;744,776 tỷ đồng&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill low&quot; style=&quot;width:30.41%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;em&gt;30,4%&lt;/em&gt;&lt;/div&gt;
@@ -2055,10 +2076,10 @@ html&gt;body{padding:0}&lt;/style&gt;
 
   &lt;div class=&quot;section-head&quot;&gt;&lt;h3&gt;Vốn năm 2025 kéo dài sang 2026&lt;/h3&gt;&lt;/div&gt;
   &lt;div class=&quot;card viz-stat&quot;&gt;
-    &lt;span class=&quot;text-muted&quot;&gt;Đã giải ngân vốn kéo dài&lt;/span&gt;
+    &lt;span class=&quot;text-muted&quot;&gt;Đã giải ngân vốn kéo dài đến 19/11&lt;/span&gt;
     &lt;div class=&quot;viz-stat-value&quot;&gt;3.030,628 / 5.318,314 &lt;span class=&quot;text-small text-muted&quot;&gt;tỷ đồng&lt;/span&gt; · 56,98%&lt;/div&gt;
     &lt;p&gt;&lt;span class=&quot;viz-badge&quot;&gt;+35,882 tỷ đồng so với 12/11&lt;/span&gt;&lt;/p&gt;
-    &lt;p class=&quot;text-small text-muted&quot;&gt;Sau khi trừ 670,582 tỷ đồng hết nhiệm vụ chi/không có khả năng giải ngân: đạt 65,21%; còn 1.617,104 tỷ đồng, bình quân 269,517 tỷ đồng/tuần đến 31/12.&lt;/p&gt;
+    &lt;p class=&quot;text-small text-muted&quot;&gt;Sau khi trừ 670,582 tỷ đồng hết nhiệm vụ chi/không có khả năng giải ngân: đạt 65,21%; còn 1.617,104 tỷ đồng.&lt;/p&gt;
   &lt;/div&gt;
   &lt;div class=&quot;viz-grid&quot;&gt;
     &lt;div class=&quot;card viz-stat&quot;&gt;&lt;span class=&quot;text-muted&quot;&gt;Kế hoạch sau rà soát&lt;/span&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;4.647,732 tỷ đồng&lt;/div&gt;&lt;/div&gt;
@@ -2093,16 +2114,16 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;div class=&quot;mobile-scroll-hint text-small text-muted&quot;&gt;Bảng được thu gọn để xem đồng thời thực hiện tháng 11 và kịch bản các tháng còn lại.&lt;/div&gt;
     &lt;div class=&quot;scenario-scroll&quot;&gt;
       &lt;div class=&quot;scenario-chart&quot; role=&quot;img&quot; aria-label=&quot;Tỷ lệ thực hiện đến 19 tháng 11 và kịch bản giải ngân đến tháng 1 năm 2027&quot;&gt;
-        &lt;div class=&quot;scenario-row header text-small&quot;&gt;&lt;span&gt;Chủ đầu tư&lt;/span&gt;&lt;span&gt;TH 19/11&lt;/span&gt;&lt;span&gt;KB T11&lt;/span&gt;&lt;span&gt;KB T12&lt;/span&gt;&lt;span&gt;KB T1/2027&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban phía Đông&lt;/span&gt;&lt;span class=&quot;scenario-cell actual&quot; style=&quot;--pct:73.30%&quot;&gt;&lt;b&gt;73,3%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:72.97%&quot;&gt;&lt;b&gt;73,0%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:93.03%&quot;&gt;&lt;b&gt;93,0%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban Tuy Hòa&lt;/span&gt;&lt;span class=&quot;scenario-cell actual&quot; style=&quot;--pct:73.13%&quot;&gt;&lt;b&gt;73,1%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:76.28%&quot;&gt;&lt;b&gt;76,3%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:87.94%&quot;&gt;&lt;b&gt;87,9%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban Buôn Hồ&lt;/span&gt;&lt;span class=&quot;scenario-cell actual&quot; style=&quot;--pct:70.21%&quot;&gt;&lt;b&gt;70,2%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:78.18%&quot;&gt;&lt;b&gt;78,2%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:92.85%&quot;&gt;&lt;b&gt;92,9%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban Buôn Ma Thuột&lt;/span&gt;&lt;span class=&quot;scenario-cell actual&quot; style=&quot;--pct:70.13%&quot;&gt;&lt;b&gt;70,1%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:76.24%&quot;&gt;&lt;b&gt;76,2%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;BQL KKT KCN&lt;/span&gt;&lt;span class=&quot;scenario-cell actual&quot; style=&quot;--pct:69.54%&quot;&gt;&lt;b&gt;69,5%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:65.56%&quot;&gt;&lt;b&gt;65,6%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:82.37%&quot;&gt;&lt;b&gt;82,4%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban Tuy An&lt;/span&gt;&lt;span class=&quot;scenario-cell actual&quot; style=&quot;--pct:69.43%&quot;&gt;&lt;b&gt;69,4%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:75.12%&quot;&gt;&lt;b&gt;75,1%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:91.54%&quot;&gt;&lt;b&gt;91,5%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban Ea Kar&lt;/span&gt;&lt;span class=&quot;scenario-cell actual&quot; style=&quot;--pct:69.38%&quot;&gt;&lt;b&gt;69,4%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:77.84%&quot;&gt;&lt;b&gt;77,8%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:85.19%&quot;&gt;&lt;b&gt;85,2%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban Dân dụng &amp;amp; CN&lt;/span&gt;&lt;span class=&quot;scenario-cell actual&quot; style=&quot;--pct:66.14%&quot;&gt;&lt;b&gt;66,1%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:65.64%&quot;&gt;&lt;b&gt;65,6%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:75.37%&quot;&gt;&lt;b&gt;75,4%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban GT&amp;amp;NNPTNT tỉnh&lt;/span&gt;&lt;span class=&quot;scenario-cell actual&quot; style=&quot;--pct:55.79%&quot;&gt;&lt;b&gt;55,8%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:64.34%&quot;&gt;&lt;b&gt;64,3%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:83.90%&quot;&gt;&lt;b&gt;83,9%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;scenario-row header text-small&quot;&gt;&lt;span&gt;Chủ đầu tư&lt;/span&gt;&lt;span&gt;T11: TH 19/11 / KB&lt;/span&gt;&lt;span&gt;KB T12&lt;/span&gt;&lt;span&gt;KB T1/2027&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban phía Đông&lt;/span&gt;&lt;span class=&quot;scenario-cell current&quot; style=&quot;--target:72.97%;--actual:73.30%&quot;&gt;&lt;b&gt;73,3%&lt;small&gt;KB 73,0%&lt;/small&gt;&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:93.03%&quot;&gt;&lt;b&gt;93,0%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban Tuy Hòa&lt;/span&gt;&lt;span class=&quot;scenario-cell current&quot; style=&quot;--target:76.28%;--actual:73.13%&quot;&gt;&lt;b&gt;73,1%&lt;small&gt;KB 76,3%&lt;/small&gt;&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:87.94%&quot;&gt;&lt;b&gt;87,9%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban Buôn Hồ&lt;/span&gt;&lt;span class=&quot;scenario-cell current&quot; style=&quot;--target:78.18%;--actual:70.21%&quot;&gt;&lt;b&gt;70,2%&lt;small&gt;KB 78,2%&lt;/small&gt;&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:92.85%&quot;&gt;&lt;b&gt;92,9%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban Buôn Ma Thuột&lt;/span&gt;&lt;span class=&quot;scenario-cell current&quot; style=&quot;--target:76.24%;--actual:70.13%&quot;&gt;&lt;b&gt;70,1%&lt;small&gt;KB 76,2%&lt;/small&gt;&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;BQL KKT KCN&lt;/span&gt;&lt;span class=&quot;scenario-cell current&quot; style=&quot;--target:65.56%;--actual:69.54%&quot;&gt;&lt;b&gt;69,5%&lt;small&gt;KB 65,6%&lt;/small&gt;&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:82.37%&quot;&gt;&lt;b&gt;82,4%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban Tuy An&lt;/span&gt;&lt;span class=&quot;scenario-cell current&quot; style=&quot;--target:75.12%;--actual:69.43%&quot;&gt;&lt;b&gt;69,4%&lt;small&gt;KB 75,1%&lt;/small&gt;&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:91.54%&quot;&gt;&lt;b&gt;91,5%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban Ea Kar&lt;/span&gt;&lt;span class=&quot;scenario-cell current&quot; style=&quot;--target:77.84%;--actual:69.38%&quot;&gt;&lt;b&gt;69,4%&lt;small&gt;KB 77,8%&lt;/small&gt;&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:85.19%&quot;&gt;&lt;b&gt;85,2%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban Dân dụng &amp;amp; CN&lt;/span&gt;&lt;span class=&quot;scenario-cell current&quot; style=&quot;--target:65.64%;--actual:66.14%&quot;&gt;&lt;b&gt;66,1%&lt;small&gt;KB 65,6%&lt;/small&gt;&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:75.37%&quot;&gt;&lt;b&gt;75,4%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;scenario-row&quot;&gt;&lt;span class=&quot;scenario-name&quot;&gt;Ban GT&amp;amp;NNPTNT tỉnh&lt;/span&gt;&lt;span class=&quot;scenario-cell current&quot; style=&quot;--target:64.34%;--actual:55.79%&quot;&gt;&lt;b&gt;55,8%&lt;small&gt;KB 64,3%&lt;/small&gt;&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:83.90%&quot;&gt;&lt;b&gt;83,9%&lt;/b&gt;&lt;/span&gt;&lt;span class=&quot;scenario-cell&quot; style=&quot;--pct:100%&quot;&gt;&lt;b&gt;100%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class=&quot;table-responsive investor-table-page&quot;&gt;
@@ -2126,25 +2147,20 @@ html&gt;body{padding:0}&lt;/style&gt;
 
   &lt;section data-view=&quot;projects&quot; class=&quot;print-page-break projects-page&quot; aria-label=&quot;Tiến độ dự án trọng điểm&quot;&gt;
     &lt;div class=&quot;projects&quot;&gt;
-      &lt;article class=&quot;card project&quot;&gt;&lt;h3&gt;GPMB hồ Krông Pách Thượng – giai đoạn 2 (Ea Pal)&lt;/h3&gt;&lt;p&gt;&lt;b&gt;Kênh chính Bắc:&lt;/b&gt; đã chi trả, bàn giao 11,94/12,8 ha cho 54 hộ, đạt 93,3% diện tích. &lt;b&gt;Kênh nhánh:&lt;/b&gt; đã kiểm kê 13,73/15,6 ha (86%); phê duyệt 8,78 ha (56%); chi trả, bàn giao 6,36 ha (41%).&lt;span class=&quot;change-note&quot;&gt;Cập nhật báo cáo xã Ea Pal ngày 07/8/2026&lt;/span&gt;&lt;/p&gt;&lt;div class=&quot;metric&quot;&gt;&lt;span&gt;Kênh chính Bắc bàn giao&lt;/span&gt;&lt;b&gt;93,3%&lt;/b&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:93.3%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;metric&quot;&gt;&lt;span&gt;Kênh nhánh kiểm kê&lt;/span&gt;&lt;b&gt;86%&lt;/b&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:86%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;metric&quot;&gt;&lt;span&gt;Kênh nhánh bàn giao&lt;/span&gt;&lt;b&gt;41%&lt;/b&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill low&quot; style=&quot;width:41%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;p class=&quot;text-small&quot;&gt;Vướng mắc: 8 hộ đã phê duyệt nhưng chưa nhận tiền/bàn giao; hồ sơ đất thất lạc, quyền sử dụng phức tạp và còn ý kiến về giá, mật độ cây trồng.&lt;/p&gt;&lt;/article&gt;
       &lt;article class=&quot;card project&quot;&gt;&lt;h3&gt;Cao tốc Khánh Hòa – Buôn Ma Thuột&lt;/h3&gt;&lt;p&gt;Dự án thành phần 3 · Kế hoạch vốn 879,250 tỷ đồng · Đã giải ngân 537,446 tỷ đồng; còn 341,804 tỷ đồng.&lt;span class=&quot;change-note&quot;&gt;Cập nhật Phụ lục giải ngân đến 19/11&lt;/span&gt;&lt;/p&gt;&lt;div class=&quot;metric&quot;&gt;&lt;span&gt;Giải ngân lũy kế / kế hoạch&lt;/span&gt;&lt;b&gt;61,1%&lt;/b&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:61.13%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/article&gt;
       &lt;article class=&quot;card project&quot;&gt;&lt;h3&gt;Đường ven biển Xuân Đài – Tuy An Đông&lt;/h3&gt;&lt;p&gt;Kế hoạch vốn 178,220 tỷ đồng · Đã giải ngân 24,076 tỷ đồng; còn 154,144 tỷ đồng.&lt;span class=&quot;change-note&quot;&gt;Cập nhật Phụ lục giải ngân đến 19/11&lt;/span&gt;&lt;/p&gt;&lt;div class=&quot;metric&quot;&gt;&lt;span&gt;Giải ngân lũy kế / kế hoạch&lt;/span&gt;&lt;b&gt;13,5%&lt;/b&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill low&quot; style=&quot;width:13.51%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/article&gt;
       &lt;article class=&quot;card project&quot;&gt;&lt;h3&gt;Trường học liên cấp tại 04 xã biên giới&lt;/h3&gt;&lt;p&gt;Kế hoạch vốn 334,336 tỷ đồng · Đã giải ngân 88,074 tỷ đồng; còn 246,262 tỷ đồng.&lt;span class=&quot;change-note&quot;&gt;Cập nhật Phụ lục giải ngân đến 19/11&lt;/span&gt;&lt;/p&gt;&lt;div class=&quot;metric&quot;&gt;&lt;span&gt;Giải ngân lũy kế / kế hoạch&lt;/span&gt;&lt;b&gt;26,3%&lt;/b&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill low&quot; style=&quot;width:26.34%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/article&gt;
     &lt;/div&gt;
   &lt;/section&gt;
 
-  &lt;div class=&quot;section-head print-page-break&quot;&gt;&lt;h3&gt;Nhiệm vụ điều hành trọng tâm&lt;/h3&gt;&lt;span&gt;Cập nhật báo cáo 9 tháng&lt;/span&gt;&lt;/div&gt;
+  &lt;div class=&quot;section-head print-page-break&quot;&gt;&lt;h3&gt;Kết quả điều hành nổi bật&lt;/h3&gt;&lt;span&gt;Ước thực hiện năm 2026&lt;/span&gt;&lt;/div&gt;
   &lt;div class=&quot;bars&quot; aria-label=&quot;Tiến độ các nhiệm vụ điều hành trọng tâm&quot;&gt;
-    &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Tài sản công đã có phương án xử lý&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:92.3%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;851/922&lt;/span&gt;&lt;/div&gt;
-    &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Dự án khó khăn, vướng mắc đã tháo gỡ&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:65.65%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;260/396&lt;/span&gt;&lt;/div&gt;
-    &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Nhiệm vụ Chương trình 01 đến hết quý III đã hoàn thành&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:70.34%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;83/118&lt;/span&gt;&lt;/div&gt;
-    &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Nhiệm vụ Nghị quyết 57 đã hoàn thành&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:61.96%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;171/276&lt;/span&gt;&lt;/div&gt;
-    &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Khám sức khỏe trực tiếp&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill low&quot; style=&quot;width:3.79%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;60.370 · 3,79%&lt;/span&gt;&lt;/div&gt;
-    &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Bao phủ các hình thức khám, kiểm tra sức khỏe&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:73.81%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;2.287.309/3.099.000&lt;/span&gt;&lt;/div&gt;
-    &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Văn bản quy phạm pháp luật đã xử lý&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill&quot; style=&quot;width:63.01%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;230/365&lt;/span&gt;&lt;/div&gt;
-    &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Nhiệm vụ nghị quyết trụ cột chưa hoàn thành&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill low&quot; style=&quot;width:70.78%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;327/462&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Chỉ tiêu đạt hoặc vượt kế hoạch&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:76.09%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;35/46&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Dự án khó khăn, vướng mắc đã tháo gỡ&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:71.72%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;284/396&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Cơ sở nhà, đất đã hoàn thành phương án xử lý&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill good&quot; style=&quot;width:99.78%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;935/937&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;Chỉ tiêu chưa đạt kế hoạch&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill low&quot; style=&quot;width:21.74%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;pct&quot;&gt;10/46&lt;/span&gt;&lt;/div&gt;
   &lt;/div&gt;
-  &lt;p class=&quot;text-small text-muted&quot;&gt;Theo Báo cáo 452/BC-UBND và Tờ trình cập nhật ngày 20/10: còn 136/396 dự án tiếp tục xử lý; tỷ lệ lập hồ sơ sức khỏe điện tử trên VNeID đạt 45,3%. Tiến độ chi tiết nhiệm vụ Chương trình 01 và Nghị quyết 57 được giữ theo phụ lục gần nhất khi chưa có mẫu số cập nhật đồng nhất.&lt;/p&gt;
+  &lt;p class=&quot;text-small text-muted&quot;&gt;Còn 01/46 chỉ tiêu chưa đủ cơ sở đánh giá do chưa có phương pháp tính: tăng trưởng ngành công nghiệp văn hóa.&lt;/p&gt;
 
   &lt;section class=&quot;indicator-section print-page-break&quot; aria-label=&quot;Kết quả chỉ tiêu kinh tế – xã hội&quot;&gt;
   &lt;div class=&quot;section-head&quot;&gt;&lt;h3&gt;Kết quả chỉ tiêu kinh tế – xã hội&lt;/h3&gt;&lt;span&gt;Ước thực hiện năm 2026 · kế hoạch năm 2027&lt;/span&gt;&lt;/div&gt;
@@ -2153,7 +2169,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;span&gt;&lt;i class=&quot;indicator-dot unmet&quot;&gt;&lt;/i&gt;Chưa đạt kế hoạch 2026&lt;/span&gt;
     &lt;span&gt;&lt;i class=&quot;indicator-dot&quot;&gt;&lt;/i&gt;Chưa đủ cơ sở đánh giá&lt;/span&gt;
   &lt;/div&gt;
-  &lt;div class=&quot;mobile-scroll-hint text-small text-muted&quot;&gt;Vuốt ngang bảng để xem kế hoạch 2027 và các cột giai đoạn 2026–2030.&lt;/div&gt;
+  &lt;div class=&quot;mobile-scroll-hint text-small text-muted&quot;&gt;Bảng được thu gọn để xem đồng thời kết quả năm 2026 và kế hoạch năm 2027.&lt;/div&gt;
   &lt;div class=&quot;table-responsive&quot;&gt;
     &lt;table class=&quot;table table-sm indicator-table&quot;&gt;
       &lt;thead&gt;&lt;tr&gt;&lt;th&gt;STT&lt;/th&gt;&lt;th&gt;Chỉ tiêu&lt;/th&gt;&lt;th&gt;Kết quả 2025&lt;/th&gt;&lt;th&gt;Kế hoạch 2026&lt;/th&gt;&lt;th&gt;Ước thực hiện 2026&lt;/th&gt;&lt;th&gt;Kế hoạch 2027&lt;/th&gt;&lt;th&gt;GĐ 2026–2030 (Nghị quyết ĐHĐB tỉnh)&lt;/th&gt;&lt;th&gt;GĐ 2026–2030 (CTHĐ thực hiện NQĐH XIV)&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
@@ -2172,9 +2188,9 @@ html&gt;body{padding:0}&lt;/style&gt;
         &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tổng thu từ du lịch&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;13.626 tỷ đồng&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;16.000 tỷ đồng&lt;/td&gt;&lt;td data-label=&quot;Ước thực hiện 2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;20.067 tỷ đồng&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot met&quot;&gt;&lt;/i&gt;Vượt kế hoạch&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;97.150 tỷ đồng/5 năm; tăng 14,5%/năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;111.300 tỷ đồng/5 năm; tăng 17,10%/năm&lt;/td&gt;&lt;/tr&gt;
         &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;7.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tổng thu NSNN trên địa bàn&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;18.154 tỷ đồng&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;18.100 tỷ đồng&lt;/td&gt;&lt;td data-label=&quot;Ước thực hiện 2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;19.265 tỷ đồng&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 106,44% dự toán HĐND&lt;/span&gt;&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot&quot;&gt;&lt;/i&gt;Vượt kế hoạch&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 11%/năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 11%/năm&lt;/td&gt;&lt;/tr&gt;
         &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;8.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Tỷ lệ đảm bảo tưới cây trồng&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;83,7%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;84,1%&lt;/td&gt;&lt;td data-label=&quot;Ước thực hiện 2026&quot;&gt;84,1%&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot met&quot;&gt;&lt;/i&gt;Đạt kế hoạch&lt;/span&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 86%&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 86%&lt;/td&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;9.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Nhà ở xã hội hoàn thành và khởi công&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;2.800 căn&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;3.900 căn&lt;/td&gt;&lt;td data-label=&quot;Ước thực hiện 2026&quot;&gt;200 căn&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 5,13% kế hoạch HĐND&lt;/span&gt;&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot unmet&quot;&gt;&lt;/i&gt;Chưa đạt kế hoạch&lt;/span&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;38.400 căn (theo QĐ TTg)&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;38.400 căn (theo QĐ TTg)&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;9.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Nhà ở xã hội hoàn thành và khởi công&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;2.800 căn&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;3.900 căn&lt;span class=&quot;indicator-secondary&quot;&gt;· điều chỉnh 200 căn theo Nghị quyết 303/NQ-CP&lt;/span&gt;&lt;/td&gt;&lt;td data-label=&quot;Ước thực hiện 2026&quot;&gt;200 căn&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot met&quot;&gt;&lt;/i&gt;Đạt kế hoạch điều chỉnh&lt;/span&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;38.400 căn (theo QĐ TTg)&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;38.400 căn (theo QĐ TTg)&lt;/td&gt;&lt;/tr&gt;
         &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;10.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Số doanh nghiệp thành lập mới&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;3.168 doanh nghiệp&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;3.200 doanh nghiệp&lt;/td&gt;&lt;td data-label=&quot;Ước thực hiện 2026&quot;&gt;3.550 doanh nghiệp&lt;span class=&quot;indicator-secondary&quot;&gt;· đạt 110,94% kế hoạch&lt;/span&gt;&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot met&quot;&gt;&lt;/i&gt;Vượt kế hoạch&lt;/span&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;15.500 doanh nghiệp/5 năm; tăng ≥ 13%/năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;Tăng ≥ 12%/năm&lt;/td&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;11.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Quy mô kinh tế số trong GRDP&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;7,67% GRDP&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;14% GRDP&lt;/td&gt;&lt;td data-label=&quot;Ước thực hiện 2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;14% GRDP&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot&quot;&gt;&lt;/i&gt;Đạt kế hoạch&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 30% GRDP&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 30% GRDP&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;11.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Quy mô kinh tế số trong GRDP&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;7,67% GRDP&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;14% GRDP&lt;/td&gt;&lt;td data-label=&quot;Ước thực hiện 2026&quot;&gt;&lt;div class=&quot;indicator-result&quot;&gt;&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot met&quot;&gt;&lt;/i&gt;Đạt kế hoạch&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 30% GRDP&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 30% GRDP&lt;/td&gt;&lt;/tr&gt;
 
         &lt;tr class=&quot;indicator-band&quot;&gt;&lt;td colspan=&quot;8&quot;&gt;CHỈ TIÊU VĂN HÓA – XÃ HỘI&lt;/td&gt;&lt;/tr&gt;
         &lt;tr&gt;&lt;td data-label=&quot;STT&quot;&gt;12.&lt;/td&gt;&lt;td data-label=&quot;Chỉ tiêu&quot;&gt;Giảm tỷ lệ hộ nghèo&lt;/td&gt;&lt;td data-label=&quot;Kết quả 2025&quot;&gt;0,95%&lt;/td&gt;&lt;td data-label=&quot;Kế hoạch 2026&quot;&gt;≥ 2%&lt;/td&gt;&lt;td data-label=&quot;Ước thực hiện 2026&quot;&gt;2%&lt;span class=&quot;indicator-status text-small&quot;&gt;&lt;i class=&quot;indicator-dot met&quot;&gt;&lt;/i&gt;Đạt kế hoạch&lt;/span&gt;&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (NQ ĐHĐB tỉnh)&quot;&gt;≥ 2%/năm&lt;/td&gt;&lt;td data-label=&quot;GĐ 2026–2030 (CTHĐ NQĐH XIV)&quot;&gt;≥ 2%/năm&lt;/td&gt;&lt;/tr&gt;
@@ -2202,7 +2218,7 @@ html&gt;body{padding:0}&lt;/style&gt;
   &lt;/div&gt;
   &lt;/section&gt;
 
-  &lt;p class=&quot;text-small text-muted&quot;&gt;&lt;b&gt;Nguồn cập nhật:&lt;/b&gt; Dự thảo Báo cáo KTXH năm 2026 và kế hoạch 2027 cập nhật GRDP; Phụ lục II chỉ tiêu ngành, lĩnh vực; Báo cáo giải ngân vốn đầu tư công ngày 24/11/2026; Phụ lục kèm báo cáo, số liệu đến 19/11/2026. Chỉ tiêu kinh tế – xã hội là số ước thực hiện cả năm; giải ngân là số thực tế lũy kế. Kịch bản tháng 11 theo Kế hoạch 411/KH-UBND.&lt;/p&gt;
+  &lt;p class=&quot;text-small text-muted&quot;&gt;&lt;b&gt;Nguồn cập nhật:&lt;/b&gt; Dự thảo Báo cáo KTXH năm 2026 và kế hoạch năm 2027; Phụ lục II chỉ tiêu ngành, lĩnh vực; Báo cáo giải ngân vốn đầu tư công ngày 24/11/2026 và Phụ lục kèm báo cáo. Chỉ tiêu kinh tế – xã hội là số ước thực hiện cả năm; giải ngân là số thực tế lũy kế đến 19/11/2026; kịch bản T11 theo Kế hoạch 411/KH-UBND trong phụ lục giải ngân.&lt;/p&gt;
 
   &lt;script&gt;
     (() =&gt; {
@@ -2272,7 +2288,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       const scenarioRows = Array.from(root.querySelectorAll(&quot;.scenario-row:not(.header)&quot;));
       scenarioRows
         .sort((a, b) =&gt; {
-          const rate = (row) =&gt; parseFloat(row.querySelector(&quot;.scenario-cell.actual&quot;)?.style.getPropertyValue(&quot;--pct&quot;)) || 0;
+          const rate = (row) =&gt; parseFloat(row.querySelector(&quot;.scenario-cell.current&quot;)?.style.getPropertyValue(&quot;--actual&quot;)) || 0;
           return rate(b) - rate(a);
         })
         .forEach((row) =&gt; scenarioChart.appendChild(row));
@@ -2309,6 +2325,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         &quot;Tỷ lệ che phủ rừng&quot;: [&quot;41,44%&quot;],
         &quot;Tỷ lệ dân số đô thị dùng nước sạch&quot;: [&quot;94,33%&quot;],
         &quot;Tỷ lệ dân nông thôn dùng nước hợp vệ sinh&quot;: [&quot;98,63%&quot;],
+        &quot;Tỷ lệ cụm công nghiệp có xử lý nước thải đạt chuẩn&quot;: [&quot;30% (06/20 cụm)&quot;],
         &quot;Tỷ lệ thu gom, xử lý chất thải rắn sinh hoạt đô thị&quot;: [&quot;94%&quot;]
       };
       root.querySelectorAll(&quot;.indicator-table tbody tr&quot;).forEach((row) =&gt; {
